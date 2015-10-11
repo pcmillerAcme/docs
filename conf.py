@@ -267,8 +267,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'AcmeCodes', u'Acme.Codes Documentation',
-   author, 'AcmeCodes', 'One line description of project.',
-   'Miscellaneous'),
+   author, 'AcmeCodes', 'How to use service.acme.codes to generate animated codes.',
+   'Qr Codes Animation'),
 ]
 
 # Documents to append as an appendix to all manuals.
