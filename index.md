@@ -1,10 +1,10 @@
-# Documentation of acme.codes API
+# service.acme.codes: ReST API
 
 ## Introduction
 
-These pages describe the REST API call sequences for requesting an animated code.
+These pages describe the ReST API call sequences for requesting an animated code.
 
-The service is provided by [Animated Codes Made Easy LLC](http://www.acme.codes 'Title'), or 'ACME'. 
+The service is provided by [Animated Codes Made Easy LLC](http://www.acme.codes), or 'ACME'. 
 
 ACME provides near real time creation of customized animations of any scannable code, including QR codes. 
 
