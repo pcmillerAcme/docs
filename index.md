@@ -2,7 +2,7 @@
 
 ## Introduction
 
-These pages describe the ReST API call sequences for requesting an animated code.
+These pages describe the ReST API call sequences for requesting an animated code online.
 
 The service is provided by [Animated Codes Made Easy LLC](http://www.acme.codes), or 'ACME'. 
 
@@ -10,7 +10,7 @@ ACME provides near real time creation of customized animations of any scannable 
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes)
 
-Please note that access to this service requires a contract with ACME, please contact sales@acme.codes 
+Please note that access to this service requires a contract with ACME, please contact sales@acme.codes
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
 
@@ -29,12 +29,12 @@ For example, a requesting service could:
 
 ACME service would return JSON:
 
-    {orderNumber: 3284729}
+    {"orderNumber": "1444720642_NLGEDCVP"}
     
 Now the requesting service could retrieve the final product:
 
 
-    GET: http://service.acme.codes/orders/3284729/gif
+    GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/gif
 
 
 ACME service would then return a gif file:
@@ -57,19 +57,19 @@ For example, a requesting service could:
 
 ACME service would return JSON:
 
-    {orderNumber: 3284729}
+    {"orderNumber": "1444720642_NLGEDCVP"}
     
 Now the requesting service can retrieve the progress of the order:
 
-    GET: http://service.acme.codes/orders/3284729/progress
+    GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/progress
 
 ACME service would return JSON:
 
-    {progress: 12}
+    {"progress": 12}
     
 Now the requesting service can retrieve the first frame of an order before the completed animation is available:
     
-    GET: http://service.acme.codes/orders/3284729/frames/1
+    GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/frames/1
 
 ACME service would return a non-animated single frame gif file:
 
@@ -77,7 +77,7 @@ ACME service would return a non-animated single frame gif file:
     
 When reported progress is 100%, the requesting service can retrieve the final animated product, in this case a GIF file of an animation:
 
-    GET: http://service.acme.codes/orders/3284729/gif
+    GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/gif
 
 ACME service would return an animated gif file:
 
