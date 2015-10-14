@@ -1,4 +1,4 @@
-# service.acme.codes: ReST API
+# acme.codes: ReST API
 
 ## Introduction
 
