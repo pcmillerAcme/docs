@@ -8,7 +8,7 @@ The service is provided by [Animated Codes Made Easy LLC](http://www.acme.codes)
 
 ACME provides near real time creation of customized animations of any scannable code, including QR codes. 
 
-The API described in this documentation is available at [service.acme.codes](http://service.acme.codes)
+The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
 Please note that access to this service requires a contract with ACME, please contact sales@acme.codes
 
@@ -18,24 +18,20 @@ Please note that access to this service requires a contract with ACME, please co
 
 The minimal request sequence:
 
-1. POST a request to ACME service, capture JSON **Order Number** response.
+1. GET a new order number, receive JSON response containing an **Order Number**.
 2. GET the product (or any other information) by referencing the **Order Number**. 
-
 
 For example, a requesting service could:
 
-    POST: http://service.acme.codes/new?msg=GreetingsCustomer!
-
+    GET: http://service.acme.codes/new?msg=GreetingsCustomer!
 
 ACME service would return JSON:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
     
-Now the requesting service could retrieve the final product:
-
+Now the client can retrieve the final product:
 
     GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/gif
-
 
 ACME service would then return a gif file:
 
@@ -45,15 +41,14 @@ ACME service would then return a gif file:
 
 Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to the calling application. 
 
-1. POST a request to ACME service, capture JSON **Order Number** response.
-2. (Optional) Iteratively GET the **progress** of the product generation by referencing the **Order Number**, capture the JSON progress information. This can be used to feed into a progress bar feedback window for the client. Then, When the progress is > 5%:
+1. GET a new order, receive JSON response containing an **Order Number**.
+2. (Optional) Iteratively GET the **progress** of the product generation by referencing the **Order Number**, capture the JSON progress information. This can be used to feed into a progress bar feedback window for the client. Then, when the progress is > 5%:
 3. (Optional) GET the first frame (or any frame, with reasonable patience) by referencing the **Order Number**. Then, when the progress is = 100%:
 4. GET the final product 
 
 For example, a requesting service could:
 
-    POST: http://service.acme.codes/new?msg=GreetingsCustomer!
-
+    GET: http://service.acme.codes/new?msg=GreetingsCustomer!
 
 ACME service would return JSON:
 
