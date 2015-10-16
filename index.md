@@ -12,7 +12,7 @@ The API described in this documentation is available at [service.acme.codes](htt
 
 Please note that access to the full service requires a business contract with ACME. The example workflows in this document can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
 
-The vast majority of API calls made availabe here can be experimented with by anyone with a browser, just try the links or cut and paste them to create your test codes!
+The vast majority of API calls made available here can be experimented with by anyone with a browser, just try the links or cut and paste them to create your test codes!
 
 Please contact sales@acme.codes for interest in unlimited near real time animated QR code generation.
 
@@ -120,7 +120,11 @@ ACME service would return an animated gif file:
     </tr>
 </table>
 
-/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request:
+/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
+
+    GET: http://service.acme.codes/new?msg=HelloQrScannersOfTheWorld!
+    
+Example return value:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
 
@@ -132,7 +136,11 @@ No arguments. This resource returns completed full animated gif binary stream. T
 
 ## /orders/**[#]**/progress
 
-No arguments. This resource returns a json string containing a 'progress' key:value pair. The value of progress is always an int in the range [0-100]. Examples:
+No arguments. This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Examples:
+
+     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
+     
+ Example return values:
     
     {"progress": 0}
     {"progress": 15}
