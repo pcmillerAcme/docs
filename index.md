@@ -12,6 +12,8 @@ The API described in this documentation is available at [service.acme.codes](htt
 
 Please note that access to the full service requires a business contract with ACME. The example workflows in this document can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
 
+The vast majority of API calls made availabe here can be experimented with by anyone with a browser, just try the links or cut and paste them to create your test codes!
+
 Please contact sales@acme.codes for interest in unlimited near real time animated QR code generation.
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
@@ -124,7 +126,9 @@ ACME service would return an animated gif file:
 
 ## /orders/**[#]**/gif
 
-No arguments. This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif.
+No arguments. This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
+
+    http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
 
 ## /orders/**[#]**/progress
 
@@ -136,6 +140,6 @@ No arguments. This resource returns a json string containing a 'progress' key:va
 
 ## /orders/**[#]**/frames/**[#]**
 
-No arguments. This resource returns a single frame gif corresponding to the frame number of the animation.
+No arguments. This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
 
-
+    http://service.acme.codes/orders/1444979323_ODFAUQSE/frames/33
