@@ -53,8 +53,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Acme.Codes'
-copyright = u'2015, Peter C. Miller'
-author = u'Peter C. Miller'
+copyright = u'2015, Animated Codes Made Easy LLC'
+author = u'PCPM / Animated Codes Made Easy LLC'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
