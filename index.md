@@ -10,7 +10,9 @@ ACME provides near real time creation of customized animations of any scannable 
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-Please note that access to this service requires a contract with ACME, please contact sales@acme.codes
+Please note that access to the full service requires a business contract with ACME. The example workflows in this document can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
+
+Please contact sales@acme.codes for interest in unlimited near real time animated QR code generation.
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
 
@@ -43,7 +45,7 @@ Since ACME animation generation times can vary significantly based on animation 
 
 1. GET a new order, receive JSON response containing an **Order Number**.
 2. (Optional) Iteratively GET the **progress** of the product generation by referencing the **Order Number**, capture the JSON progress information. This can be used to feed into a progress bar feedback window for the client. Then, when the progress is > 5%:
-3. (Optional) GET the first frame (or any frame, with reasonable patience) by referencing the **Order Number**. Then, when the progress is = 100%:
+3. (Optional) GET the **first frame** (or any frame, with reasonable patience) by referencing the **Order Number**. Then, when the progress is = 100%:
 4. GET the final product 
 
 For example, a requesting service could:
@@ -78,5 +80,62 @@ ACME service would return an animated gif file:
 
 !['Animated Code'](http://service.acme.codes/acmePivot 'Animated Code')
 
+***
+
+# Resources & Resource Args
+
+## /new
+
+<table>
+    <tr>
+        <td>Arg:</td>
+        <td width=20px></td>
+        <td>Description / Example:</td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>msg</td>
+        <td></td>
+        <td>The message to be encoded into the code. Default = 'http://acme.codes'</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?msg=GreetingsCustomer!">http://service.acme.codes/new?msg=GreetingsCustomer!</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>partner</td>
+        <td></td>
+        <td>Client identifier. Default = 'demo'</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?partner=RetainedAcmeClient">http://service.acme.codes/new?partner=RetainedAcmeClient</a></td>
+    </tr>
+</table>
+
+/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request:
+
+    {"orderNumber": "1444720642_NLGEDCVP"}
+
+## /orders/**[#]**/gif
+
+No arguments. This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif.
+
+## /orders/**[#]**/progress
+
+No arguments. This resource returns a json string containing a 'progress' key:value pair. The value of progress is always an int in the range [0-100]. Examples:
+    
+    {"progress": 0}
+    {"progress": 15}
+    {"progress": 100}
+
+## /orders/**[#]**/frames/**[#]**
+
+No arguments. This resource returns a single frame gif corresponding to the frame number of the animation.
 
 
