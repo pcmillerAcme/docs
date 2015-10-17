@@ -10,9 +10,9 @@ ACME provides near real time creation of customized animations of any scannable 
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-Please note that access to the full service requires a business contract with ACME. The example workflows in this document can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
+Please note that access to the full service requires a business contract with ACME. The example workflows here can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
 
-The vast majority of API calls made available here can be experimented with by anyone with a browser, just try the links or cut and paste them to create your test codes!
+The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
 Please contact sales@acme.codes for interest in unlimited near real time animated QR code generation.
 
@@ -86,13 +86,45 @@ ACME service would return an animated gif file:
 
 # Resources & Resource Args
 
+## /anims-html
+
+/anims-html returns a human browsable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
+
+<a href="http://service.acme.codes/anims-html">http://service.acme.codes/anims-html</a>
+
+## /anims-json
+
+/anims-json returns a machine readable JSON string heirarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
+
+<a href="http://service.acme.codes/anims-json">http://service.acme.codes/anims-json</a>
+
 ## /new
+
+/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
+
+    GET: http://service.acme.codes/new?msg=HelloQrScannersOfTheWorld!
+    
+Example return value:
+
+    {"orderNumber": "1444720642_NLGEDCVP"}
 
 <table>
     <tr>
         <td>Arg:</td>
         <td width=20px></td>
         <td>Description / Example:</td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>anim</td>
+        <td></td>
+        <td>The animation to be applied to the code. Default = 'spinning_90_oscillate'</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?anim=tumbling_360_walk">http://service.acme.codes/new?anim=tumbling_360_walk</a></td>
     </tr>
     <tr height=20px>
     </tr>
@@ -118,15 +150,43 @@ ACME service would return an animated gif file:
         <td></td>
         <td><a href="http://service.acme.codes/new?partner=RetainedAcmeClient">http://service.acme.codes/new?partner=RetainedAcmeClient</a></td>
     </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>stencil</td>
+        <td></td>
+        <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scanability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?stencil=true">http://service.acme.codes/new?stencil=true</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>x-res</td>
+        <td></td>
+        <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with y-res, cropping can occur in the final product. Default = 100</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?x-res=400">http://service.acme.codes/new?x-res=400</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>y-res</td>
+        <td></td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with x-res, cropping can occur in the final product. Default = 100 </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?y-res=400">http://service.acme.codes/new?y-res=400</a></td>
+    </tr>
 </table>
-
-/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
-
-    GET: http://service.acme.codes/new?msg=HelloQrScannersOfTheWorld!
-    
-Example return value:
-
-    {"orderNumber": "1444720642_NLGEDCVP"}
 
 ## /orders/**[#]**/gif
 
