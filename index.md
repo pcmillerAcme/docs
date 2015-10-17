@@ -165,26 +165,26 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>x-res</td>
+        <td>xres</td>
         <td></td>
         <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with y-res, cropping can occur in the final product. Default = 100</td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?x-res=400">http://service.acme.codes/new?x-res=400</a></td>
+        <td><a href="http://service.acme.codes/new?xres=400">http://service.acme.codes/new?xres=400</a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
-        <td>y-res</td>
+        <td>yres</td>
         <td></td>
         <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with x-res, cropping can occur in the final product. Default = 100 </td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?y-res=400">http://service.acme.codes/new?y-res=400</a></td>
+        <td><a href="http://service.acme.codes/new?yres=400">http://service.acme.codes/new?yres=400</a></td>
     </tr>
 </table>
 
