@@ -10,11 +10,11 @@ ACME provides near real time creation of customized animations of any scannable 
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-Please note that access to the full service requires a business contract with ACME. The example workflows here can still be used, but without a contract the responses will be capped to only be useful in a 'demo' mode.
+The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way limits commercial use but still demonstrates ACME's realtime encoding ability. To encode messages without this prefixed demonstration restriction, a business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
-Please contact sales@acme.codes for interest in unlimited near real time animated QR code generation.
+Please contact sales@acme.codes if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API.
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
 
@@ -167,7 +167,7 @@ Example return value:
     <tr>
         <td>xres</td>
         <td></td>
-        <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with y-res, cropping can occur in the final product. Default = 100</td>
+        <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with yres, cropping can occur in the final product. Default = 100</td>
     </tr>
     <tr>
         <td></td>
@@ -179,7 +179,7 @@ Example return value:
     <tr>
         <td>yres</td>
         <td></td>
-        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with x-res, cropping can occur in the final product. Default = 100 </td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100 </td>
     </tr>
     <tr>
         <td></td>
