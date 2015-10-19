@@ -190,13 +190,13 @@ Example return value:
 
 ## /orders/**[#]**/gif
 
-No arguments. This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
+This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
 
 ## /orders/**[#]**/progress
 
-No arguments. This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Examples:
+This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Examples:
 
      http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
      
