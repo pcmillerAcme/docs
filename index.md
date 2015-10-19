@@ -10,7 +10,7 @@ ACME provides near real time creation of customized animations of any scannable 
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way limits commercial use but still demonstrates ACME's realtime encoding ability. To encode messages without this prefixed demonstration restriction, a business agreement with ACME must first be paid for.
+The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
@@ -88,13 +88,13 @@ ACME service would return an animated gif file:
 
 ## /anims-html
 
-/anims-html returns a human browsable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
+/anims-html returns a human readable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
 
 <a href="http://service.acme.codes/anims-html">http://service.acme.codes/anims-html</a>
 
 ## /anims-json
 
-/anims-json returns a machine readable JSON string heirarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
+/anims-json returns a machine readable JSON string hierarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
 
 <a href="http://service.acme.codes/anims-json">http://service.acme.codes/anims-json</a>
 
