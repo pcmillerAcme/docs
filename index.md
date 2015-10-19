@@ -208,6 +208,6 @@ This resource returns a JSON string containing a 'progress' key:value pair. The 
 
 ## /orders/**[#]**/frames/**[#]**
 
-No arguments. This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
+This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/frames/33
