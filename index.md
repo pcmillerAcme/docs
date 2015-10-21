@@ -102,11 +102,16 @@ ACME service would return an animated gif file:
     ** All animations subject to copyright claims unless indicated otherwise. **
 
 Realtime example link:
+
 <a href="http://service.acme.codes/anims-html">http://service.acme.codes/anims-html</a>
 
 ## /anims-json
 
 /anims-json returns a machine readable JSON string hierarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
+
+    {"flock": {"simple": {"circleDucksInRow": {"frames": 180}, "circle": {"frames": 90}, "circleCreased": {"frames": 180}}}, "tumbling": {"360": {"smooth": {"pause": {"frames": 150}, "const": {"frames": 150}}, "walk": {"frames": 150}}}, "spinning": {"90": {"oscillate": {"frames": 100}}, "360": {"smooth": {"const": {"frames": 150}}}}, "wind": {"windVane": {"11": {"frames": 25}, "10": {"frames": 140}, "rotateAllOutIn": {"frames": 24}, "rotateRandomOutIn": {"frames": 60}, "rotateRandomOutInRs1": {"frames": 60}, "rotateRandomOutInRs2": {"frames": 60}}}, "swap": {"doSeeDo1": {"frames": 50}, "doSeeDo3": {"frames": 100}, "doSeeDo2": {"frames": 50}}}
+
+Realtime example link:
 
 <a href="http://service.acme.codes/anims-json">http://service.acme.codes/anims-json</a>
 
@@ -226,7 +231,11 @@ This resource returns a single frame gif corresponding to the frame number of th
 
 ## /version
 
-This resource returns a JSON string containing software build and date information about this service.
+This resource returns a JSON string containing software build and date information about this service. 
+
+    {"buildNumber": 1747, "buildTime": "Tue Oct 20 22:14:11 2015", "version": "0.5", "branch": "master"}
+
+Real time example link:
 
 <a href="http://service.acme.codes/version">http://service.acme.codes/version</a>
 
