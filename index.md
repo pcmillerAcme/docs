@@ -12,7 +12,7 @@ If you are a software developer interested in using ACME's service, this documen
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a business agreement with ACME must first be paid for.
+The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
@@ -215,3 +215,11 @@ This resource returns a JSON string containing a 'progress' key:value pair. The 
 This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/frames/33
+
+## /version
+
+This resource returns a JSON string containing software build and date information about this service.
+
+<a href="http://service.acme.codes/version">http://service.acme.codes/version</a>
+
+
