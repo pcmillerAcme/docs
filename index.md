@@ -94,6 +94,14 @@ ACME service would return an animated gif file:
 
 /anims-html returns a human readable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
 
+    ACME Animations:
+    ** All animations subject to copyright claims unless indicated otherwise. **
+    flock_simple_circle
+    flock_simple_circleCreased
+    [...]
+    ** All animations subject to copyright claims unless indicated otherwise. **
+
+Realtime example link:
 <a href="http://service.acme.codes/anims-html">http://service.acme.codes/anims-html</a>
 
 ## /anims-json
