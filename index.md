@@ -146,6 +146,20 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
+    <tr>
+        <td>format</td>
+        <td></td>
+        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API without relying on a complex GUI front end. Without this option and without a front end, the user is left to manually assemble the URL with an order number, which is not fun for anything but scripts.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?format=JSON">http://service.acme.codes/new?format=JSON</a> (Defualt)<br>
+        <a href="http://service.acme.codes/new?format=html">http://service.acme.codes/new?format=html</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
         <td>msg</td>
         <td></td>
         <td>The message to be encoded into the code. Default = 'http://acme.codes'</td>
