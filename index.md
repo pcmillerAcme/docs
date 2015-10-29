@@ -101,7 +101,7 @@ ACME service would return an animated gif file:
     [...]
     ** All animations subject to copyright claims unless indicated otherwise. **
 
-Realtime example link:
+Real time example link:
 
 <a href="http://service.acme.codes/anims-html">http://service.acme.codes/anims-html</a>
 
@@ -111,7 +111,7 @@ Realtime example link:
 
     {"flock": {"simple": {"circleDucksInRow": {"frames": 180}, "circle": {"frames": 90}, "circleCreased": {"frames": 180}}}, "tumbling": {"360": {"smooth": {"pause": {"frames": 150}, "const": {"frames": 150}}, "walk": {"frames": 150}}}, "spinning": {"90": {"oscillate": {"frames": 100}}, "360": {"smooth": {"const": {"frames": 150}}}}, "wind": {"windVane": {"11": {"frames": 25}, "10": {"frames": 140}, "rotateAllOutIn": {"frames": 24}, "rotateRandomOutIn": {"frames": 60}, "rotateRandomOutInRs1": {"frames": 60}, "rotateRandomOutInRs2": {"frames": 60}}}, "swap": {"doSeeDo1": {"frames": 50}, "doSeeDo3": {"frames": 100}, "doSeeDo2": {"frames": 50}}}
 
-Realtime example link:
+Real time example link:
 
 <a href="http://service.acme.codes/anims-json">http://service.acme.codes/anims-json</a>
 
@@ -227,9 +227,9 @@ This resource returns completed full animated gif binary stream. There is a high
 
 ## /orders/**[#]**/progress
 
-This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Examples:
+This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Example URL:
 
-     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
+     http://service.acme.codes/orders/1444979323_ODFAUQSE/progress
      
  Example return values:
     
