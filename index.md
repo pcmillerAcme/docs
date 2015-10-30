@@ -12,7 +12,7 @@ If you are a software developer interested in using ACME's service, this documen
 
 The API described in this documentation is available at [service.acme.codes](http://service.acme.codes) and [api.acme.codes](http://api.acme.codes)
 
-The example workflows described in this documentation will function for anyone, but the encoded messages will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
+The example workflows described in this documentation will function for anyone, but the messages embedded into the codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
@@ -221,7 +221,7 @@ Example return value:
 
 ## /orders/**[#]**/gif
 
-This resource returns completed full animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
+This resource returns the complete animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
 
