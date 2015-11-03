@@ -184,6 +184,18 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
+        <td>randomSeed</td>
+        <td></td>
+        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://service.acme.codes/new?randomSeed=5">http://service.acme.codes/new?randomSeed=5</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
         <td>stencil</td>
         <td></td>
         <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scanability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
@@ -192,6 +204,18 @@ Example return value:
         <td></td>
         <td></td>
         <td><a href="http://service.acme.codes/new?stencil=true">http://service.acme.codes/new?stencil=true</a></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td>tileShape</td>
+        <td></td>
+        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="http://api.acme.codes/new?tileShape=circle&xres=400&yres=400">http://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
     </tr>
     <tr height=20px>
     </tr>
