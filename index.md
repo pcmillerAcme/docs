@@ -16,7 +16,7 @@ The example workflows described in this documentation will function for anyone, 
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
-Please contact sales@acme.codes if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API.
+If you have feedback or questions on this documentation, or if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API, please contact [sales@acme.codes](mailto:sales@acme.codes?subject=From%20RTD:%20Interest%20in%20ACME%20Web%20Service)
 
 Certain design and architectural features of this service are patent pending.
 
@@ -41,7 +41,7 @@ Now the client can retrieve the final product:
 
     GET: http://service.acme.codes/orders/1444720642_NLGEDCVP/gif
 
-ACME service would then return a gif file:
+ACME service would then return a gif file - in this case the default simplest animation ACME offers:
 
 ![Acme Animated gif](http://service.acme.codes/acmePivot 'Animated Code')
 
@@ -107,7 +107,7 @@ Real time example link:
 
 ## /anims-json
 
-/anims-json returns a machine readable JSON string hierarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
+/anims-json returns a machine readable JSON-formatted response hierarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
 
     {"flock": {"simple": {"circleDucksInRow": {"frames": 180}, "circle": {"frames": 90}, "circleCreased": {"frames": 180}}}, "tumbling": {"360": {"smooth": {"pause": {"frames": 150}, "const": {"frames": 150}}, "walk": {"frames": 150}}}, "spinning": {"90": {"oscillate": {"frames": 100}}, "360": {"smooth": {"const": {"frames": 150}}}}, "wind": {"windVane": {"11": {"frames": 25}, "10": {"frames": 140}, "rotateAllOutIn": {"frames": 24}, "rotateRandomOutIn": {"frames": 60}, "rotateRandomOutInRs1": {"frames": 60}, "rotateRandomOutInRs2": {"frames": 60}}}, "swap": {"doSeeDo1": {"frames": 50}, "doSeeDo3": {"frames": 100}, "doSeeDo2": {"frames": 50}}}
 
@@ -117,7 +117,7 @@ Real time example link:
 
 ## /new
 
-/new returns a JSON string containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
+/new returns a JSON-formatted response containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
 
     GET: http://service.acme.codes/new?msg=HelloQrScannersOfTheWorld!
     
@@ -127,6 +127,7 @@ Example return value:
 
 <table>
     <tr>
+    <!--<td style="background-color: #e0e0e0; vertical-align: top;">-->
         <td>Arg:</td>
         <td width=20px></td>
         <td>Description / Example:</td>
@@ -134,14 +135,14 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>anim</td>
+        <td style="background-color: #f0f0f0;">anim</td>
         <td></td>
-        <td>The animation to be applied to the code. Default = 'spinning_90_oscillate'</td>
+        <td>The animation to be applied to the code. Default = 'spinning_90_oscillate'<br><a href="http://service.acme.codes/new?anim=tumbling_360_walk">http://service.acme.codes/new?anim=tumbling_360_walk</a></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?anim=tumbling_360_walk">http://service.acme.codes/new?anim=tumbling_360_walk</a></td>
+        <td></td>
     </tr>
     <tr height=20px>
     </tr>
@@ -149,25 +150,25 @@ Example return value:
     <tr>
         <td>format</td>
         <td></td>
-        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.
+        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="http://service.acme.codes/new?format=JSON">http://service.acme.codes/new?format=JSON</a> (Default)<br>
+        <a href="http://service.acme.codes/new?format=html">http://service.acme.codes/new?format=html</a>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?format=JSON">http://service.acme.codes/new?format=JSON</a> (Defualt)<br>
-        <a href="http://service.acme.codes/new?format=html">http://service.acme.codes/new?format=html</a></td>
+        <td></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
-        <td>msg</td>
+        <td style="background-color: #f0f0f0;">msg</td>
         <td></td>
-        <td>The message to be encoded into the code. Default = 'http://acme.codes'</td>
+        <td>The message to be encoded into the code. Default = 'http://acme.codes'<br><a href="http://service.acme.codes/new?msg=GreetingsCustomer!">http://service.acme.codes/new?msg=GreetingsCustomer!</a></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?msg=GreetingsCustomer!">http://service.acme.codes/new?msg=GreetingsCustomer!</a></td>
+        <td></td>
     </tr>
     <tr height=20px>
     </tr>
@@ -184,14 +185,14 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>randomSeed</td>
+        <td style="background-color: #f0f0f0;">randomSeed</td>
         <td></td>
-        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.</td>
+        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="http://service.acme.codes/new?randomSeed=5">http://service.acme.codes/new?randomSeed=5</a></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?randomSeed=5">http://service.acme.codes/new?randomSeed=5</a></td>
+        <td></td>
     </tr>
     <tr height=20px>
     </tr>
@@ -208,14 +209,14 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>tileShape</td>
+        <td style="background-color: #f0f0f0;">tileShape</td>
         <td></td>
-        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.</td>
+        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="http://api.acme.codes/new?tileShape=circle&xres=400&yres=400">http://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://api.acme.codes/new?tileShape=circle&xres=400&yres=400">http://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
+        <td></td>
     </tr>
     <tr height=20px>
     </tr>
@@ -232,14 +233,14 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>yres</td>
+        <td style="background-color: #f0f0f0;">yres</td>
         <td></td>
-        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100 </td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="http://service.acme.codes/new?yres=400">http://service.acme.codes/new?yres=400</a></td>
     </tr>
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://service.acme.codes/new?yres=400">http://service.acme.codes/new?yres=400</a></td>
+        <td></td>
     </tr>
 </table>
 
@@ -251,7 +252,7 @@ This resource returns the complete animated gif binary stream. There is a high v
 
 ## /orders/**[#]**/progress
 
-This resource returns a JSON string containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Example URL:
+This resource returns a JSON-formatted response containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Example URL:
 
      http://service.acme.codes/orders/1444979323_ODFAUQSE/progress
      
@@ -269,7 +270,7 @@ This resource returns a single frame gif corresponding to the frame number of th
 
 ## /version
 
-This resource returns a JSON string containing software build and date information about this service. 
+This resource returns a JSON-formatted response containing software build and date information about this service. 
 
     {"buildNumber": 1747, "buildTime": "Tue Oct 20 22:14:11 2015", "version": "0.5", "branch": "master"}
 
