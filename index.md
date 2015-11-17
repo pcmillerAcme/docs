@@ -137,7 +137,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">anim</td>
         <td></td>
-        <td>The animation to be applied to the code. Default = 'spinning_90_oscillate'<br><a href="http://service.acme.codes/new?anim=tumbling_360_walk">http://service.acme.codes/new?anim=tumbling_360_walk</a></td>
+        <td>The animation to be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'spinning_90_oscillate'.<br><a href="http://service.acme.codes/new?anim=tumbling_360_walk">http://service.acme.codes/new?anim=tumbling_360_walk</a></td>
     </tr>
     <tr>
         <td></td>
