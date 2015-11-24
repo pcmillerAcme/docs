@@ -250,6 +250,16 @@ This resource returns the complete animated gif binary stream. There is a high v
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif
 
+## /orders/**[#]**/gif-file-info
+
+This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is 0 until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
+
+    http://service.acme.codes/orders/1444979323_ODFAUQSE/gif-file-info
+    
+Example return value:
+
+    {"fileSize": 439441}
+
 ## /orders/**[#]**/progress
 
 This resource returns a JSON-formatted response containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Example URL:
