@@ -252,7 +252,7 @@ This resource returns the complete animated gif binary stream. There is a high v
 
 ## /orders/**[#]**/gif-file-info
 
-This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is 0 until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
+This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is zero until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
 
     http://service.acme.codes/orders/1444979323_ODFAUQSE/gif-file-info
     
