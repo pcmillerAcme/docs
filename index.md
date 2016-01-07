@@ -10,7 +10,7 @@ ACME provides near real time creation of customized animations of any scannable 
 
 If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting [ACME's top page](http://acme.codes). 
 
-The API described in this documentation is available at [api.acme.codes](http://api.acme.codes)
+The API described in this documentation is available at [https://api.acme.codes](https://api.acme.codes)
 
 The example workflows described in this documentation will function for anyone, but the messages embedded into the codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
