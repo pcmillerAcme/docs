@@ -31,7 +31,7 @@ The minimal request sequence:
 
 For example, a requesting service could:
 
-    GET: http://api.acme.codes/new?msg=GreetingsCustomer!
+    GET: https://api.acme.codes/new?msg=GreetingsCustomer!
 
 ACME service would return JSON:
 
@@ -39,11 +39,11 @@ ACME service would return JSON:
     
 Now the client can retrieve the final product:
 
-    GET: http://api.acme.codes/orders/1444720642_NLGEDCVP/gif
+    GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
 ACME service would then return a gif file - in this case the default simplest animation ACME offers:
 
-![Acme Animated gif](http://api.acme.codes/acmePivot 'Animated Code')
+![Acme Animated gif](https://api.acme.codes/acmePivot 'Animated Code')
 
 ## Standard Request
 
@@ -56,7 +56,7 @@ Since ACME animation generation times can vary significantly based on animation 
 
 For example, a requesting service could:
 
-    GET: http://api.acme.codes/new?msg=GreetingsCustomer!
+    GET: https://api.acme.codes/new?msg=GreetingsCustomer!
 
 ACME service would return JSON:
 
@@ -64,7 +64,7 @@ ACME service would return JSON:
     
 Now the requesting service can retrieve the progress of the order:
 
-    GET: http://api.acme.codes/orders/1444720642_NLGEDCVP/progress
+    GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/progress
 
 ACME service would return JSON:
 
@@ -72,19 +72,19 @@ ACME service would return JSON:
     
 Now the requesting service can retrieve the first frame of an order before the completed animation is available:
     
-    GET: http://api.acme.codes/orders/1444720642_NLGEDCVP/frames/1
+    GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/frames/1
 
 ACME service would return a non-animated single frame gif file:
 
-!['Non-animated Code'](http://api.acme.codes/acmePivotSingleFrame 'Single Frame')
+!['Non-animated Code'](https://api.acme.codes/acmePivotSingleFrame 'Single Frame')
     
 When reported progress is 100%, the requesting service can retrieve the final animated product, in this case a GIF file of an animation:
 
-    GET: http://api.acme.codes/orders/1444720642_NLGEDCVP/gif
+    GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
 ACME service would return an animated gif file:
 
-!['Animated Code'](http://api.acme.codes/acmePivot 'Animated Code')
+!['Animated Code'](https://api.acme.codes/acmePivot 'Animated Code')
 
 ***
 
@@ -103,7 +103,7 @@ ACME service would return an animated gif file:
 
 Real time example link:
 
-<a href="http://api.acme.codes/anims-html">http://api.acme.codes/anims-html</a>
+<a href="https://api.acme.codes/anims-html">https://api.acme.codes/anims-html</a>
 
 ## /anims-json
 
@@ -113,13 +113,13 @@ Real time example link:
 
 Real time example link:
 
-<a href="http://api.acme.codes/anims-json">http://api.acme.codes/anims-json</a>
+<a href="https://api.acme.codes/anims-json">https://api.acme.codes/anims-json</a>
 
 ## /new
 
 /new returns a JSON-formatted response containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
 
-    GET: http://api.acme.codes/new?msg=HelloQrScannersOfTheWorld!
+    GET: https://api.acme.codes/new?msg=HelloQrScannersOfTheWorld!
     
 Example return value:
 
@@ -137,7 +137,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">anim</td>
         <td></td>
-        <td>The animation to be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'spinning_90_oscillate'.<br><a href="http://api.acme.codes/new?anim=tumbling_360_walk">http://api.acme.codes/new?anim=tumbling_360_walk</a></td>
+        <td>The animation to be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'spinning_90_oscillate'.<br><a href="https://api.acme.codes/new?anim=tumbling_360_walk">https://api.acme.codes/new?anim=tumbling_360_walk</a></td>
     </tr>
     <tr>
         <td></td>
@@ -150,8 +150,8 @@ Example return value:
     <tr>
         <td>format</td>
         <td></td>
-        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="http://api.acme.codes/new?format=JSON">http://api.acme.codes/new?format=JSON</a> (Default)<br>
-        <a href="http://api.acme.codes/new?format=html">http://api.acme.codes/new?format=html</a>
+        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="https://api.acme.codes/new?format=JSON">https://api.acme.codes/new?format=JSON</a> (Default)<br>
+        <a href="https://api.acme.codes/new?format=html">https://api.acme.codes/new?format=html</a>
     </tr>
     <tr>
         <td></td>
@@ -163,7 +163,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">msg</td>
         <td></td>
-        <td>The message to be encoded into the code. Default = 'http://acme.codes'<br><a href="http://api.acme.codes/new?msg=GreetingsCustomer!">http://api.acme.codes/new?msg=GreetingsCustomer!</a></td>
+        <td>The message to be encoded into the code. Default = 'https://acme.codes'<br><a href="https://api.acme.codes/new?msg=GreetingsCustomer!">https://api.acme.codes/new?msg=GreetingsCustomer!</a></td>
     </tr>
     <tr>
         <td></td>
@@ -180,14 +180,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://api.acme.codes/new?partner=RetainedAcmeClient">http://api.acme.codes/new?partner=RetainedAcmeClient</a></td>
+        <td><a href="https://api.acme.codes/new?partner=RetainedAcmeClient">https://api.acme.codes/new?partner=RetainedAcmeClient</a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td style="background-color: #f0f0f0;">randomSeed</td>
         <td></td>
-        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="http://api.acme.codes/new?randomSeed=5">http://api.acme.codes/new?randomSeed=5</a></td>
+        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5">https://api.acme.codes/new?randomSeed=5</a></td>
     </tr>
     <tr>
         <td></td>
@@ -204,14 +204,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://api.acme.codes/new?stencil=true">http://api.acme.codes/new?stencil=true</a></td>
+        <td><a href="https://api.acme.codes/new?stencil=true">https://api.acme.codes/new?stencil=true</a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td style="background-color: #f0f0f0;">tileShape</td>
         <td></td>
-        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="http://api.acme.codes/new?tileShape=circle&xres=400&yres=400">http://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
+        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="https://api.acme.codes/new?tileShape=circle&xres=400&yres=400">https://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
     </tr>
     <tr>
         <td></td>
@@ -228,14 +228,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="http://api.acme.codes/new?xres=400">http://api.acme.codes/new?xres=400</a></td>
+        <td><a href="https://api.acme.codes/new?xres=400">https://api.acme.codes/new?xres=400</a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td style="background-color: #f0f0f0;">yres</td>
         <td></td>
-        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="http://api.acme.codes/new?yres=400">http://api.acme.codes/new?yres=400</a></td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400">https://api.acme.codes/new?yres=400</a></td>
     </tr>
     <tr>
         <td></td>
@@ -248,13 +248,13 @@ Example return value:
 
 This resource returns the complete animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
 
-    http://api.acme.codes/orders/1444979323_ODFAUQSE/gif
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/gif
 
 ## /orders/**[#]**/gif-file-info
 
 This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is zero until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
 
-    http://api.acme.codes/orders/1444979323_ODFAUQSE/gif-file-info
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/gif-file-info
     
 Example return value:
 
@@ -264,7 +264,7 @@ Example return value:
 
 This resource returns a JSON-formatted response containing a 'progress' key:value pair. The value of progress is always an integer in the range [0-100]. Example URL:
 
-     http://api.acme.codes/orders/1444979323_ODFAUQSE/progress
+     https://api.acme.codes/orders/1444979323_ODFAUQSE/progress
      
  Example return values:
     
@@ -276,7 +276,7 @@ This resource returns a JSON-formatted response containing a 'progress' key:valu
 
 This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
 
-    http://api.acme.codes/orders/1444979323_ODFAUQSE/frames/33
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/frames/33
 
 ## /version
 
@@ -286,6 +286,6 @@ This resource returns a JSON-formatted response containing software build and da
 
 Real time example link:
 
-<a href="http://api.acme.codes/version">http://api.acme.codes/version</a>
+<a href="https://api.acme.codes/version">https://api.acme.codes/version</a>
 
 
