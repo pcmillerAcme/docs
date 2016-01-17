@@ -2,13 +2,13 @@
 
 ## Introduction
 
-These pages describe the ReST API call sequences for requesting an animated code online. 
-
-The service is provided by [Animated Codes Made Easy LLC](http://www.acme.codes), or 'ACME'. 
+These pages describe the ['Software as a Service' (SaaS)](https://en.wikipedia.org/wiki/Software_as_a_service) provided by [Animated Codes Made Easy LLC](http://www.acme.codes), or 'ACME'. 
 
 ACME provides near real time creation of customized animations of any scannable code, including QR codes. 
 
 If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting [ACME's top page](http://acme.codes). 
+
+This documentation describes the ReST API call sequences for requesting an animated code online. 
 
 The API described in this documentation is available at [https://api.acme.codes](https://api.acme.codes)
 
