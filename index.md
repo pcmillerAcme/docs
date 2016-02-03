@@ -51,8 +51,8 @@ Since ACME animation generation times can vary significantly based on animation 
 
 1. GET a new order, receive JSON response containing an **Order Number**.
 2. (Optional) Iteratively GET the **server-side progress** of the product generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a realtime progress bar feedback window for the client. Then, when the server side progress is > 5%:
-3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide arbitrary visual partial feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
-4. (Optional) GET the final deliverable file size. This information can be used to provide **transmission progress** of the final file from the server to the client. 
+3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
+4. (Optional) GET the final deliverable file size. This information can be used below.
 5. GET the final product
 6. (Optional) Measure the local file size as it is streamed in from the above call and compare it to the known full file size. This comparison can be used to accurately provide visual progress bar(s) to the client regarding file transmission.
 
