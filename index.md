@@ -50,9 +50,9 @@ ACME service would then return a gif file - in this case the default simplest an
 Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to a client application. 
 
 1. GET a new order, receive JSON response containing an **Order Number**.
-2. (Optional) Iteratively GET the **server-side progress** of the product generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a realtime progress bar feedback window for the client. Then, when the server side progress is > 5%:
+2. (Optional) Iteratively GET the **server-side progress** of the animation generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a realtime progress bar feedback window for the client. Then, when the server side progress is > 5%:
 3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
-4. (Optional) GET the final deliverable file size. This information can be used below.
+4. (Optional) GET the final product file size. This information can be used below.
 5. GET the final product
 6. (Optional) Measure the local file size as it is streamed in from the above call and compare it to the known full file size. This comparison can be used to accurately provide visual progress bar(s) to the client regarding file transmission.
 
@@ -80,7 +80,7 @@ ACME service would return a non-animated single frame gif file:
 
 !['Non-animated Code'](https://api.acme.codes/acmePivotSingleFrame 'Single Frame')
     
-Optionally, when reported server-side progress is 100%, the client application can request the final delierable file size:
+Optionally, when reported server-side progress is 100%, the client application can request the final product file size:
 
     GET https://api.acme.codes/orders/1444720642_NLGEDCVP/gif-file-info
 
