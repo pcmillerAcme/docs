@@ -47,14 +47,16 @@ ACME service would then return a gif file - in this case the default simplest an
 
 ## Standard Request
 
-Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to the calling application. 
+Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to a client application. 
 
 1. GET a new order, receive JSON response containing an **Order Number**.
-2. (Optional) Iteratively GET the **progress** of the product generation by referencing the **Order Number**, capture the JSON progress information. This can be used to feed into a progress bar feedback window for the client. Then, when the progress is > 5%:
-3. (Optional) GET the **first frame** (or any frame, with reasonable patience) by referencing the **Order Number**. Then, when the progress is = 100%:
-4. GET the final product 
+2. (Optional) Iteratively GET the **server-side progress** of the product generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a realtime progress bar feedback window for the client. Then, when the server side progress is > 5%:
+3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide arbitrary visual partial feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
+4. (Optional) GET the final deliverable file size. This information can be used to provide **transmission progress** of the final file from the server to the client. 
+5. GET the final product
+6. (Optional) Measure the local file size as it is streamed in from the above call and compare it to the known full file size. This comparison can be used to accurately provide visual progress bar(s) to the client regarding file transmission.
 
-For example, a requesting service could:
+For example, a client application could:
 
     GET: https://api.acme.codes/new?msg=GreetingsCustomer!
 
@@ -62,7 +64,7 @@ ACME service would return JSON:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
     
-Now the requesting service can retrieve the progress of the order:
+Optionally, now the client application can retrieve the server-side progress of the order:
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/progress
 
@@ -70,7 +72,7 @@ ACME service would return JSON:
 
     {"progress": 12}
     
-Now the requesting service can retrieve the first frame of an order before the completed animation is available:
+Optionally, now the client application can retrieve the first frame of an order before the completed animation is available:
     
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/frames/1
 
@@ -78,13 +80,23 @@ ACME service would return a non-animated single frame gif file:
 
 !['Non-animated Code'](https://api.acme.codes/acmePivotSingleFrame 'Single Frame')
     
-When reported progress is 100%, the requesting service can retrieve the final animated product, in this case a GIF file of an animation:
+Optionally, when reported server-side progress is 100%, the client application can request the final delierable file size:
+
+    GET https://api.acme.codes/orders/1444720642_NLGEDCVP/gif-file-info
+
+ACME service would return JSON:
+
+    {"fileSize": 439441}
+
+Finally, the client application can retrieve the completed animated product, in this case a GIF file of an animation:
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
 ACME service would return an animated gif file:
 
 !['Animated Code'](https://api.acme.codes/acmePivot 'Animated Code')
+
+Optionally, the client application can display the transmission progress of the final product as it is streamed from server to client by querying the size of the local streamed file as it arrives and comparing it to the known full file size from the above optional gif-file-info resource.
 
 ***
 
