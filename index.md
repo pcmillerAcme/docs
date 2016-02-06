@@ -45,7 +45,7 @@ ACME service would then return a gif file - in this case the default simplest an
 
 ![Acme Animated gif](https://api.acme.codes/acmePivot 'Animated Code')
 
-An immediate 'gif' resource GET request will initially result in a 404 File Not Found Error, because the service has not completed creating the file. The error return page will contain a message clarifying the reason for the temporary failure. The below Standard Request workflow shows how to avoid this error.
+Note: An immediate 'gif' resource GET request will initially result in a 404 File Not Found Error, because the service has not completed creating the file. The error return page will contain a message clarifying the reason for the temporary failure. The below Standard Request workflow shows how to avoid this error entirely.
 
 ## Standard Request
 
