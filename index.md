@@ -37,7 +37,7 @@ ACME service would return JSON:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
     
-Now the client can retrieve the final product:
+Now, after some time has passed, the client can retrieve the final product:
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
@@ -45,7 +45,7 @@ ACME service would then return a gif file - in this case the default simplest an
 
 ![Acme Animated gif](https://api.acme.codes/acmePivot 'Animated Code')
 
-Note: An immediate 'gif' resource GET request will initially result in a 404 File Not Found Error, because the service has not completed creating the file. The error page will contain a message clarifying the reason for the temporary failure. The below Standard Request workflow shows how to avoid this error entirely.
+Note: An immediate 'gif' resource GET request to an accurate order will initially result in a 202 'Accepted' response, because the service has not completed creating the file. This response page will contain a message clarifying the reason for the temporary inability to return the requested file. The below Standard Request workflow shows how to avoid this response entirely.
 
 ## Standard Request
 
@@ -213,7 +213,7 @@ Example return value:
     <tr>
         <td>stencil</td>
         <td></td>
-        <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scanability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
+        <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scannability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
     </tr>
     <tr>
         <td></td>
