@@ -165,7 +165,17 @@ Example return value:
         <td>format</td>
         <td></td>
         <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="https://api.acme.codes/new?format=JSON">https://api.acme.codes/new?format=JSON</a> (Default)<br>
-        <a href="https://api.acme.codes/new?format=html">https://api.acme.codes/new?format=html</a>
+        <a href="https://api.acme.codes/new?format=html">https://api.acme.codes/new?format=html</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>    
+    <tr>
+        <td style="background-color: #f0f0f0;">frameNumber</td>
+        <td></td>
+        <td>Limits the generation of the animation to one specific frame. Use of this is discouraged for normal use. Normal access of individual frames should be through the /orders/[Order#]/frames/[n] resource. However, if the user is creating test suites or similar use cases where it is known in advance that only one frame is needed, it can be helpful to use this argument to optimize test execution time by limiting generated output to just one frame. </td>
     </tr>
     <tr>
         <td></td>
@@ -175,7 +185,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">msg</td>
+        <td>msg</td>
         <td></td>
         <td>The message to be encoded into the code. Default = 'https://acme.codes'<br><a href="https://api.acme.codes/new?msg=GreetingsCustomer!">https://api.acme.codes/new?msg=GreetingsCustomer!</a></td>
     </tr>
@@ -187,7 +197,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>partner</td>
+        <td style="background-color: #f0f0f0;">partner</td>
         <td></td>
         <td>Client identifier. Default = 'demo'</td>
     </tr>
@@ -199,7 +209,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">randomSeed</td>
+        <td>randomSeed</td>
         <td></td>
         <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5">https://api.acme.codes/new?randomSeed=5</a></td>
     </tr>
@@ -211,7 +221,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>stencil</td>
+        <td style="background-color: #f0f0f0;">stencil</td>
         <td></td>
         <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scannability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
     </tr>
@@ -223,7 +233,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">tileShape</td>
+        <td>tileShape</td>
         <td></td>
         <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="https://api.acme.codes/new?tileShape=circle&xres=400&yres=400">https://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
     </tr>
@@ -235,7 +245,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>xres</td>
+        <td style="background-color: #f0f0f0;">xres</td>
         <td></td>
         <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with yres, cropping can occur in the final product. Default = 100</td>
     </tr>
@@ -247,7 +257,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">yres</td>
+        <td>yres</td>
         <td></td>
         <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400">https://api.acme.codes/new?yres=400</a></td>
     </tr>
