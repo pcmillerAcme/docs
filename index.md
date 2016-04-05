@@ -12,7 +12,7 @@ This documentation describes the ReST API call sequences for requesting an anima
 
 The API described in this documentation is available at [https://api.acme.codes](https://api.acme.codes)
 
-The example workflows described in this documentation will function for anyone, but the messages embedded into the codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contatin the original message. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
+The example workflows described in this documentation will function for anyone, but the messages embedded into the codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
@@ -52,7 +52,7 @@ Note: An immediate 'gif' resource GET request to an accurate order will initiall
 Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to a client application. 
 
 1. GET a new order, receive JSON response containing an **Order Number**.
-2. (Optional) Iteratively GET the **server-side progress** of the animation generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a realtime progress bar feedback window for the client. Then, when the server side progress is > 5%:
+2. (Optional) Iteratively GET the **server-side progress** of the animation generation by referencing the **Order Number**, capture the JSON response containing the server-side progress information. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
 3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
 4. (Optional) GET the final product file size. This information can be used below.
 5. GET the final product
