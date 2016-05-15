@@ -268,6 +268,22 @@ Example return value:
     </tr>
 </table>
 
+## /orders/**[#]**/fbx
+
+This resource returns the complete animated fbx binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/fbx
+
+## /orders/**[#]**/fbx-file-info
+
+This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is zero until the file creation is completed, at which point it is permanently the file size of the final finished fbx animation file. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/fbx-file-info
+    
+Example return value:
+
+    {"fileSize": 439441}
+
 ## /orders/**[#]**/gif
 
 This resource returns the complete animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
