@@ -284,6 +284,12 @@ Example return value:
 
     {"fileSize":  1124656}
 
+## /orders/**[#]**/frames/**[#]**
+
+This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/frames/33
+
 ## /orders/**[#]**/gif
 
 This resource returns the complete animated gif binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
@@ -311,12 +317,6 @@ This resource returns a JSON-formatted response containing a 'progress' key:valu
     {"progress": 0}
     {"progress": 15}
     {"progress": 100}
-
-## /orders/**[#]**/frames/**[#]**
-
-This resource returns a single frame gif corresponding to the frame number of the animation. Example URL:
-
-    https://api.acme.codes/orders/1444979323_ODFAUQSE/frames/33
 
 ## /version
 
