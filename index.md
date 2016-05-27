@@ -304,7 +304,7 @@ This resource returns the complete animated gif binary stream. There is a high v
 
 ## /orders/**[#]**/gif/**[TS]**
 
-This resource is an alias to /orders/**[#]**/gif. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after gif, the client code is forced - through this resource alais - to always get the latest /orders/**[#]**/gif  Example URL:
+This resource is an alias to /orders/**[#]**/gif. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after gif, the client code is forced - through this resource alais - to always get the latest /orders/**[#]**/gif.  Example URL:
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/gif/1464382911
 
