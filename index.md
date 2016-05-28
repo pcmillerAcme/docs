@@ -276,7 +276,7 @@ This resource returns the complete animated [FBX](https://en.wikipedia.org/wiki/
 
 ## /orders/**[#]**/fbx/**[TS]**
 
-This resource is an alias to /orders/**[#]**/fbx. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after fbx, the client code is forced - through this resource alais - to always get the latest /orders/**[#]**/fbx. Example URL:
+This resource is an alias to /orders/**[#]**/fbx. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after fbx, the client code is forced - through this resource alias - to always get the latest /orders/**[#]**/fbx. Example URL:
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/fbx/1464382911
 
@@ -304,13 +304,13 @@ This resource returns the complete animated gif binary stream. There is a high v
 
 ## /orders/**[#]**/gif/**[TS]**
 
-This resource is an alias to /orders/**[#]**/gif. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after gif, the client code is forced - through this resource alais - to always get the latest /orders/**[#]**/gif.  Example URL:
+This resource is an alias to /orders/**[#]**/gif. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after gif, the client code is forced - through this resource alias - to always get the latest /orders/**[#]**/gif.  Example URL:
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/gif/1464382911
 
 ## /orders/**[#]**/gif-file
 
-This resource is another alias for the /gif resource, but wraps the return response with 'Content-Disposition' as 'attachment', allowing browsers to treat the returned gif as a saveable file, rather than display it as an inline image. When this resource is called, client browsers will download the gif file automatically to a specific download directroy, or pop-up a browser to allow the user to specify the file name and location on their system. Example URL:
+This resource is another alias for the /gif resource, but wraps the return response with 'Content-Disposition' as 'attachment', allowing browsers to treat the returned gif as an explicit file to be saved, rather than display it as an inline image on the displayed web page. When this resource is called, client browsers will download the gif file automatically to a specific download directory, or pop-up a browser to allow the user to specify the file name and location on their system. Example URL:
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/gif-file
 
