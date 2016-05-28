@@ -308,6 +308,12 @@ This resource is an alias to /orders/**[#]**/gif. This is a convenience resource
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/gif/1464382911
 
+## /orders/**[#]**/gif-file
+
+This resource is another alias for the /gif resource, but wraps the return response with 'Content-Disposition' as 'attachment', allowing browsers to treat the returned gif as a saveable file, rather than display it as an inline image. When this resource is called, client browsers will download the gif file automatically to a specific download directroy, or pop-up a browser to allow the user to specify the file name and location on their system. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/gif-file
+
 ## /orders/**[#]**/gif-file-info
 
 This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is zero until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
