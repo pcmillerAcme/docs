@@ -104,6 +104,26 @@ Optionally, the client application can display the transmission progress of the 
 
 # Resources & Resource Args
 
+## /anims/**[anim]**/thumbnails/anim
+
+This resource returns a thumbnail-sized animated gif which can aid user's selection from a large animation list. Example URL:
+
+    https://api.acme.codes/anims/spinning_360_smooth_const/thumbnails/anim
+    
+Example return value:
+
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/spinning_360_smooth_const/thumbnails/anim)
+
+## /anims/**[anim]**/thumbnails/image
+
+This resource returns a thumbnail-sized static gif which can aid user's selection from a large animation list. Example URL:
+
+    https://api.acme.codes/anims/spinning_360_smooth_const/thumbnails/image
+    
+Example return value:
+
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/spinning_360_smooth_const/thumbnails/image)
+
 ## /anims-html
 
 /anims-html returns a human readable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
