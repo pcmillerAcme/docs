@@ -80,7 +80,7 @@ Optionally, now the client application can retrieve the first frame of an order 
 
 ACME service would return a non-animated single frame gif file:
 
-!['Non-animated Code'](https://api.acme.codes/docs/Acme-Pivot-Single-Frame 'Single Frame')
+!['Non-animated Code'](https://api.acme.codes/docs/Acme-Pivot-Single-Frame.gif 'Single Frame')
     
 Optionally, when reported server-side progress is 100%, the client application can request the final product file size:
 
@@ -96,7 +96,7 @@ Finally, the client application can retrieve the completed animated product, in 
 
 ACME service would return an animated gif file:
 
-!['Animated Code'](https://api.acme.codes/acmePivot 'Animated Code')
+!['Animated Code'](https://api.acme.codes/docs/Acme-Pivot.gif 'Animated Code')
 
 Optionally, the client application can display the transmission progress of the final product as it is streamed from server to client by querying the size of the local streamed file as it arrives and comparing it to the known full file size from the above optional gif-file-info resource.
 
