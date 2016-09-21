@@ -43,7 +43,7 @@ Now, after some time has passed, the client can retrieve the final product:
 
 ACME service would then return a gif file - in this case the default simplest animation ACME offers:
 
-![Acme Animated gif](https://api.acme.codes/acmePivot 'Animated Code')
+![Acme Animated gif](https://api.acme.codes/docs/Acme-Pivot.gif 'Animated Code')
 
 Note: An immediate 'gif' resource GET request to an accurate order will initially result in a 202 'Accepted' response, because the service has not completed creating the file. This response page will contain a message clarifying the reason for the temporary inability to return the requested file. The below Standard Request workflow shows how to avoid this response entirely.
 
@@ -80,7 +80,7 @@ Optionally, now the client application can retrieve the first frame of an order 
 
 ACME service would return a non-animated single frame gif file:
 
-!['Non-animated Code'](https://api.acme.codes/acmePivotSingleFrame 'Single Frame')
+!['Non-animated Code'](https://api.acme.codes/docs/Acme-Pivot-Single-Frame 'Single Frame')
     
 Optionally, when reported server-side progress is 100%, the client application can request the final product file size:
 
