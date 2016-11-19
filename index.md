@@ -231,7 +231,21 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>randomSeed</td>
+        <td>remoteIp</td>
+        <td></td>
+        <td>Intermediary front-end web pages, apps, or automated API's can send (and are sometimes required to send) the IP address of the remote client through this argument.<br><a href="https://api.acme.codes/new?remoteIp=123.456.789.1">https://api.acme.codes/new?remoteIp=123.456.789.1</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr height=20px>
+    </tr>
+    <tr>
+        <td style="background-color: #f0f0f0;">randomSeed</td>
         <td></td>
         <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5">https://api.acme.codes/new?randomSeed=5</a></td>
     </tr>
@@ -243,7 +257,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">stencil</td>
+        <td>stencil</td>
         <td></td>
         <td>Stencil option. Rather than create a positive pattern of dark tiles on a white background to form the code, create the negative pattern of white tiles against a transparent background to form the code (complete with white border frame), like a <a href="https://en.wikipedia.org/wiki/Stencil">stencil</a>. This allows for a client to use the resulting animation as an overlay to a custom darker image. Care must be taken to ensure the code is still scannable in these conditions; since final scannability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false</td>
     </tr>
@@ -255,7 +269,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>tileShape</td>
+        <td style="background-color: #f0f0f0;">tileShape</td>
         <td></td>
         <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="https://api.acme.codes/new?tileShape=circle&xres=400&yres=400">https://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
     </tr>
@@ -267,7 +281,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">xres</td>
+        <td>xres</td>
         <td></td>
         <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with yres, cropping can occur in the final product. Default = 100</td>
     </tr>
@@ -279,7 +293,7 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td>yres</td>
+        <td style="background-color: #f0f0f0;">yres</td>
         <td></td>
         <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400">https://api.acme.codes/new?yres=400</a></td>
     </tr>
