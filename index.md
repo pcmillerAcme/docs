@@ -110,21 +110,21 @@ Optionally, the client application can display the transmission progress of the 
 
 This resource returns a thumbnail-sized animated gif which can aid user's selection from a large animation list. Example URL:
 
-    https://api.acme.codes/anims/code_spin/thumbnails/anim
+    https://api.acme.codes/anims/code_spin_codeImage/thumbnails/anim
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin/thumbnails/anim 'Animated thumbnail')
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImage/thumbnails/anim 'Animated thumbnail')
 
 ## /anims/**[anim]**/thumbnails/image
 
 This resource returns a thumbnail-sized static gif which can aid user's selection from a large animation list. Example URL:
 
-    https://api.acme.codes/anims/code_spin/thumbnails/image
+    https://api.acme.codes/anims/code_spin_codeImage/thumbnails/image
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin/thumbnails/image 'Static thumbnail')
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImage/thumbnails/image 'Static thumbnail')
 
 ## /anims-html
 
