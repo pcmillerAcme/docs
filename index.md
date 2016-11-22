@@ -110,7 +110,7 @@ Optionally, the client application can display the transmission progress of the 
 
 This resource returns a thumbnail-sized animated gif which can aid user's selection from a large animation list. Example URL:
 
-    https://api.acme.codes/anims/code_spin_codeImage/thumbnails/anim
+    https://api.acme.codes/anims/code_spin_codeImageConstantSpeed/thumbnails/anim
     
 Example return value:
 
@@ -120,7 +120,7 @@ Example return value:
 
 This resource returns a thumbnail-sized static gif which can aid user's selection from a large animation list. Example URL:
 
-    https://api.acme.codes/anims/code_spin_codeImage/thumbnails/image
+    https://api.acme.codes/anims/code_spin_codeImageConstantSpeed/thumbnails/image
     
 Example return value:
 
