@@ -114,7 +114,7 @@ This resource returns a thumbnail-sized animated gif which can aid user's select
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImage/thumbnails/anim 'Animated thumbnail')
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImageConstantSpeed/thumbnails/anim 'Animated thumbnail')
 
 ## /anims/**[anim]**/thumbnails/image
 
@@ -124,7 +124,7 @@ This resource returns a thumbnail-sized static gif which can aid user's selectio
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImage/thumbnails/image 'Static thumbnail')
+!['Thumbnail Animated Code'](https://api.acme.codes/anims/code_spin_codeImageConstantSpeed/thumbnails/image 'Static thumbnail')
 
 ## /anims-html
 
