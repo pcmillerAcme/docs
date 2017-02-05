@@ -216,6 +216,26 @@ Example return value:
         <td></td>
         <td></td>
     </tr>
+    <tr>
+        <td style="background-color: #f0f0f0;">bgpColor</td>
+        <td></td>
+        <td>Background Plate Color. Background color. Default = 'FFFFFF' (White). Multiple hex color values can be supplied separated by commas for multi color options. <br>Green background example: <a href="https://api.acme.codes/new?bgpColor=00FF00">https://api.acme.codes/new?bgpColor=00FF00</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>pixelColor</td>
+        <td></td>
+        <td>The color of the base code tiles in hex. Default = '000000' (Black). Multiple hex color values can be supplied separated by commas for multi color options. <br>Red pixel example: <a href="https://api.acme.codes/new?pixelColor=FF0000">https://api.acme.codes/new?pixelColor=FF0000</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
     <tr height=20px>
     </tr>
     <tr>
