@@ -173,7 +173,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">anim</td>
         <td></td>
-        <td>The animation to be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'spinning_90_oscillate'.<br><a href="https://api.acme.codes/new?anim=tumbling_360_walk">https://api.acme.codes/new?anim=tumbling_360_walk</a></td>
+        <td>The animation toa be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'spinning_90_oscillate'.<br><a href="https://api.acme.codes/new?anim=tumbling_360_walk"><code>https://api.acme.codes/new?anim=tumbling_360_walk</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -186,8 +186,8 @@ Example return value:
     <tr>
         <td>format</td>
         <td></td>
-        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="https://api.acme.codes/new?format=JSON">https://api.acme.codes/new?format=JSON</a> (Default)<br>
-        <a href="https://api.acme.codes/new?format=html">https://api.acme.codes/new?format=html</a></td>
+        <td>The format of the return value. Default = 'JSON'. Usually <b>format</b> is left undeclared in order inherit the default 'JSON'. However, as a convenience option for humans directly accessing the API, the 'html' option exists. If <b>format</b> set to 'html', <b>/new</b> will return an html web page containing a clickable link to the final gif product. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.<br><a href="https://api.acme.codes/new?format=JSON"><code>https://api.acme.codes/new?format=JSON</code></a> (Default)<br>
+        <a href="https://api.acme.codes/new?format=html"><code>https://api.acme.codes/new?format=html</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -209,7 +209,7 @@ Example return value:
     <tr>
         <td>msg</td>
         <td></td>
-        <td>The message to be encoded into the code. Default = 'https://acme.codes'<br><a href="https://api.acme.codes/new?msg=GreetingsCustomer!">https://api.acme.codes/new?msg=GreetingsCustomer!</a></td>
+        <td>The message to be encoded into the code. Default = 'https://acme.codes'<br><a href="https://api.acme.codes/new?msg=GreetingsCustomer!"><code>https://api.acme.codes/new?msg=GreetingsCustomer!</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -219,7 +219,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">bgpColor</td>
         <td></td>
-        <td>Background Plate Color. Background color. Default = 'FFFFFF' (White). Multiple hex color values can be supplied separated by commas for multi color options. <br>Green background example: <a href="https://api.acme.codes/new?bgpColor=00FF00">https://api.acme.codes/new?bgpColor=00FF00</a></td>
+        <td>Background Plate Color. Background color. Default = 'FFFFFF' (White). Multiple hex color values can be supplied separated by commas for multi color options. <br>Green background example: <a href="https://api.acme.codes/new?bgpColor=00FF00"><code>https://api.acme.codes/new?bgpColor=00FF00</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -229,7 +229,7 @@ Example return value:
     <tr>
         <td>pixelColor</td>
         <td></td>
-        <td>The color of the base code tiles in hex. Default = '000000' (Black). Multiple hex color values can be supplied separated by commas for multi color options. <br>Red pixel example: <a href="https://api.acme.codes/new?pixelColor=FF0000">https://api.acme.codes/new?pixelColor=FF0000</a></td>
+        <td>The color of the base code tiles in hex. Default = '000000' (Black). Multiple hex color values can be supplied separated by commas for multi color options. <br>Red pixel example: <a href="https://api.acme.codes/new?pixelColor=FF0000"><code>https://api.acme.codes/new?pixelColor=FF0000</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -246,14 +246,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="https://api.acme.codes/new?partner=RetainedAcmeClient">https://api.acme.codes/new?partner=RetainedAcmeClient</a></td>
+        <td><a href="https://api.acme.codes/new?partner=RetainedAcmeClient"><code>https://api.acme.codes/new?partner=RetainedAcmeClient</code></a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td>remoteIp</td>
         <td></td>
-        <td>Intermediary front-end web pages, apps, or automated API's can send (and are sometimes required to send) the IP address of the remote client through this argument.<br><a href="https://api.acme.codes/new?remoteIp=123.456.789.1">https://api.acme.codes/new?remoteIp=123.456.789.1</a></td>
+        <td>Intermediary front-end web pages, apps, or automated API's can send (and are sometimes required to send) the IP address of the remote client through this argument.<br><a href="https://api.acme.codes/new?remoteIp=123.456.789.1"><code>https://api.acme.codes/new?remoteIp=123.456.789.1</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -267,7 +267,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">randomSeed</td>
         <td></td>
-        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5">https://api.acme.codes/new?randomSeed=5</a></td>
+        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5"><code>https://api.acme.codes/new?randomSeed=5</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -284,14 +284,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="https://api.acme.codes/new?stencil=true">https://api.acme.codes/new?stencil=true</a></td>
+        <td><a href="https://api.acme.codes/new?stencil=true"><code>https://api.acme.codes/new?stencil=true</code></a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td style="background-color: #f0f0f0;">tileShape</td>
         <td></td>
-        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="https://api.acme.codes/new?tileShape=circle&xres=400&yres=400">https://api.acme.codes/new?tileShape=circle&xres=400&yres=400</a></td>
+        <td>Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square.<br><a href="https://api.acme.codes/new?tileShape=circle&xres=400&yres=400"><code>https://api.acme.codes/new?tileShape=circle&xres=400&yres=400</code></a></td>
     </tr>
     <tr>
         <td></td>
@@ -308,14 +308,14 @@ Example return value:
     <tr>
         <td></td>
         <td></td>
-        <td><a href="https://api.acme.codes/new?xres=400">https://api.acme.codes/new?xres=400</a></td>
+        <td><a href="https://api.acme.codes/new?xres=400"><code>https://api.acme.codes/new?xres=400</code></a></td>
     </tr>
     <tr height=20px>
     </tr>
     <tr>
         <td style="background-color: #f0f0f0;">yres</td>
         <td></td>
-        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400">https://api.acme.codes/new?yres=400</a></td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400"><code>https://api.acme.codes/new?yres=400</code></a></td>
     </tr>
     <tr>
         <td></td>
