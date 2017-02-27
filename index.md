@@ -151,6 +151,12 @@ Real time example link:
 
 <a href="https://api.acme.codes/anims-json">https://api.acme.codes/anims-json</a>
 
+anims-json can return a flat list with the 'flat' argument set to True. For example:
+
+https://api.acme.codes/anims-json?flat=1
+
+<a href="https://api.acme.codes/anims-json?flat=1">https://api.acme.codes/anims-json?flat=1</a>
+
 ## /new
 
 /new returns a JSON-formatted response containing the **Order Number** to be used for all subsequent queries and updates to the animation request. Example:
