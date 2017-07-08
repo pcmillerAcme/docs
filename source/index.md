@@ -406,5 +406,3 @@ This resource returns a JSON-formatted response containing software build and da
 Real time example link:
 
 <a href="https://api.acme.codes/version">https://api.acme.codes/version</a>
-
-
