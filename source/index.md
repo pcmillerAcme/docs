@@ -269,9 +269,9 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
-        <td style="background-color: #f0f0f0;">randomSeed</td>
+        <td style="background-color: #f0f0f0;">random_seed</td>
         <td></td>
-        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?randomSeed=5"><code>https://api.acme.codes/new?randomSeed=5</code></a></td>
+        <td>Many animations available to clients contain certain randomized elements in the final animations. Explicitly setting randomSeed allows for these randomized elements to be consistent for the client for any given code. This argument also allows for consistent results in our automated test systems.<br><a href="https://api.acme.codes/new?random_seed=5"><code>https://api.acme.codes/new?random_seed=5</code></a></td>
     </tr>
     <tr>
         <td></td>
