@@ -82,7 +82,7 @@ Optionally, now the client application can retrieve the first frame of an order 
 
 ACME service would return a non-animated single frame gif file:
 
-!['Non-animated Code'](https://api.acme.codes/docs/Acme-Pivot-Single-Frame.gif 'Single Frame')
+!['Non-animated Code'](./_static/Acme-Pivot-Single-Frame.gif 'Single Frame')
     
 Optionally, when reported server-side order "progress" is 100%, the client application can request the final product file size:
 
@@ -98,7 +98,7 @@ Finally, the client application can retrieve the completed animated product, in 
 
 ACME service would return an animated gif file:
 
-!['Animated Code'](https://api.acme.codes/docs/Acme-Pivot.gif 'Animated Code')
+!['Animated Code'](./_static/Acme-Pivot.gif 'Animated Code')
 
 Optionally, the client application can display the transmission progress of the final product as it is streamed from server to client by querying the size of the local streamed file as it arrives and comparing it to the known full file size from the above optional gif-file-info resource.
 
@@ -114,7 +114,7 @@ This resource returns a thumbnail-sized animated gif which can aid user's select
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/SpinConstSpeedCodeOnly/thumbnails/anim 'Animated thumbnail')
+!['Thumbnail Animated Code'](./_static/anim.gif 'Animated thumbnail')
 
 ## /anims/**[anim]**/thumbnails/image
 
@@ -124,7 +124,7 @@ This resource returns a thumbnail-sized static gif which can aid user's selectio
     
 Example return value:
 
-!['Thumbnail Animated Code'](https://api.acme.codes/anims/SpinConstSpeedCodeOnly/thumbnails/image 'Static thumbnail')
+!['Thumbnail Animated Code'](./_static/image.gif 'Static thumbnail')
 
 ## /anims-html
 
@@ -143,17 +143,17 @@ Real time example link:
 
 ## /anims-json
 
-/anims-json returns a machine readable JSON-formatted response hierarchy definition of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
+/anims-json returns a machine readable JSON-formatted response flat dictionary of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
 
-    {"flock": {"simple": {"circleDucksInRow": {"frames": 180}, "circle": {"frames": 90}, "circleCreased": {"frames": 180}}}, "tumbling": {"360": {"smooth": {"pause": {"frames": 150}, "const": {"frames": 150}}, "walk": {"frames": 150}}}, "spinning": {"90": {"oscillate": {"frames": 100}}, "360": {"smooth": {"const": {"frames": 150}}}}, "wind": {"windVane": {"11": {"frames": 25}, "10": {"frames": 140}, "rotateAllOutIn": {"frames": 24}, "rotateRandomOutIn": {"frames": 60}, "rotateRandomOutInRs1": {"frames": 60}, "rotateRandomOutInRs2": {"frames": 60}}}, "swap": {"doSeeDo1": {"frames": 50}, "doSeeDo3": {"frames": 100}, "doSeeDo2": {"frames": 50}}}
+    {"Tumbling360Pause": {"frames": 150}, "ImageToCodeTileSwap": {"frames": 24}, "WindVanesAll": {"frames": 24}, "SpinConstSpeedCodeOnly": {"frames": 150}, "CircleCreased": {"frames": 180}, "SpinConstSpeedCodeOnlyCC": {"frames": 150}, "Circle": {"frames": 90}, "WindVanes1Breeze": {"frames": 25}, "WindVanes2Breezes": {"frames": 140},...}
 
 Real time example link:
 
 <a href="https://api.acme.codes/anims-json">https://api.acme.codes/anims-json</a>
 
-anims-json can return a flat list with the 'flat' argument set to True. For example: /anims-json?flat=1
+anims-json can return a list limited to animations with matching tags. For example: /anims-json?tags=image or /anims-json?tags=image,spin 
 
-<a href="https://api.acme.codes/anims-json?flat=1">https://api.acme.codes/anims-json?flat=1</a>
+<a href="https://api.acme.codes/anims-json?tags=image">https://api.acme.codes/anims-json?tags=image</a>
 
 ## /new
 
