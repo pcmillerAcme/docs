@@ -397,6 +397,14 @@ This resource returns a JSON-formatted response containing information key:value
     {"queue": 0, "progress": 15}
     {"queue": 0, "progress": 100}
 
+## /price-list
+
+This resource returns standard html web page with a sortable, searchable, and filterable price list of animations.
+
+Real time example link:
+
+<a href="https://api.acme.codes/price-list">https://api.acme.codes/price-list</a>
+
 ## /version
 
 This resource returns a JSON-formatted response containing software build and date information about this service. 
