@@ -145,7 +145,7 @@ Real time example link:
 
 /anims-json returns a machine readable JSON-formatted response flat dictionary of available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Additional information is also supplied per animation.
 
-    {"Tumbling360Pause": {"frames": 150}, "ImageToCodeTileSwap": {"frames": 24}, "WindVanesAll": {"frames": 24}, "SpinConstSpeedCodeOnly": {"frames": 150}, "CircleCreased": {"frames": 180}, "SpinConstSpeedCodeOnlyCC": {"frames": 150}, "Circle": {"frames": 90}, "WindVanes1Breeze": {"frames": 25}, "WindVanes2Breezes": {"frames": 140},...}
+    {"Tumbling360Pause": {"frames": 150}, "ImageToCodeTileSwap": {"frames": 24}, "WindVanesAll": {"frames": 24}, "Spin": {"frames": 150}, "CircleCreased": {"frames": 180}, "Spin_Fast": {"frames": 150}, "Circle": {"frames": 90}, "WindVanes1Breeze": {"frames": 25}, "WindVanes2Breezes": {"frames": 140},...}
 
 Real time example link:
 
@@ -177,7 +177,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">anim</td>
         <td></td>
-        <td>The animation toa be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'SpinConstSpeedCodeOnly'.<br><a href="https://api.acme.codes/new?anim=SpinConstSpeedCodeOnly&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?anim=SpinConstSpeedCodeOnly</code></a></td>
+        <td>The animation toa be applied to the code. Setting anim to 'None' will result in an un-animated flat code being returned. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'Spin'.<br><a href="https://api.acme.codes/new?anim=Spin&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?anim=Spin</code></a></td>
     </tr>
     <tr>
         <td></td>
