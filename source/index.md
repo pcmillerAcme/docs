@@ -31,7 +31,7 @@ The minimal request sequence:
 
 For example, a requesting service could:
 
-    GET: https://api.acme.codes/new?msg=GreetingsCustomer!
+    GET: https://api.acme.codes/new?msg=Reading%20ACME%20documentation%20is%20fun!
 
 ACME service would return JSON:
 
@@ -60,7 +60,7 @@ Since ACME animation generation times can vary significantly based on animation 
 
 For example, a client application could:
 
-    GET: https://api.acme.codes/new?msg=GreetingsCustomer!
+    GET: https://api.acme.codes/new?msg=Reading%20ACME%20documentation%20is%20fun!
 
 ACME service would return JSON:
 
