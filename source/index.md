@@ -82,7 +82,7 @@ Optionally, now the client application can retrieve the first frame of an order 
 
 ACME service would return a non-animated single frame gif file:
 
-!['Non-animated Code'](./_static/Acme-Pivot-Single-Frame.gif 'Single Frame')
+!['Non-animated Code'](./_static/ACME_SF_1.png 'Single Frame')
     
 Optionally, when reported server-side order "progress" is 100%, the client application can request the final product file size:
 
