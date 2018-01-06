@@ -43,7 +43,7 @@ Now, after some time has passed, the client can retrieve the final product:
 
 ACME service would then return a gif file - in this case the default simplest animation ACME offers:
 
-![Acme Animated gif](./_static/Acme-Pivot.gif 'Animated Code')
+![Acme Animated gif](./_static/AcmeCode_182160.gif 'Animated Code')
 
 Note: An immediate 'gif' resource GET request to an accurate order will initially result in a '202 Accepted' response, and not a '200 OK' return code because the service has not yet completed creating the file. This response page will contain a message clarifying the reason for the temporary inability to return the requested file. The below Standard Request workflow shows how to avoid this response entirely.
 
@@ -98,7 +98,7 @@ Finally, the client application can retrieve the completed animated product, in 
 
 ACME service would return an animated gif file:
 
-!['Animated Code'](./_static/Acme-Pivot.gif 'Animated Code')
+!['Animated Code'](./_static/AcmeCode_182160.gif 'Animated Code')
 
 Optionally, the client application can display the transmission progress of the final product as it is streamed from server to client by querying the size of the local streamed file as it arrives and comparing it to the known full file size from the above optional gif-file-info resource.
 
