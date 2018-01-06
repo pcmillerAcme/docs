@@ -41,7 +41,7 @@ Now, after some time has passed, the client can retrieve the final product:
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
-ACME service would then return a gif file - in this case the default simplest animation ACME offers:
+ACME service would then return an animated gif file. Depending on creation arguments described below, a file similar to this would be returned:
 
 ![Acme Animated gif](./_static/AcmeCode_182160.gif 'Animated Code')
 
@@ -96,7 +96,7 @@ Finally, the client application can retrieve the completed animated product, in 
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/gif
 
-ACME service would return an animated gif file:
+ACME service would then return an animated gif file. Depending on creation arguments described below, a file similar to this would be returned:
 
 !['Animated Code'](./_static/AcmeCode_182160.gif 'Animated Code')
 
