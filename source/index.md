@@ -307,7 +307,7 @@ Example return value:
     <tr>
         <td>xres</td>
         <td></td>
-        <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with yres, cropping can occur in the final product. Default = 100</td>
+        <td>X Resolution, or Pixel Width, of the generated animation. Note if this value is not in harmony with yres, cropping can occur in the final product. Default = 150</td>
     </tr>
     <tr>
         <td></td>
@@ -319,7 +319,7 @@ Example return value:
     <tr>
         <td style="background-color: #f0f0f0;">yres</td>
         <td></td>
-        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 100<br><a href="https://api.acme.codes/new?yres=400&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?yres=400</code></a></td>
+        <td>Y Resolution, or Pixel Height, of the generated animation.  Note if this value is not in harmony with xres, cropping can occur in the final product. Default = 150<br><a href="https://api.acme.codes/new?yres=400&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?yres=400</code></a></td>
     </tr>
     <tr>
         <td></td>
