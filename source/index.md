@@ -1,4 +1,4 @@
-# acme.codes: ReST API
+# api.acme.codes: ReST API
 
 ## Introduction
 
@@ -106,21 +106,21 @@ Optionally, the client application can display the transmission progress of the 
 
 # Resources & Resource Args
 
-## /anims/**[anim]**/thumbnails/anim
+## https://acme.codes/anims/**[anim]**/thumbnails/anim.gif
 
-This resource returns a thumbnail-sized animated gif which can aid user's selection from a large animation list. Example URL:
+This resource returns a thumbnail-sized animated gif which can aid user's selection from a large animation list. Note thumbnails are hosted out of the acme.codes domain, not api.acme.codes. Example URL:
 
-    https://api.acme.codes/anims/Spin/thumbnails/anim
+    https://acme.codes/anims/Spin/thumbnails/anim.gif
     
 Example return value:
 
 !['Thumbnail Animated Code'](./_static/anim.gif 'Animated thumbnail')
 
-## /anims/**[anim]**/thumbnails/image
+## https://acme.codes/anims/**[anim]**/thumbnails/image.gif
 
-This resource returns a thumbnail-sized static gif which can aid user's selection from a large animation list. Example URL:
+This resource returns a thumbnail-sized static gif which can aid user's selection from a large animation list. Note thumbnails are hosted out of the acme.codes domain, not api.acme.codes. Example URL:
 
-    https://api.acme.codes/anims/Spin/thumbnails/image
+    https://acme.codes/anims/Spin/thumbnails/image.gif
     
 Example return value:
 
