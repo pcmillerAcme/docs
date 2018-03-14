@@ -31,7 +31,8 @@ The minimal request sequence:
 
 For example, a requesting service could:
 
-    GET: https://api.acme.codes/new?msg=Reading%20ACME%20documentation%20is%20fun!
+    GET: https://api.acme.codes/new?
+    =Reading%20ACME%20documentation%20is%20fun!
 
 ACME service would return JSON:
 
@@ -198,6 +199,8 @@ Example return value:
         <td></td>
         <td></td>
     </tr>    
+    <tr height=20px>
+    </tr>
     <tr>
         <td style="background-color: #f0f0f0;">frameNumber</td>
         <td></td>
@@ -244,6 +247,8 @@ Example return value:
         <td></td>
         <td></td>
     </tr>
+    <tr height=20px>
+    </tr>
     <tr>
         <td style="background-color: #f0f0f0;">bgpColor</td>
         <td></td>
@@ -253,6 +258,8 @@ Example return value:
         <td></td>
         <td></td>
         <td></td>
+    </tr>
+    <tr height=20px>
     </tr>
     <tr>
         <td>pixelColor</td>
