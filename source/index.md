@@ -220,6 +220,8 @@ Example return value:
         <td></td>
         <td></td>
     </tr>
+    <tr height=20px>
+    </tr>
     <tr>
         <td style="background-color: #f0f0f0;">img</td>
         <td></td>
@@ -229,6 +231,8 @@ Example return value:
         <td></td>
         <td></td>
         <td></td>
+    </tr>
+    <tr height=20px>
     </tr>
     <tr>
         <td>msg</td>
