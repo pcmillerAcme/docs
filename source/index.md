@@ -211,6 +211,26 @@ Example return value:
     <tr height=20px>
     </tr>
     <tr>
+        <td>imageRotation</td>
+        <td></td>
+        <td>The rotation to be applied to a supplied image URL<br><a href="https://api.acme.codes/new?anim=Spin&img=https://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png&imageRotation=90&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?anim=Spin&img=https://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png&imageRotation=90</code></a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td style="background-color: #f0f0f0;">img</td>
+        <td></td>
+        <td>The image URL to be applied within the animation, if supported by the selected animation.<br><a href="https://api.acme.codes/new?anim=Spin&img=https://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?anim=Spin&img=https://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png</code></a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
         <td>msg</td>
         <td></td>
         <td>The message to be encoded into the code. Default = 'https://acme.codes'<br><a href="https://api.acme.codes/new?msg=GreetingsCustomer!&remoteIp=readthedocs.io"><code>https://api.acme.codes/new?msg=GreetingsCustomer!</code></a></td>
