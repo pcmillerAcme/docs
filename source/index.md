@@ -4,7 +4,7 @@
 
 These pages describe the ['Software as a Service' (SaaS)](https://en.wikipedia.org/wiki/Software_as_a_service) provided by [Animated Codes Made Easy LLC](http://www.acme.codes), or 'ACME'. 
 
-ACME provides near real time creation of customized animations of any scannable code, including QR codes. 
+ACME's service at api.acme.codes provides near real time creation of customized animations of any scannable code, including QR codes. Standard codes and QR codes (non-animated) can also be created.
 
 If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting [ACME's top page](http://acme.codes). 
 
@@ -12,7 +12,7 @@ This documentation describes the ReST API call sequences for requesting an anima
 
 The API described in this documentation is available at [https://api.acme.codes](https://api.acme.codes)
 
-The example workflows described in this documentation will function for anyone, but the messages embedded into the codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
+The example workflows described in this documentation will function for anyone; in particular non-animated codes can be generated without any payment (for free). However messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
