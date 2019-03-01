@@ -414,6 +414,34 @@ Example return value:
 
     {"fileSize": 439441}
 
+## /orders/**[#]**/mp4
+
+This resource returns the complete animated mp4 binary stream. There is a high variability of time to completion as driven by animation complexity, including times that may exceed the timeout period of some browsers. It is therefore recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100 request the gif. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/mp4
+
+## /orders/**[#]**/mp4/**[TS]**
+
+This resource is an alias to /orders/**[#]**/mp4. This is a convenience resource which is helpful in some programmatic circumstances to bypass the caching mechanism of client-side frameworks. By putting any timestamp (TS) value after gif, the client code is forced - through this resource alias - to always get the latest /orders/**[#]**/mp4.  Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/gif/1464382911
+
+## /orders/**[#]**/mp4-file
+
+This resource is another alias for the /mp4 resource, but wraps the return response with 'Content-Disposition' as 'attachment', allowing browsers to treat the returned gif as an explicit file to be saved, rather than display it as an inline image on the displayed web page. When this resource is called, client browsers will download the gif file automatically to a specific download directory, or pop-up a browser to allow the user to specify the file name and location on their system. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/mp4-file
+
+## /orders/**[#]**/mp4-file-info
+
+This resource returns a JSON-formatted response containing a 'fileSize' key:value pair. The value of fileSize is zero until the file creation is completed, at which point it is permanently the file size of the final finished gif animation file. Example URL:
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/mp4-file-info
+    
+Example return value:
+
+    {"fileSize": 39441}
+
 ## /orders/**[#]**/progress
 
 This resource returns a JSON-formatted response containing information key:value pairs about the specified order since the most recent edit. Pairs include "progress", which returns an integer in the range [0-100], and represents the percentage of completion for the most recently requested animated code. This progress information is useful to communicate to end users how much longer they will have to wait until their order update is completed. Also, "queue" returns the current size of the backup request queue. If queue is non-zero, the system is at maximum capacity and progress speed will be delayed. If queue is non-zero, most front end client systems communicate this information to users to help assure them as to why processing is slower than usual. Example URL:
