@@ -18,7 +18,7 @@ The majority of API calls made available here can be experimented with by anyone
 
 If you have feedback or questions on this documentation, or if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API, please contact [sales@acme.codes](mailto:sales@acme.codes?subject=From%20RTD:%20Interest%20in%20ACME%20Web%20Service)
 
-Certain design and architectural features of this service are patent pending.
+Certain design and architectural features of this service are patented under [US 10,083,535 B2](https://patents.google.com/patent/US10083535B2).
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
 
