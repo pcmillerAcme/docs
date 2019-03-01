@@ -6,7 +6,7 @@ These pages describe the ['Software as a Service' (SaaS)](https://en.wikipedia.o
 
 ACME's service at api.acme.codes provides near real time creation of customized animations of any scannable code, including QR codes. Standard codes and QR codes (non-animated) can also be created.
 
-If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting [ACME's top page](http://acme.codes). 
+If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting ACME's home page: [www.acme.codes](http://www.acme.codes). 
 
 This documentation describes the ReST API call sequences for requesting an animated code online. 
 
