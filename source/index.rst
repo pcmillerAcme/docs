@@ -39,7 +39,13 @@ Certain design and architectural features of this service are patented under `US
    anims-json
    fbx
    frames
+   gif
+   mp4
    new
+   orders
+   progress
+   price-list
+   thumbnails
    version
 
 Indices and tables
