@@ -26,3 +26,5 @@ Example return value:
 .. raw:: html 
 
    <video loop autoplay muted src="https://service.acme.codes/anims/Spin/thumbnails/anim.mp4"></video> 
+
+Single frame image thumbanils have been temporarily removed.
