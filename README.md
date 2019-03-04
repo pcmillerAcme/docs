@@ -1,4 +1,4 @@
-# docs
+# api.acme.codes documentation
 API Documentation of the api available at https://api.acme.codes
 
 The documentaion is published at https://acme.readthedocs.io
