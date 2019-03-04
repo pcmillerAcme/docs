@@ -26,16 +26,3 @@ Example return value:
 .. raw:: html 
 
    <video loop autoplay muted src="https://service.acme.codes/anims/Spin/thumbnails/anim.mp4"></video> 
-
-
-thumbnails/image
-################
-
-This resource returns a thumbnail-sized static gif displaying a single frame of the animation. **Note thumbnails are hosted out of the service.acme.codes domain, not api.acme.codes.** Example URL:
-::
-
-    https://service.acme.codes/anims/Spin/thumbnails/image.gif
-    
-Example return value:
-
-.. image:: https://service.acme.codes/anims/Spin/thumbnails/image.gif
