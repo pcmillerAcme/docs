@@ -35,8 +35,7 @@ Certain design and architectural features of this service are patented under `US
 
    Basic Request
    Standard Request
-   anims-html
-   anims-json
+   animations
    fbx
    frames
    gif
