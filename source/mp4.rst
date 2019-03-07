@@ -19,9 +19,8 @@ This resource is an alias to /orders/**[#]**/mp4. This is a convenience resource
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/mp4/1464382911
 
-    
 mp4-file
-#############
+########
 
 This resource returns the same mp4 stream as the above, but when called from within a browser, a "File Save As..' dialog box will appear asking the user where they would like to download the remote file to. Example URL:
 ::
