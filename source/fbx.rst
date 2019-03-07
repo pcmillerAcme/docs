@@ -19,6 +19,14 @@ This resource is an alias to /orders/**[#]**/fbx. This is a convenience resource
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/fbx/1464382911
 
+fbx-file
+########
+
+This resource returns the same fbx stream as the above, but when called from within a browser, a "File Save As..' dialog box will appear asking the user where they would like to download the remote file to. Example URL:
+::
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/fbx-file
+
     
 fbx-file-info
 #############
