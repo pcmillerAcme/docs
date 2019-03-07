@@ -19,6 +19,13 @@ This resource is an alias to /orders/**[#]**/gif. This is a convenience resource
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/gif/1464382911
 
+gif-file
+########
+
+This resource returns the same gif stream as the above, but when called from within a browser, a "File Save As..' dialog box will appear asking the user where they would like to download the remote file to. Example URL:
+::
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/gif-file
     
 gif-file-info
 #############
