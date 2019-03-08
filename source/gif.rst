@@ -6,7 +6,7 @@
 gif
 ###
 
-`Gif <https://en.wikipedia.org/wiki/GIF>`_ files have two advantages over other formats. First, gif format is the most commonly known animation software format, requiring no complex or hardware enabled `codecs <https://en.wikipedia.org/wiki/Codec>`_. As a result, gif files are displayable by almost any software and is arguable the most universally readable animated file format. Gif also supports transparency. Gif files have two primary disadvantages over other formats; They are slow to create, and also the final file size is very large for the animation time periods.
+`Gif <https://en.wikipedia.org/wiki/GIF>`_ files have two advantages over other formats. First, gif format is the most commonly known animation software format, requiring no complex or hardware enabled `codecs <https://en.wikipedia.org/wiki/Codec>`_. As a result, gif files are displayable by almost any software and is arguably the most universally readable animated file format. Gif also supports transparency. Gif files have several disadvantages over other formats; they are slow to create, the final file size is very large for the length of time shown, and the timing of the playback is imprecise.
 
 gif
 """

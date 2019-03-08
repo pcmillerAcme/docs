@@ -6,15 +6,15 @@
 Basic Request
 #############
 
-The minimal request sequence:
+To request api.acme.codes create an animated code for you, here is the minimal request sequence:
 
 1. GET a new order number, receive JSON response containing an **Order Number**.
 2. GET the product (or any other information) by referencing the **Order Number**. 
 
-For example, a requesting service could:
+For example, a requesting service could ask for an animation to be started by:
 ::
 
-    GET: https://api.acme.codes/new?msg=Reading%20ACME%20documentation%20is%20fun!
+    GET: https://api.acme.codes/new?msg=ReadingAcmeDocumentationIsFun!
 
 ACME service would return JSON:
 ::

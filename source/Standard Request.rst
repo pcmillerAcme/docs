@@ -6,22 +6,22 @@
 Standard Request
 ################
 
-Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence provides more options to a client application. 
+Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence described below provides more options to a client application. 
 
-1. GET a new order, receive JSON response containing an **Order Number**.
+1. Initiate a new animation creation by GETing a new order by calling https://api.acme.codes/new, and receive JSON response containing an **Order Number**.
 2. (Optional) Iteratively GET the **server-side state and order progress** of the animation generation by referencing the **Order Number**, capture the JSON response containing the server-side state information. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
 3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
 4. (Optional) GET the final product file size. This information can be used below.
 5. GET the final product (animation, 3d file, frames, etc.)
 6. (Optional) Measure the local file size as it is streamed in from the above call and compare it to the known full file size. This comparison can be used to accurately provide visual progress bar(s) to the client regarding file transmission.
 
-New
-"""
+New Order
+"""""""""
 
 For example, a client application could:
 ::
 
-    GET: https://api.acme.codes/new?msg=Reading%20ACME%20documentation%20is%20fun!
+    GET: https://api.acme.codes/new?msg=ReadingAcmeDocumentationIsFun!
 
 ACME service would return JSON:
 ::
@@ -86,10 +86,10 @@ ACME service would return JSON:
     {"fileSize": 439441}
 
 
-mp4/gif
-"""""""
+Animation
+"""""""""
 
-Finally, the client application can retrieve the completed animated product, in this case a mp4 file of an animation:
+Finally, the client application can retrieve the completed animated products. The api.acme.codes generates the following animated products: mp4, gif, png frames, fbx and zip. The most common retrieval is the mp4 file of an animation, which can be attained with the mp4 order resource:
 ::
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/mp4
