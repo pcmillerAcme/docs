@@ -8,7 +8,7 @@ Introduction
 
 .. image:: ./_static/AcmeLogo.png
 
-These pages describe the `RESTful <https://en.wikipedia.org/wiki/Representational_state_transfer>`_  `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) for the  `'Software as a Service' (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'. 
+This documentation describes the `REST <https://en.wikipedia.org/wiki/Representational_state_transfer>`_ ful `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) supporting the  `'Software as a Service' (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'. 
 
 ACME's service at https://api.acme.codes provides near real time creation of customized animations of any scannable code, including QR codes. Standard codes and QR codes (non-animated) can also be created.
 

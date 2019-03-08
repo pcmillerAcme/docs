@@ -9,7 +9,7 @@ Standard Request
 Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence described below provides more options to a client application. 
 
 1. Initiate a new animation creation by GETing a new order by calling https://api.acme.codes/new, and receive JSON response containing an **Order Number**. See the documentation on /new for details on the many arguments that define your requested animation. 
-2. (Optional) Iteratively GET the **server-side state and order progress** of the animation generation by referencing the **Order Number**, capture the JSON response containing the server-side state information. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
+2. (Optional) Iteratively GET the **server-side runtime information and order progress** of the animation generation by referencing the **Order Number**. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
 3. (Optional) GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
 4. (Optional) GET the final product file size. This information can be used below.
 5. GET the final product (animation, 3d file, frames, etc.)
@@ -31,7 +31,7 @@ ACME service would return JSON:
 Progress
 """"""""
 
-Optionally, now the client application can retrieve the server-side state and order progress:
+Optionally, now the client application can iteratively retrieve the server-side order progress:
 ::
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/progress

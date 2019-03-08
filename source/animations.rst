@@ -6,7 +6,7 @@
 Animations
 ##########
 
-The api.acme.codes provides a variety of animations that can be applied to any code or QR code. The list of available animations is provided in both human-readible (html) and machine readible (json) formats by the resources below.
+The web service hosted at api.acme.codes provides a variety of animations that can be applied to any code or QR code. The list of available animations is provided in both human-readible (html) and machine readible (`JSON <https://en.wikipedia.org/wiki/JSON>`_) formats by the resources below.
 
 anims-html
 """"""""""

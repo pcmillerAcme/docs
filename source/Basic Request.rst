@@ -6,10 +6,10 @@
 Basic Request
 #############
 
-To request api.acme.codes create an animated code for you, here is the minimal request sequence:
+Here is the minimal request sequence to receive an animated code from api.acme.codes:
 
-1. GET a new order number, receive JSON response containing an **Order Number**.
-2. GET the product (or any other information) by referencing the **Order Number**. 
+1. Request an order number by http GET method /new, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number**.
+2. Request the product (or any other information) by http GET method referencing the **Order Number**. 
 
 For example, a requesting service could ask for an animation to be started by:
 ::
@@ -36,3 +36,5 @@ ACME service would then return an animated requested file type. Depending on cre
 Note: An immediate resource GET request to an accurate order will initially result in a '202 Accepted' response, and not a '200 OK' return code because the service has not yet completed creating the file. This response page will contain a message clarifying the reason for the temporary inability to return the requested file.
 |br| |br|
 This completes the Basic Request workflow; The Standard Request workflow details how to avoid the '202 Accepted' response entirely.
+
+Reminder: all REST resources described in this documentation are http GET methods, and therefore executable by entering the shown http requests in any browser URL field; no command line request client (curl for example) is required. The reader is encouraged to experiment with these calls directly in a browser to interactively see the results.
