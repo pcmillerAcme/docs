@@ -8,9 +8,9 @@ Introduction
 
 .. image:: ./_static/AcmeLogo.png
 
-These pages describe the `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) for the  `'Software as a Service' (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'. 
+These pages describe the `RESTful <https://en.wikipedia.org/wiki/Representational_state_transfer>`_  `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) for the  `'Software as a Service' (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'. 
 
-ACME's service at api.acme.codes provides near real time creation of customized animations of any scannable code, including QR codes. Standard codes and QR codes (non-animated) can also be created.
+ACME's service at https://api.acme.codes provides near real time creation of customized animations of any scannable code, including QR codes. Standard codes and QR codes (non-animated) can also be created.
 
 If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting ACME's home page: `www.acme.codes <http://www.acme.codes>`_, or you may just want to go ahead and make animated codes yourself with `ACME's Coderunner <https://coderunner.acme.codes>`_ .
 
