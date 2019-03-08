@@ -89,7 +89,7 @@ ACME service would return JSON:
 Animation
 """""""""
 
-Finally, the client application can retrieve the completed animated products. The api.acme.codes generates the following animated products: mp4, gif, png frames, fbx and zip. The most common retrieval is the mp4 file of an animation, which can be attained with the mp4 order resource:
+Finally, the client application can retrieve the completed animated products. ACME's API generates the following products: mp4, gif, png frames, fbx and zip. The most common retrieval is the mp4 file of an animation, which can be attained with the mp4 order resource:
 ::
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/mp4
