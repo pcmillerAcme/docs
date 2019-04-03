@@ -8,7 +8,9 @@ Non-animated Codes
 
 Sometimes folks want to use our API to generate standard QR codes that are not animated. Why? Several features such as color control, transparency, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) code generation services.
 
-Note that though encoded messages are wrapped in free use demo mode *for animations*, static (non-animated) code embedded messages are not wrapped, and have the direct original message embedded in the code. In other words, animated QR codes are paywalled, standard (non-animated) QR codes are not.
+Also, standard QR Codes are free!
+
+To clarify: Though encoded messages are wrapped in free use demo mode *for animations*, static (non-animated) code embedded messages are not wrapped, and have the direct original message embedded in the code. In other words, animated QR codes are paywalled, while standard, non-animated, QR codes are completely free and without message wrapping.
 
 Here is the best request sequence to receive a standard non-animated code from api.acme.codes:
 
