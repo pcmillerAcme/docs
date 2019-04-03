@@ -33,8 +33,9 @@ Certain design and architectural features of this service are patented under `US
    :maxdepth: 2
    :caption: Contents:
 
-   Basic Request
-   Standard Request
+   Basic Animation
+   Standard Animation
+   Non-animated Codes
    animations
    fbx
    frames

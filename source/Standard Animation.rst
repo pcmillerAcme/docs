@@ -3,8 +3,8 @@
 
    <br />
 
-Standard Request
-################
+Standard Animation
+##################
 
 Since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), the more standard transaction sequence described below provides more options to a client application. 
 

@@ -3,8 +3,8 @@
 
    <br />
 
-Basic Request
-#############
+Basic Animation
+###############
 
 Here is the minimal request sequence to receive an animated code from api.acme.codes:
 
