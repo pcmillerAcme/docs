@@ -6,24 +6,16 @@
 Animations
 ##########
 
-The web service hosted at api.acme.codes provides a variety of animations that can be applied to any code or QR code. The list of available animations is provided in both human-readible (html) and machine readible (`JSON <https://en.wikipedia.org/wiki/JSON>`_) formats by the resources below.
+The web service hosted at api.acme.codes provides a variety of animations that can be applied to any code or QR code. The list of available animations is provided in human-readible (searchable) and machine readible (`JSON <https://en.wikipedia.org/wiki/JSON>`_) formats by the resources below.
 
-anims-html
-""""""""""
+animation-list
+""""""""""""""
 
-The /anims-html resource returns a hman readable web page flat listing of the available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource.
-::
-
-    ACME Animations:
-    ** All animations subject to copyright claims unless indicated otherwise. **
-    Spin
-    Spin_Right
-    [...]
-    ** All animations subject to copyright claims unless indicated otherwise. **
+The /animation-list page displays a human readable web page for reviewing animation thumbnails and text/tag searching available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Note: Spaces in the animation names should be replaced with underscored in api calls.
 
 Real time example link:
 
-`https://api.acme.codes/anims-html <https://api.acme.codes/anims-html>`_
+`https://api.acme.codes/animation-list <https://api.acme.codes/animation-list>`_
 
 anims-json
 """"""""""
