@@ -11,7 +11,7 @@ The web service hosted at api.acme.codes provides a variety of animations that c
 animation-list
 """"""""""""""
 
-The /animation-list page displays a human readable web page for reviewing animation thumbnails and text/tag searching available animations. Each listing is a valid request for the 'anim' argument of the '/new' resource. Note: Spaces in the animation names should be replaced with underscored in api calls.
+The /animation-list page displays a human readable web page for reviewing animation thumbnails and text/tag searching available animations. Retail Coderunner pricing is also listed. Each listing is a valid request for the 'anim' argument of the '/new' resource. Note: Spaces in the animation names should be replaced with underscored in api calls.
 
 Real time example link:
 

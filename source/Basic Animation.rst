@@ -6,10 +6,12 @@
 Basic Animation
 ###############
 
-Here is the minimal request sequence to receive an animated code from api.acme.codes:
+Here is the minimal 2 step request sequence to receive an animated code from api.acme.codes:
 
-1. Request an order number by http GET method /new, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number**.
-2. Request the product (or any other information) by http GET method referencing the **Order Number**. 
+1. /new |br| Request an order number by http GET method /new, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number**.
+|br|
+|br|
+2. orders/#/mp4 |br| Request the product (or any other information) by http GET method referencing the **Order Number**. 
 
 For example, a requesting service could ask for an animation to be started by:
 ::
