@@ -24,6 +24,8 @@ Below are the optional arguments when calling the ``/new`` resource.
 
    * - Arg:
      - Description/Examples/Default Values:
+   * - ``apiKey``
+     - For users with temporary "try-it-out" or fully paid subscriptions wanting unlocked codes rather than the default free Locked Demonstration codes, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ must be subitted in this argument for all newly created codes. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
    * - ``anim``
      - The animation to be applied to the code. See anims-json and anims-html resources for a complete list of valid values for anim. Default = 'Spin'. ``https://api.acme.codes/new?anim=Spin``
    * - ``applyFrameNumbers``
