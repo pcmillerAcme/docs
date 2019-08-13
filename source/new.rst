@@ -27,7 +27,7 @@ Below are the optional arguments when calling the ``/new`` resource.
    * - ``apiKey``
      - For users with temporary "try-it-out" or fully paid subscriptions wanting unlocked codes rather than the default free Locked Demonstration codes, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ must be subitted in this argument for all newly created codes. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
    * - ``anim``
-     - The animation to be applied to the code. See anims-json and animation-list resources for a complete list of valid values for anim. Default = 'Exchange'. ``https://api.acme.codes/new?anim=Exchange``
+     - The animation to be applied to the code. See ``anims-json`` and ``animation-list`` resources for a complete list of valid values for anim. Default = 'Exchange'. ``https://api.acme.codes/new?anim=Exchange``
    * - ``applyFrameNumbers``
      - This setting allows for diagnostic per frame overlays of a frame hand and frame count to ensure altered animations are rendered correctly for expected total and block times.
    * - ``bgpColor``
