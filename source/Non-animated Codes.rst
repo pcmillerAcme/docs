@@ -3,7 +3,8 @@
 
    <br />
 
-# Non-animated Codes
+Non-animated Codes
+##################
 
 Sometimes folks want to use ACME's API to generate standard QR codes that are not animated. Why? Several features such as color control, transparency, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) code generation services.
 
@@ -18,7 +19,7 @@ There are two methods to getting free standard QR codes form ACME's API:
 |br|
 2. **Single Call Request**. With certain arguments, ACME's api will return a png file directly as a response to the first creation API call. 
 
-## Standard Call Sequence:
+**Standard Call Sequence:**
 Here is the best 2-step request sequence to receive a standard (non-animated) code from api.acme.codes:
 
 1. /new?anim=staticCodeOnly&msg=Hello! |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
@@ -48,7 +49,7 @@ ACME service would then return a png file:
 Note: An immediate resource GET request to an accurate order *might* initially result in a '202 Accepted' response, and not a '200 OK' return code because the service has not yet completed creating the file. For non-animated requests like this, it is not usually required to query and order's progress because the creation time is so short. However, it is still good practice to check and retry if a 202 response is initially returned.
 |br| |br|
 
-## Single Call Request:
+**Single Call Request:**
 
 The following API call will directly return a png file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ACME.CODES if you require faster response times for standard QR code creation API calls, which are available. 
 ::
