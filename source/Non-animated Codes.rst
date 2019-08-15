@@ -14,18 +14,18 @@ To clarify: Though encoded messages are wrapped in free use demo mode *for anima
 
 There are two methods to getting free standard QR codes form ACME's API:
 
-1. The ACME **Standard Call Sequence**, which is 2-3 api calls. This is the best API approach if you think you may want animated QR codes in the future, your code will already be able to handle the longer generation times required for animated code creation and avoid any timeout problems.
+1. The ACME **Standard Call Sequence**, which is 2-3 API calls. This is the best API approach if you think you may want animated QR codes in the future, your code will already be able to handle the longer generation times required for animated code creation and avoid any timeout problems.
 |br|
 |br|
-2. **Single Call Request**. With certain arguments, ACME's api will return a png file directly as a response to the first creation API call. 
+2. **Single Call Request**. With certain arguments, ACME's API will return a png file directly as a response to the first creation API call. 
 
 **Standard Call Sequence:**
-Here is the best 2-step request sequence to receive a standard (non-animated) code from api.acme.codes:
+Here is the 'most ACME way' to do a 2-step request sequence to receive a standard (non-animated) code from api.acme.codes:
 
 1. /new?anim=staticCodeOnly&msg=Hello! |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
 |br|
 |br|
-2. orders/#/frames/1 |br| Request the static png file by http GET method referencing the **Order Number**. 
+2. orders/#/frames/1 |br| Request the static PNG file by http GET method referencing the **Order Number**. 
 
 For example, a requesting service could ask for code by:
 ::
@@ -37,7 +37,7 @@ ACME service would return JSON:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
     
-Now, almost immediately, the client can retrieve a static non animated png file:
+Now, almost immediately, the client can retrieve a static non-animated PNG file:
 ::
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/frames/1
@@ -51,7 +51,7 @@ Note: An immediate resource GET request to an accurate order *might* initially r
 
 **Single Call Request:**
 
-The following API call will directly return a png file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ACME.CODES if you require faster response times for standard QR code creation API calls, which are available. 
+The following API call will directly return a PNG file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ACME.CODES if you require faster response times for standard QR code creation API calls, which are available. 
 ::
 
     GET: https://api.acme.codes/new?msg=Hi!&anim=staticCodeOnly&format=png
