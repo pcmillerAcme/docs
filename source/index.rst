@@ -30,7 +30,7 @@ Certain design and architectural features of this service are patented under `US
    
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    Basic Animation

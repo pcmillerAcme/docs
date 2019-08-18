@@ -12,15 +12,19 @@ Also, standard QR Codes are free!
 
 To clarify: Though encoded messages are wrapped in free use demo mode *for animations*, static (non-animated) code embedded messages are not wrapped, and have the direct original message embedded in the code. In other words, animated QR codes are paywalled, while standard, non-animated, QR codes are completely free and without message wrapping.
 
+
 There are two methods to getting free standard QR codes form ACME's API:
 
-1. The ACME **Standard Call Sequence**, which is 2-3 API calls. This is the best API approach if you think you may want animated QR codes in the future, your code will already be able to handle the longer generation times required for animated code creation and avoid any timeout problems.
+1. The :ref:`Acme Sequence`, which is 2-3 API calls. This is the best API approach if you think you may want animated QR codes in the future, your code will already be able to handle the longer generation times required for animated code creation and avoid any timeout problems.
 |br|
 |br|
-2. **Single Call Request**. With certain arguments, ACME's API will return a png file directly as a response to the first creation API call. 
+2. :ref:`Single Call` sequence. With certain arguments, ACME's API will return a PNG file directly as a response to the first creation API call. 
 
-**Standard Call Sequence:**
-Here is the 'most ACME way' to do a 2-step request sequence to receive a standard (non-animated) code from api.acme.codes:
+.. _Acme Sequence:
+
+Acme Sequence
+-------------
+Here is the 'most ACME way' to do a multi-step request sequence to receive a standard (non-animated) code from api.acme.codes:
 
 1. /new?anim=staticCodeOnly&msg=Hello! |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
 |br|
@@ -49,12 +53,14 @@ ACME service would then return a png file:
 Note: An immediate resource GET request to an accurate order *might* initially result in a '202 Accepted' response, and not a '200 OK' return code because the service has not yet completed creating the file. For non-animated requests like this, it is not usually required to query and order's progress because the creation time is so short. However, it is still good practice to check and retry if a 202 response is initially returned.
 |br| |br|
 
-**Single Call Request:**
+.. _Single Call:
 
-The following API call will directly return a PNG file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ACME.CODES if you require faster response times for standard QR code creation API calls, which are available. 
+Single Call
+-----------
+By setting *both* ``anim=staticCodeOnly`` and ``format=png``, api.acme.codes will directly return a PNG file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ``sales@acme.codes`` if you require faster response times for standard QR code creation API calls, which are available. 
 ::
 
     GET: https://api.acme.codes/new?msg=Hi!&anim=staticCodeOnly&format=png
 
 
-Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily, though generally always available for 48 hours after creation. They are automatically deleted over time. Please remember your harvest period for all files you create on api.acme.codes is limited.
+Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily, though generally always available for 48 hours after creation. They are automatically deleted over time. Please remember your harvest period is limited for all files you create on api.acme.codes.
