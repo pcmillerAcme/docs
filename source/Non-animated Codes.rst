@@ -6,7 +6,7 @@
 Non-animated Codes
 ##################
 
-Sometimes folks want to use ACME's API to generate standard QR codes that are not animated. Why? Several features such as color control, transparency, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) code generation services.
+Sometimes folks want to use ACME's API to generate standard QR codes that are not animated. Why? Several features such as color control, transparency, stenciling, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) code generation services.
 
 Also, standard QR Codes are free!
 
