@@ -30,7 +30,7 @@ Certain design and architectural features of this service are patented under `US
    
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
    Basic Animation
@@ -43,6 +43,7 @@ Certain design and architectural features of this service are patented under `US
    mp4
    new
    orders
+   order_image
    progress
    thumbnails
    version

@@ -8,6 +8,8 @@ Animations
 
 The web service hosted at api.acme.codes provides a variety of animations that can be applied to any code or QR code. The list of available animations is provided in human-readible (searchable) and machine readible (`JSON <https://en.wikipedia.org/wiki/JSON>`_) formats by the resources below.
 
+.. _animation-list:
+
 animation-list
 """"""""""""""
 
@@ -16,6 +18,8 @@ The /animation-list page displays a human readable web page for reviewing animat
 Real time example link:
 
 `https://api.acme.codes/animation-list <https://api.acme.codes/animation-list>`_
+
+..  _anims-json:
 
 anims-json
 """"""""""

@@ -28,7 +28,7 @@ Example return value:
 apiKey
 ------
 
-For users with temporary "try-it-out" or fully paid subscriptions wanting unlocked codes rather than the default free Locked Demonstration codes, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ must be subitted in this argument for all newly created codes. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
+For users with temporary, "try-it-out" subscriptions (usually restricted to re-directed codes only), or semi-permanent, or permanent paid subscriptions wanting unlocked codes rather than the default free Locked Demonstration codes, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ must be subitted in this argument for all newly created codes. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
 
 .. _anim:
 
@@ -145,7 +145,17 @@ The rotation to be applied to a supplied image URL ``https://api.acme.codes/new?
 img1
 ----
 
-The image URL to be applied within the animation, if supported by the selected animation. ``https://api.acme.codes/new?anim=Spin&img1=https://www.acme.ink/demos/acmecodes/tImg/img1.png``
+The image URL to be applied within the animation, if supported by the selected animation. 
+
+Example:
+``https://api.acme.codes/new?anim=Spin&img1=https://www.acme.ink/demos/acmecodes/tImg/img1.png``
+
+To recap, there are two ways to supply an image to an ACME animation:
+
+1. At initial order creation time, by supplying a URL to an image published on the internet via the ``img1=`` argument for the ``/new`` resource, an image can be inserted into an animation right from the start. The advantage here is the image goes in 'all at once' in *one* call. The disadvantage is the image must already exist over http/https and be published on the internet before the call to ``/new`` is made. 
+|br|
+|br|
+2. Alternatively, a different call sequnce can be used. After the intial order has been created via a call to ``/new``, a POST of an image to order_image will trigger the order animation to be refreshed after order upload is complete. The advantage is the image need never be published on the internet, while the disadvantage is that two seperate calls must be made to create the animation.
 
 
 .. _length:
