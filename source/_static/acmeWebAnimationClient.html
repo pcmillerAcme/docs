@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="acmeWebAnimationClient.js"></script>
+<style>
+    body, table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+</style>
+</head>
+<body>
+    <h1>ACME SDK<br>Api Demo Web Page</h1>
+    <br>
+    This page will automatically load a dynamically created animated QR code
+    from the API at api.acme.codes.<br>
+    Reload to restart.<br>
+    <br>
+    <br>
+    The order number is: <b id="orderNumber">--</b>
+    <br>
+    Animation Progress: <b id="orderProgress"></b><br>
+    Animation Stage: <b id="orderStage"></b><br><br>
+    <table>
+        <tr>
+            <td>
+            <video id="mp4Animation"muted autoplay loop src="">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

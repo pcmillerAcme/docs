@@ -37,6 +37,7 @@ Certain design and architectural features of this service are patented under `US
    Standard Animation
    Non-animated Codes
    animations
+   SDK
    fbx
    frames
    gif
