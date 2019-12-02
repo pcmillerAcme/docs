@@ -11,19 +11,25 @@ Software Development Kit
 
 Here are working examples of client-side software running remotely and accessing api.acme.codes to attain animated or standard QR codes.
 
-1. :ref:`Animated QR Code Retrieval - Python`
-2. :ref:`Animated QR Code Retrieval - Web Page (Html & Javascript)`
-3. :ref:`Standard QR Code Retrieval - Python`
-4. :ref:`Standard QR Code Retrieval - Web Page Html`
-
+:ref:`Animated QR Code Creation - Python`
+|br|
+:ref:`Animated QR Code Creation - Web Page (Html & Javascript)`
+|br|
+:ref:`Animated QR Code Creation with Image Upload - Python`
+|br|
+:ref:`Animated QR Code Creation with Image Upload - Web Page (Html & Javascript)`
+|br|
+:ref:`Standard QR Code Retrieval - Python`
+|br|
+:ref:`Standard QR Code Retrieval - Web Page Html`
 |br|
 |br|
 |br|
 |br|
 
-.. _Animated QR Code Retrieval - Python:
+.. _Animated QR Code Creation - Python:
 
-Animated QR Code Retrieval - Python
+Animated QR Code Creation - Python
 -----------------------------------
 
 acmeAnimationClient.py
@@ -34,29 +40,80 @@ This script depends on the ``requests`` module, so make sure that is present or 
 Note the design pattern of 'request, check progress until complete, retrieve' is required since animation generation times exceed the
 standard timeout periods of internet web service calls.
 
-acmeAnimationClient.py: :download:`Download <./_static/acmeAnimationClient.py>` or :ref:`Read acmeAnimationClient.py`
+:download:`Download <./_static/acmeAnimationClient.py>` or :ref:`Read acmeAnimationClient.py`
 
 |br|
 |br|
 |br|
 
-.. _Animated QR Code Retrieval - Web Page (Html & Javascript):
+.. _Animated QR Code Creation - Web Page (Html & Javascript):
 
-Animated QR Code Retrieval - Web Page (Html & Javascript)
+Animated QR Code Creation - Web Page (Html & Javascript)
 ---------------------------------------------------------
 
 acmeWebAnimationClient.html |br|
 acmeWebAnimationClient.js
 
 These files define a web page which dynamically queries api.acme.codes for an animation via chained xmlhttp calls.
-Click `here <./_static/acmeWebAnimationClient.html>`_ to run the page directly.
 
 Note the design pattern of 'request, check progress until complete, retrieve' is required since animation generation times exceed the
 standard timeout periods of internet web service calls.
 
-acmeWebAnimationClient.html: :download:`Download <./_static/acmeWebAnimationClient.html>` or :ref:`Read acmeWebAnimationClient.html`
-acmeWebAnimationClient.js: :download:`Download <./_static/acmeWebAnimationClient.js>` or :ref:`Read acmeWebAnimationClient.js`
+:download:`Download <./_static/acmeWebAnimationClient.html>` or :ref:`Read acmeWebAnimationClient.html`
+|br|
+:download:`Download <./_static/acmeWebAnimationClient.js>` or :ref:`Read acmeWebAnimationClient.js`
+|br|
+|br|
+or `click here <./_static/acmeWebAnimationClient.html>`_ to load and run the page in your browser now.
+|br|
+|br|
+|br|
 
+.. _Animated QR Code Creation with Image Upload - Python:
+
+Animated QR Code Creation with Image Upload - Python
+----------------------------------------------------
+
+acmeAnimationClientImageUpload.py
+
+This Python script is identical to the Animated QR Code Creation except it has the additional
+step of uploading a custom image to the order. Uploading a custom image automatically triggers
+a re-processing of the order, so the development code pattern is:
+|br|
+"get new order #, upload image to order, check progress, download mp4"
+|br|
+The advantage of uploading a custom image after order creation is that the image
+can be uploaded privately, but the disadvantage is a second call must be made after
+order creation to upload the image. This is in contrast to providing a custom image
+at order creation time; in this case the advantage is that only one call must be made to
+create the animation, but the disadvantage is that the image must be published over the web
+in advance of order creation via the ``img1`` argument. See documentation on the ``/new`` resource.
+
+:download:`Download <./_static/acmeAnimationClientImageUpload.py>` or :ref:`Read acmeAnimationClientImageUpload.py`
+|br|
+|br|
+|br|
+|br|
+
+.. _Animated QR Code Creation with Image Upload - Web Page (Html & Javascript):
+
+Animated QR Code Creation with Image Upload - Web Page (Html & Javascript)
+--------------------------------------------------------------------------
+
+acmeWebAnimationClientImageUpload.html
+acmeWebAnimationClientImageUpload.js
+
+This example set is the same as the above Web Animated QR Code Creation example, but with the additional feature of
+a local file selection button and upload button which updates the order's image file by the
+Api's ``/orders/#/image`` resource.
+
+:download:`Download <./_static/acmeWebAnimationClientImageUpload.html>` or :ref:`Read acmeWebAnimationClientImageUpload.html`
+|br|
+:download:`Download <./_static/acmeWebAnimationClientImageUpload.js>` or :ref:`Read acmeWebAnimationClientImageUpload.js`
+|br|
+|br|
+or click `here <./_static/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now.
+|br|
 |br|
 |br|
 |br|
@@ -73,7 +130,7 @@ Please note that usage of this resource does not require any Api key and is free
 the right to suppress or deny service to users utilizing high usage volumes (~10-20 per hour) without payment.
 Paid for subscriptions have much higher volume limits.
 
-acmeStandardCodeClient.py: :download:`Download <./_static/acmeStandardCodeClient.py>` or :ref:`Read acmeStandardCodeClient.py`
+:download:`Download <./_static/acmeStandardCodeClient.py>` or :ref:`Read acmeStandardCodeClient.py`
 
 |br|
 |br|
@@ -99,7 +156,10 @@ is being made from scratch each time the page is viewed. Since ACME should never
 the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server.
 However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
 
-acmeWebStandardCodeClient.html: :download:`Download <./_static/acmeWebStandardCodeClient.html>` or :ref:`Read acmeWebStandardCodeClient.html`
+:download:`Download <./_static/acmeWebStandardCodeClient.html>` or :ref:`Read acmeWebStandardCodeClient.html`
+|br|
+|br|
+or `click here acmeWebStandardCodeClient.html <./_static/acmeWebStandardCodeClient.html>`_ to load and run the page in your browser now.
 
 |br|
 |br|
@@ -129,7 +189,10 @@ Read acmeAnimationClient.py
         '&fbx=0'  # Suppress fbx for speed
         '&mp4=1'   
         '&xres=400'  # since you're a developer...
-        '&yres=400'  # ...let's make the resolution better than default 
+        '&yres=400'  # ...let's make the resolution better than default
+        # Below: Optional: provide a custom published image to the animation
+        # '&img1=https://some.image/somehere/on/the/internet.png'
+
     )
 
     # Send anim request, get order # in return
@@ -388,4 +451,278 @@ Read acmeWebStandardCodeClient.html
     </table>
     </body>
     </html>
+
+.. _Read acmeAnimationClientImageUpload.py:
+
+Read acmeAnimationClientImageUpload.py
+--------------------------------------
+
+::
+
+    import os
+    import requests
+    from os.path import join
+    from time import sleep
+
+    ACME_API_DOMAIN = 'https://api.acme.codes'
+
+    # Setup Request for animation
+    request_object = requests.Session()
+    new_anim_request_url = (
+            ACME_API_DOMAIN +
+            '/new?msg=DemoMessage'  # Baseline request
+            '&gif=0'  # Suppress gif for speed
+            '&fbx=0'  # Suppress fbx for speed
+            '&mp4=1'
+            '&xres=400'  # since you're a developer...
+            '&yres=400'  # ...let's make the resolution better than default
+            '&anim=Spin'
+    )
+
+    # Send anim request, get order # in return
+    order_request_response = request_object.get(new_anim_request_url)
+    if order_request_response.status_code != 200:
+        print('Problem with api call: ' + new_anim_request_url)
+        import sys
+        sys.exit()
+    new_order_data = order_request_response.json()
+
+    print('The new order number is: ' + new_order_data['orderNumber'])
+
+    # Upload a local custom image to the server after order creation
+    local_img_file = '/a/path/to/a/file/on/your/system/uploadMe.jpg'
+
+    image_upload_url = (ACME_API_DOMAIN +
+                        '/orders/' +
+                        new_order_data['orderNumber'] +
+                        '/image'
+                        )
+    files = {'ufile': open(local_img_file, 'rb')}
+    image_post_response = requests.post(image_upload_url, files=files)
+    print(image_post_response)
+
+    if image_post_response.status_code == 200:
+        print('Image uploaded ok')
+    else:
+        print('Problem uploading image: ' +
+              str(image_post_response.status_code) + '\n' +
+              str(image_post_response.text))
+
+    # Query the api to know when it is complete
+    progress_url = (ACME_API_DOMAIN + '/orders/' +
+                    new_order_data['orderNumber'] +
+                    '/progress'
+                    )
+    percent_complete = 0
+    progress_info = {'progress': 0}
+    while percent_complete < 100:
+        sleep(2)  # Anims take time, be reasonable
+        progress_response = request_object.get(progress_url)
+        progress_info = progress_response.json()
+        print(str(progress_info['progress']) +
+              '% complete, currently in stage "' +
+              progress_info['stage'] + '"'
+              )
+        percent_complete = progress_info['progress']
+    print(str(progress_info['progress']) + '% complete')
+
+    # Grab the mp4 file and save it in current directory
+    mp4_url = (ACME_API_DOMAIN + '/orders/' +
+               new_order_data['orderNumber'] +
+               '/mp4'
+               )
+    mp4_request = request_object.get(mp4_url)
+    drop_image_file = join(join(os.getcwd(),
+                                'DemoAnimationWithCustomImage.mp4'))
+    print('Saving file to: ' + drop_image_file)
+    with open(drop_image_file, 'wb') as file_handle:
+        for chunk in mp4_request.iter_content(4096):
+            file_handle.write(chunk)
+    print('Done.')
+
+.. _Read acmeWebAnimationClientImageUpload.html:
+
+Read acmeWebAnimationClientImageUpload.html
+-------------------------------------------
+
+::
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="acmeWebAnimationClientImageUpload.js"></script>
+    <style>
+    body, table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
+    </head>
+
+    <body>
+        <h1>ACME SDK<br>Api Demo Web Page<br>with Image Upload</h1>
+        <br>
+        This page will automatically create a new order for an animated QR code
+        from the API at api.acme.codes.<br>
+        In addition, a custom image file and uploaded. The animation will
+        then be re-generated with the new image.
+        Reload to restart.<br>
+        <br>
+        <br>
+        The order number is: <b id="orderNumber">--</b>
+        <br>
+        <input type="file" id="acmeUploadFile" />
+        <button type="button" onclick="uploadImageWrapper()">Upload Image</button>
+        Animation Progress: <b id="orderProgress"></b><br>
+        Animation Stage: <b id="orderStage"></b><br><br>
+        <table>
+            <tr>
+                <td>
+                    <video id="mp4Animation" muted autoplay loop src=""></video>
+                </td>
+            </tr>
+        </table>
+    </body>
+    </html>
+
+.. _Read acmeWebAnimationClientImageUpload.js:
+
+Read acmeWebAnimationClientImageUpload.js
+-----------------------------------------
+
+::
+
+    // Copyright (c) 2020 Animated Codes Made Easy LLC
+    let orderRequestJson = null;
+
+    function getQrCode()
+    {
+    submitAnimationRequest();
+    }
+
+    function submitAnimationRequest()
+    {
+    // Send request for new animation
+    // and retrieve order number response
+    let orderRequest = getAbstractedXmlObj();
+    orderRequest.tgtUrl = (
+        'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
+        '&anim=Spin' + // Spin is a fast demo
+        '&gif=0' +     // gif creation is slow
+        '&fbx=0' +     // fbx not needed for demo
+        '&mp4=1'       // mp4 is fastest / best
+        )
+
+    orderRequest.onreadystatechange = function()
+        {
+        if (orderRequest.readyState === 4 && orderRequest.status === 200)
+            {
+            orderRequestJson = JSON.parse(orderRequest.responseText);
+            document.getElementById('orderNumber').innerHTML =
+                orderRequestJson.orderNumber;
+            queryAndUpdateProgress();
+            }
+        }
+    orderRequest.open('GET', orderRequest.tgtUrl);
+    orderRequest.send();
+    }
+
+    function queryAndUpdateProgress()
+    // Update progress until 100%
+    {
+    let progressRequest = getAbstractedXmlObj();
+    progressRequest.tgtUrl = (
+        'https://api.acme.codes/orders/' +
+        document.getElementById('orderNumber').innerHTML +
+        '/progress')
+    progressRequest.onreadystatechange = function()
+        {
+        if (progressRequest.readyState === 4 && progressRequest.status === 200)
+            {
+            let orderProgressJson = JSON.parse(progressRequest.responseText);
+            document.getElementById('orderProgress').innerHTML =
+                orderProgressJson.progress + "%";
+            document.getElementById('orderStage').innerHTML =
+                orderProgressJson.stage;
+            if (orderProgressJson.progress === 100)
+                {
+                retrieveMp4Animation();
+                }
+            else
+                {
+                // update every 3 seconds
+                setTimeout(queryAndUpdateProgress, 3000);
+                }
+            }
+        }
+    progressRequest.open('GET', progressRequest.tgtUrl);
+    progressRequest.send();
+    }
+
+    function retrieveMp4Animation()
+    {
+    mp4Animation = document.getElementById("mp4Animation")
+    mp4Animation.setAttribute(
+        "src",
+        ("https://api.acme.codes/orders/" +
+        document.getElementById('orderNumber').innerHTML +
+        "/mp4"
+        )
+        )
+    }
+
+    document.addEventListener('DOMContentLoaded',
+                              function(event)
+                                {
+                                // Trigger auto-updating of animated qr code
+                                getQrCode();
+                                }
+                              );
+
+    function getAbstractedXmlObj()
+        {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+            {xmlhttp = new XMLHttpRequest();}
+        else
+            {xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');}
+        return xmlhttp;
+        }
+
+    function uploadImageWrapper()
+        {
+        let a = document.getElementById('acmeUploadFile');
+        console.log(orderRequestJson.orderNumber);
+        uploadImage(
+            a.files[0],
+            orderRequestJson.orderNumber
+            )
+        }
+
+    function uploadImage(file, order)
+        {
+        let url = 'https://api.acme.codes/orders/' + order + '/image';
+        let xhr = new XMLHttpRequest();
+        let fd = new FormData();
+        xhr.open('POST', url, true);
+        xhr.onreadystatechange = function()
+            {
+            if (xhr.readyState === 4 && xhr.status === 200)
+                {
+                // Every thing ok, file uploaded, now
+                // clear mp4 field and other output fields and then...
+                animsRetrieved = false;
+                mp4Img.src = '';
+                // ...update progress and reload when done
+                updateProgress(most_recent_order);
+                }
+            };
+        fd.append('ufile', file);
+        xhr.send(fd);
+        }
+
+
+    // Copyright (c) 2020 Animated Codes Made Easy LLC
 

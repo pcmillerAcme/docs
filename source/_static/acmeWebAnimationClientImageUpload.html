@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="acmeWebAnimationClientImageUpload.js"></script>
+    <style>
+        body, table {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ACME SDK<br>Api Demo Web Page<br>with Image Upload</h1>
+    <br>
+    This page will automatically create a new order for an animated QR code
+    from the API at api.acme.codes.<br>
+    In addition, a custom image file and uploaded. The animation will
+    then be re-generated with the new image.
+    Reload to restart.<br>
+    <br>
+    <br>
+    The order number is: <b id="orderNumber">--</b>
+    <br>
+    <input type="file" id="acmeUploadFile" />
+    <button type="button" onclick="uploadImageWrapper()">Upload Image</button>
+    Animation Progress: <b id="orderProgress"></b><br>
+    Animation Stage: <b id="orderStage"></b><br><br>
+    <table>
+        <tr>
+            <td>
+                <video id="mp4Animation" muted autoplay loop src=""></video>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
