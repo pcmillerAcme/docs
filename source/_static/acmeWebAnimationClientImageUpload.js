@@ -1,5 +1,26 @@
-// Copyright (c) 2020 Animated Codes Made Easy LLC
+// Copyright (c) 2019,2020 Animated Codes Made Easy LLC
+//
+// https://en.wikipedia.org/wiki/MIT_License
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 let orderRequestJson = null;
+let mp4Animation = null;
 
 function getQrCode()
 {
@@ -17,7 +38,7 @@ orderRequest.tgtUrl = (
     '&gif=0' +     // gif creation is slow
     '&fbx=0' +     // fbx not needed for demo
     '&mp4=1'       // mp4 is fastest / best
-    )
+    );
 
 orderRequest.onreadystatechange = function()
     {
@@ -28,7 +49,7 @@ orderRequest.onreadystatechange = function()
             orderRequestJson.orderNumber;
         queryAndUpdateProgress();
         }
-    }
+    };
 orderRequest.open('GET', orderRequest.tgtUrl);
 orderRequest.send();
 }
@@ -40,7 +61,7 @@ let progressRequest = getAbstractedXmlObj();
 progressRequest.tgtUrl = (
     'https://api.acme.codes/orders/' +
     document.getElementById('orderNumber').innerHTML +
-    '/progress')
+    '/progress');
 progressRequest.onreadystatechange = function()
     {
     if (progressRequest.readyState === 4 && progressRequest.status === 200)
@@ -60,14 +81,14 @@ progressRequest.onreadystatechange = function()
             setTimeout(queryAndUpdateProgress, 3000);
             }
         }
-    }
+    };
 progressRequest.open('GET', progressRequest.tgtUrl);
 progressRequest.send();
 }
 
 function retrieveMp4Animation()
 {
-mp4Animation = document.getElementById("mp4Animation")
+mp4Animation = document.getElementById("mp4Animation");
 mp4Animation.setAttribute(
     "src",
     ("https://api.acme.codes/orders/" +
@@ -87,7 +108,7 @@ document.addEventListener('DOMContentLoaded',
 
 function getAbstractedXmlObj()
     {
-    var xmlhttp;
+    let xmlhttp = null;
     if (window.XMLHttpRequest)
         {xmlhttp = new XMLHttpRequest();}
     else
@@ -98,7 +119,6 @@ function getAbstractedXmlObj()
 function uploadImageWrapper()
     {
     let a = document.getElementById('acmeUploadFile');
-    console.log(orderRequestJson.orderNumber);
     uploadImage(
         a.files[0],
         orderRequestJson.orderNumber
@@ -118,9 +138,9 @@ function uploadImage(file, order)
             // Every thing ok, file uploaded, now
             // clear mp4 field and other output fields and then...
             animsRetrieved = false;
-            mp4Img.src = '';
+            mp4Animation.src = '';
             // ...update progress and reload when done
-            updateProgress(most_recent_order);
+            queryAndUpdateProgress();
             }
         };
     fd.append('ufile', file);
@@ -128,7 +148,3 @@ function uploadImage(file, order)
     }
 
 
-
-
-
-// Copyright (c) 2020 Animated Codes Made Easy LLC
