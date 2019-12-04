@@ -32,10 +32,12 @@ let orderRequest = getAbstractedXmlObj();
 orderRequest.tgtUrl = (
     'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
     '&anim=Spin' + // Spin is a fast demo
+    '&xres=450' +  // higher than default resolution
+    '&yres=450' +  // higher than default resolution
     '&gif=0' +     // gif creation is slow
     '&fbx=0' +     // fbx not needed for demo
     '&mp4=1'       // mp4 is fastest / best
-    )
+    );
 
 orderRequest.onreadystatechange = function()
     {
@@ -46,7 +48,7 @@ orderRequest.onreadystatechange = function()
             orderRequestJson.orderNumber;
         queryAndUpdateProgress();
         }
-    }
+    };
 orderRequest.open('GET', orderRequest.tgtUrl);
 orderRequest.send();
 }
@@ -58,7 +60,7 @@ let progressRequest = getAbstractedXmlObj();
 progressRequest.tgtUrl = (
     'https://api.acme.codes/orders/' +
     document.getElementById('orderNumber').innerHTML +
-    '/progress')
+    '/progress');
 progressRequest.onreadystatechange = function()
     {
     if (progressRequest.readyState === 4 && progressRequest.status === 200)
@@ -78,14 +80,14 @@ progressRequest.onreadystatechange = function()
             setTimeout(queryAndUpdateProgress, 3000);
             }
         }
-    }
+    };
 progressRequest.open('GET', progressRequest.tgtUrl);
 progressRequest.send();
 }
 
 function retrieveMp4Animation()
 {
-mp4Animation = document.getElementById("mp4Animation")
+mp4Animation = document.getElementById("mp4Animation");
 mp4Animation.setAttribute(
     "src",
     ("https://api.acme.codes/orders/" +
@@ -112,4 +114,4 @@ function getAbstractedXmlObj()
         {xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');}
     return xmlhttp;
     }
-// Copyright (c) 2020 Animated Codes Made Easy LLC
+

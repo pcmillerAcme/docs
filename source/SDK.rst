@@ -309,10 +309,12 @@ read acmeWebAnimationClient.js
     orderRequest.tgtUrl = (
         'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
         '&anim=Spin' + // Spin is a fast demo
+        '&xres=450' +  // higher than default resolution
+        '&yres=450' +  // higher than default resolution
         '&gif=0' +     // gif creation is slow
         '&fbx=0' +     // fbx not needed for demo
         '&mp4=1'       // mp4 is fastest / best
-        )
+        );
 
     orderRequest.onreadystatechange = function()
         {
@@ -323,7 +325,7 @@ read acmeWebAnimationClient.js
                 orderRequestJson.orderNumber;
             queryAndUpdateProgress();
             }
-        }
+        };
     orderRequest.open('GET', orderRequest.tgtUrl);
     orderRequest.send();
     }
@@ -335,13 +337,12 @@ read acmeWebAnimationClient.js
     progressRequest.tgtUrl = (
         'https://api.acme.codes/orders/' +
         document.getElementById('orderNumber').innerHTML +
-        '/progress')
+        '/progress');
     progressRequest.onreadystatechange = function()
         {
         if (progressRequest.readyState === 4 && progressRequest.status === 200)
             {
-            let orderProgressJson = JSON.parse(
-                progressRequest.responseText);
+            let orderProgressJson = JSON.parse(progressRequest.responseText);
             document.getElementById('orderProgress').innerHTML =
                 orderProgressJson.progress + "%";
             document.getElementById('orderStage').innerHTML =
@@ -356,21 +357,21 @@ read acmeWebAnimationClient.js
                 setTimeout(queryAndUpdateProgress, 3000);
                 }
             }
-        }
+        };
     progressRequest.open('GET', progressRequest.tgtUrl);
     progressRequest.send();
     }
 
     function retrieveMp4Animation()
     {
-    mp4Animation = document.getElementById("mp4Animation")
+    mp4Animation = document.getElementById("mp4Animation");
     mp4Animation.setAttribute(
         "src",
         ("https://api.acme.codes/orders/" +
         document.getElementById('orderNumber').innerHTML +
         "/mp4"
         )
-    )
+        )
     }
 
     document.addEventListener('DOMContentLoaded',
@@ -390,6 +391,7 @@ read acmeWebAnimationClient.js
             {xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');}
         return xmlhttp;
         }
+
 
 |br|
 |br|
@@ -645,6 +647,8 @@ read acmeWebAnimationClientImageUpload.js
     orderRequest.tgtUrl = (
         'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
         '&anim=Spin' + // Spin is a fast demo
+        '&xres=450' +  // higher than default resolution
+        '&yres=450' +  // higher than default resolution
         '&gif=0' +     // gif creation is slow
         '&fbx=0' +     // fbx not needed for demo
         '&mp4=1'       // mp4 is fastest / best
