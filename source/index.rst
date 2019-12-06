@@ -44,7 +44,7 @@ Certain design and architectural features of this service are patented under `US
    mp4
    new
    orders
-   order_image
+   image
    progress
    thumbnails
    version

@@ -12,7 +12,7 @@ Since ACME animation generation times can vary significantly based on animation 
 |br|
 |br|
 (Optional) |br|
-2.  order_image |br| After the initial order creation request is made, a follow up call may be made to upload an input image to the specific order just created. The animation is automatically remade with the newly uploaded image. Note this optional call is one of two different ways to supply an image to a requested animation. This resource supports private direct upload of an image after the order is created but requires two API calls. Alternatively, if the desired image is published on the internet, the initial call to ``/new`` can be giving the published image location, bypassing the need for this resource entirely. See more details in the description of the ``order_image`` resource, and alternate the ``img1=`` argument of the ``/new`` resource.
+2.  image |br| After the initial order creation request is made, a follow up call may be made to upload an image to the specific order just created. The animation is automatically remade with the newly uploaded image. Note this optional call is one of two different ways to supply an image to a requested animation. This resource supports private direct upload of an image after the order is created but requires two API calls. Alternatively, if the desired image is published on the internet, the initial call to ``/new`` can be giving the published image location, bypassing the need for this resource entirely. See more details in the description of the ``image`` resource, and alternate the ``img1=`` argument of the ``/new`` resource.
 |br|
 |br|
 (Optional) |br|
