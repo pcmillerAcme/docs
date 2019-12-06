@@ -13,7 +13,7 @@ After posting to the ``image`` resource, it is recommended to check the ``progre
 |br|
 Reminder: this ``image`` resource is one of two ways to create an animation with a custom image. The two patterns of order creation with custom images are:
  
-1. Ensure image is published on the web, make a call to the ``/new`` resource with an ``img1`` argument. 
+1. Ensure image is published on the web, make a call to the ``/new`` resource with the ``img1`` argument set to the web address of the published image.
 2. Create the order with a call to ``/new``, directly upload the image to the order after the order has been created.
 
 |br|
@@ -33,7 +33,7 @@ Example URL:
 Example return values:
 ::
     
-    (None, but <200> OK status codes)
+    (None, but <200> OK status code)
 
 See the SDK section of this documentation for detailed working examples of POSTing to the ``image`` resource.
 
