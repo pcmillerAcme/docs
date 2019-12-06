@@ -6,6 +6,8 @@
 image
 #####
 
+/orders/<order number>/image
+
 This resource is a Restul POST target for a remote client to upload an image to an existing order. After the image is receieved by api.acme.codes, the order is automatically refreshed and begins processing anew as if the order was just created. |br|
 |br|
 After posting to the ``image`` resource, it is recommended to check the ``progress`` resource iteratively for completion, since requests for mp4s immediately following a post to ``image`` will return `202 responses <https://restfulapi.net/http-status-202-accepted>`_  as the animation process takes time to complete.

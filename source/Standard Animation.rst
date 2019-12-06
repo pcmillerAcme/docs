@@ -12,22 +12,22 @@ Since ACME animation generation times can vary significantly based on animation 
 |br|
 |br|
 (Optional) |br|
-2.  image |br| After the initial order creation request is made, a follow up call may be made to upload an image to the specific order just created. The animation is automatically remade with the newly uploaded image. Note this optional call is one of two different ways to supply an image to a requested animation. This resource supports private direct upload of an image after the order is created but requires two API calls. Alternatively, if the desired image is published on the internet, the initial call to ``/new`` can be giving the published image location, bypassing the need for this resource entirely. See more details in the description of the ``image`` resource, and alternate the ``img1=`` argument of the ``/new`` resource.
+2. /orders/<order number>/image |br| After the initial order creation request is made, a follow up POST call may be made to upload an image to the specific order just created. The animation is automatically remade with the newly uploaded image. Note this optional call is one of two different ways to supply an image to a requested animation. This resource supports private direct upload of an image after the order is created but requires two API calls. Alternatively, if the desired image is published on the internet, the initial call to ``/new`` can be giving the published image location, bypassing the need for this resource entirely. See more details in the description of the ``image`` resource, and also the alternate ``img1=`` argument of the ``/new`` resource.
 |br|
 |br|
 (Optional) |br|
-3.  orders/#/progress |br| Iteratively GET the **server-side runtime information and order progress** of the animation generation by referencing the **Order Number**. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
+3. /orders/<order number>/progress |br| Iteratively GET the **server-side runtime information and order progress** of the animation generation by referencing the **Order Number**. This can be used to display a real time progress bar feedback window for the client. Then, when the server side progress is > 5%:
 |br|
 |br|
 (Optional) |br|
-4. orders/#/frames/1 |br| GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
+4. /orders/<order number>/frames/1 |br| GET the **first frame** (or any frame, with reasonable correlation to the known server-side progress) by referencing the **Order Number**. This can be used to provide accurate visual feedback to the client user of the product as it is being made. Then, when the server-side progress is = 100%:
 |br|
 |br|
 (Optional) |br|
-5. orders/#/mp4-file-info |br| GET the final product file size. This information can be used below.
+5. /orders/<order number>/mp4-file-info |br| GET the final product file size. This information can be used below.
 |br|
 |br|
-6. orders/#/mp4 |br| GET the final product (animation, 3d file, frames, etc.)
+6. /orders/<order number>/mp4 |br| GET the final product (animation, 3d file, frames, etc.)
 |br|
 |br|
 (Optional) |br|

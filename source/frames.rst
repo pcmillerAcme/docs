@@ -6,6 +6,8 @@
 frames
 ######
 
+/orders/<order number>/frames/<frame number>
+
 png
 """
 

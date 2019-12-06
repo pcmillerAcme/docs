@@ -6,6 +6,8 @@
 mp4
 ###
 
+/orders/<order number>/mp4
+
 `Mp4 <https://en.wikipedia.org/wiki/MPEG-4_Part_14>`_ files are the most common and popular ACME deliverable for completed animation files. Mp4 files are the best combination of small size and system display compatability  - though still not as widely compatible as gif files, which are almost universally displayable. Mp4 files also support much more precise timing during playback than gifs, and also can support embedded sound.
 
 mp4

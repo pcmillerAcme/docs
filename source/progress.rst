@@ -6,6 +6,8 @@
 progress
 ########
 
+/orders/<order number>/progress
+
 This resource returns a JSON-formatted response containing information key:value pairs about the specified order since the most recent edit.
 |br|
 |br|
