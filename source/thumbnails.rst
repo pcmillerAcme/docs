@@ -3,8 +3,10 @@
 
    <br />
 
-thumbnails/anim
-###############
+thumbnails
+##########
+
+``https://service.acme.codes/anims/<anim>/thumbnails/anim.*``
 
 This resource returns a thumbnail-sized animated gif or mp4 which can aid user's selection from a large animation list. **Note thumbnails are hosted out of the service.acme.codes domain, not api.acme.codes.** Example URL for gif:
 ::

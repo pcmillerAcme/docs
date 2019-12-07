@@ -6,7 +6,7 @@
 image
 #####
 
-/orders/<order number>/image
+``/orders/<order number>/image``
 
 This resource is a Restul POST target for a remote client to upload an image to an existing order. After the image is receieved by api.acme.codes, the order is automatically refreshed and begins processing anew as if the order was just created. |br|
 |br|

@@ -6,7 +6,7 @@
 fbx
 ###
 
-/orders/<order number>/fbx
+ ``/orders/<order number>/fbx``
 
 `FBX <https://en.wikipedia.org/wiki/FBX>`_ files are an industry standard file format for exchanging animated 3d files between 3d apps. This data is not rendered images, but rather the original 3d scene information. Since no rendering or encoding is necessary, this ACME product take very little time to complete within the request pipeline.
 

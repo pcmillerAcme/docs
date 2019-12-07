@@ -6,7 +6,7 @@
 frames
 ######
 
-/orders/<order number>/frames/<frame number>
+``/orders/<order number>/frames/<frame number>``
 
 png
 """

@@ -6,6 +6,8 @@
 version
 #######
 
+``version``
+
 This resource returns a JSON-formatted response containing software build and date information about this service. 
 ::
 

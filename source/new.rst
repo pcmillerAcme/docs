@@ -6,6 +6,9 @@
 new
 ###
 
+``/new`` 
+
+
 ``/new`` starts the creation process of a new animated code and returns a response containing the **Order Number** to be used for all subsequent queries about (and certain limited updates to) the started animation. 
 
 
