@@ -15,8 +15,8 @@ After posting to the ``image`` resource, it is recommended to check the ``progre
 |br|
 Reminder: this ``image`` resource is one of two ways to create an animation with a custom image. The two patterns of animation creation with custom images are:
  
-1. Ensure the image is published on the web, make a call to the ``/new`` resource with the ``img1`` argument set to the web address of the published image.
-2. Create the order with a call to ``/new``, directly upload the image to the order after the order has been created.
+1. The "Don't use this ``image`` reousrce" way: First ensure the image is published on the web, then make a call to the ``/new`` resource with the ``img1`` argument set to the web address of the published image.
+2. The "Use this ``image`` resource" way: Create the order with a call to ``/new`` first, then directly upload the image to the order to this ``image`` resouce after the order has been created.
 
 |br|
 The advantage of the first pattern is that only one call to ``new`` must be made. The disadvantage of the first pattern is that the image must be published via http/https on the internet. 
@@ -37,5 +37,5 @@ Example return values:
     
     (None, but <200> OK status code)
 
-See the SDK section of this documentation for detailed working examples of POSTing to the ``image`` resource.
+See the SDK section of this documentation for detailed working examples of POSTing to the ``image`` resource. Note this is the only resource at api.acme.codes that requires a http/s POST; all other api calls can work through GETs. This makes most of the api easily explorable through a standard web browser.
 
