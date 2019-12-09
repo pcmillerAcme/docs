@@ -28,10 +28,10 @@ Acme Sequence
 -------------
 Here is the 'most ACME way' to do a multi-step request sequence to receive a standard (non-animated) code from api.acme.codes:
 
-1. /new?anim=staticCodeOnly&msg=Hello! |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
+1. ``/new?anim=staticCodeOnly&msg=Hello!`` |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
 |br|
 |br|
-2. orders/#/frames/1 |br| Request the static PNG file by http GET method referencing the **Order Number**. 
+2. ``/orders/#/frames/1`` |br| Request the static PNG file by http GET method referencing the **Order Number**. 
 
 For example, a requesting service could ask for code by:
 ::
