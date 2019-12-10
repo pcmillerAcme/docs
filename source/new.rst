@@ -31,7 +31,10 @@ Example return value:
 apiKey
 ------
 
-For users with temporary, "try-it-out" subscriptions (usually restricted to re-directed codes only), or semi-permanent, or permanent paid subscriptions wanting unlocked codes rather than the default free Locked Demonstration codes, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ must be subitted in this argument for all newly created codes. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
+First, it's important to remember that sending a value for the ``apiKey`` argument is optional; we do this so any developer can learn, experiment with, and integrate the API at any time. See the SDK section of this documentation for working examples to be used by anyone. Of course, if no ``apiKey`` argument is supplied, the service will watermark the custom portions of the animation and limit the embedded message to a demo page that proves the message can be put into the code by our API, but limits any practical use of the code.
+|br|
+|br|
+To generate animated codes without watermarking and without message demo wrapping, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ associated with a paid subscription to ACME.CODES must be subitted in this argument. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
 
 .. _anim:
 
