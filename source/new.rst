@@ -66,13 +66,20 @@ blocks
 One of ACME's most popular arguments for refining generated animations to preference. For any given animation, ``blocks=`` allows for arbitrary timing of the blocked portions of the animation. Each animation has default block timing; for example, the block timing of a code to image and back animation would be 2 seconds of the code, two seconds animating to the image, 2 second hold of the image, and finally 2 second animation back to the code. (Note: the last two seconds are so 'minus the last frame' in order to support smooth looping transitions.) ``blocks=`` allows for overriding of any animation's default block timing. |br| |br| So, say an animation is wanted that instead animates the code display for one second, then animates to the image in 5 seconds, then holds the image for 2 seconds, then animates back to the code in 3 seconds. With the block argument comma separated values representing the absolute times for blocks to start and stop, the needed argument would be ``blocks=0-1,1-6,6-8,8-11``. All values are in seconds, not frames. |br| |br| Float values fully supported: ``0-2.44,2.44-6`` is ok. |br| |br| It is important to note some animations have only one block (Spin for example), while others usually have 4, and still others have overlapping animation block times. Default block values are given with the ``/anims-json`` resource. ``blocks`` values are also subjected to the ``length`` argument. 
    
 
-.. _chromaKeys:
+.. _cdn:
 
-chromaKeys
-----------
+cdn
+---
 
-Certain animations support the notion of pixel tiles not being present for the portion of the animation where only the image is displayed. This field supports multiple chroma keys to be used. Default value is None. 
+For paying subscribers only, this argument flags the request for animation files to be automatically uploaded to our Cloud Service Provider. Default value is 0. When set to 1/True, generated animation product files will be uploaded to a dynamically determined subdirectory of https://cdn.api.acme.codes. See the CDN section of this documentation for more details. Note this argument must be accompanied with an apiKey associated with a CDN subscription account enabled by ACME.
 
+For example, a subscriber who as paid for CDN services can call:
+
+``https://api.acme.codes/new?cdn=1&apiKey=<yourApiKeyHere>&gif=0&fbx=0&msg=helloFromAcme``
+
+which will generate a response with the additional information of the location of where the published animation files will be available after ``progress`` is 100:
+
+``{"orderNumber": "1576574190_8Z0U000D", "cdnMp4": "https://cdn.api.acme.codes/2019/12/17/e4983b0f-3688-48c1-a49a-f9345a5fb703/AcmeCode_283150.mp4"}``
 
 .. _chromaRange:
 

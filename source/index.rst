@@ -46,6 +46,7 @@ Certain design and architectural features of this service are patented under `US
    Non-animated Codes
    animations
    SDK
+   CDN
    fbx
    frames
    gif
