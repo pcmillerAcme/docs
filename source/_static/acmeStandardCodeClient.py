@@ -1,5 +1,3 @@
-# Copyright (c) 2019,2020 Animated Codes Made Easy LLC
-#
 # https://en.wikipedia.org/wiki/MIT_License
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
