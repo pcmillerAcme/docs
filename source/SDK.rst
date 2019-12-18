@@ -85,7 +85,7 @@ Animated QR Code Creation - Web Page with CDN (Html & Javascript)
 acmeWebAnimationClientCDN.html |br|
 acmeWebAnimationClientCDN.js
 
-These files define a web page which dynamically queries api.acme.codes for an animation via chained xmlhttp calls. The final product is loaded from ACME's CDN network at cdn.api.acme.codes.
+These files define a web page which dynamically queries api.acme.codes for an animation via chained xmlhttp calls. The final product is loaded from ACME's Content Delivery Network at cdn.api.acme.codes. See the `CDN section of this documentation <https://acme.readthedocs.io/en/latest/CDN.html>`_ for more details.
 
 :download:`Download <./_static/acmeWebAnimationClientCDN.html>` or :ref:`read acmeWebAnimationClientCDN.html`
 |br|
