@@ -33,6 +33,8 @@ Since ACME animation generation times can vary significantly based on animation 
 (Optional) |br|
 7. Measure the local file size as it is streamed in from the above call and compare it to the known full file size. This comparison can be used to accurately provide visual progress bar(s) to the client regarding file transmission.
 
+(Optional) |br|
+8. If paying for ACME Content Delivery Network (CDN) subscription, use the URL supplied in the JSON response from step 1 which contains an absolute path to the hosted animation files. See the `CDN section <https://acme.readthedocs.io/en/latest/CDN.html>`_ of this documentation for details.
 
 Below are specific detailed examples of the above process.
 
@@ -126,3 +128,22 @@ Optionally, the client application can display the transmission progress of the 
 |br|
 |br|
 Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily, though generally always available for 48 hours after creation. They are automatically deleted over time. Please remember your harvest period for all files you create on api.acme.codes is limited.
+|br|
+|br|
+OR
+|br|
+|br|
+Optionally, if paying for ACME Content Delivery Network subscription, use the URL supplied in the JSON response from step 1 which contains an absolute path to the hosted animation files:
+
+::
+
+    {"orderNumber": "1576574190_8Z0U08JD", "cdnMp4": "https://cdn.api.acme.codes/2019/12/17/e4983b0f-3688-48c1-a49a-f92bda5fb703/AcmeCode_283150.mp4"}
+
+This location can then be embedded in any web page html with global high reliability and availability:
+
+::
+
+   <video loop autoplay muted src="https://cdn.api.acme.codes/2019/12/17/e4983b0f-3688-48c1-a49a-f92bda5fb703/AcmeCode_283150.mp4"></video> 
+
+
+See the `CDN section <https://acme.readthedocs.io/en/latest/CDN.html>`_ of this documentation for details.

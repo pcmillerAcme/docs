@@ -26,7 +26,9 @@ This documentation describes the ReST API call sequences for requesting an anima
 
 The API described in this documentation is available at `https://api.acme.codes <https://api.acme.codes>`_
 
-The example workflows described in this documentation will function for anyone; in particular non-animated codes can be generated without any payment (for free). However messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
+Our `Content Delivery Network (CDN) <https://en.wikipedia.org/wiki/Content_delivery_network>`_ subdomain is `https://cdn.api.acme.codes <https://cdn.api.acme.codes>`_ and our current global cloud provider is `Microsoft Azure <https://azure.microsoft.com>`_. Support for using ACME's `CDN <https://acme.readthedocs.io/en/latest/CDN.html>`_ is limited to paying subscribers.
+
+The example workflows described in this documentation will function for anyone without payment; in particular non-animated codes can be generated without any payment (for free). However messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 

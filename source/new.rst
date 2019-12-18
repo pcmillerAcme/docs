@@ -71,7 +71,7 @@ One of ACME's most popular arguments for refining generated animations to prefer
 cdn
 ---
 
-For paying subscribers only, this argument flags the request for animation files to be automatically uploaded to our Cloud Service Provider. Default value is 0. When set to 1/True, generated animation product files will be uploaded to a dynamically determined subdirectory of https://cdn.api.acme.codes. See the CDN section of this documentation for more details. Note this argument must be accompanied with an apiKey associated with a CDN subscription account enabled by ACME.
+For paying subscribers only, this argument flags the request for animation files to be automatically uploaded to our Cloud Service Provider. Default value is 0. When set to 1/True, generated animation product files will be uploaded to a dynamically determined subdirectory of https://cdn.api.acme.codes. See the `CDN section <https://acme.readthedocs.io/en/latest/CDN.html>`_ of this documentation for more details. Note this argument must be accompanied with an apiKey associated with a CDN subscription account enabled by ACME.
 
 For example, a subscriber who as paid for CDN services can call:
 

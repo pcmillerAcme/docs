@@ -18,7 +18,7 @@ Subscribers wanting to keep their animation files must do at least one of two th
 
 1. Download and manage their files as they wish as they are created; older content in the ``/orders`` resource is scrubbed daily for storage re-use. ACME only supports content availability in ``/orders`` for 3 days after creation.
 
-2. Optionally, ACME customers can pay ACME additionally for CDN subscription. ACME provides for automated uploading of generated content to our CDN provider. See the CDN section of this documentaion for details.
+2. Optionally, ACME customers can pay ACME additionally for CDN subscription. ACME provides for automated uploading of generated content to our CDN provider. See the `CDN section <https://acme.readthedocs.io/en/latest/CDN.html>`_ of this documentaion for details.
 
 Example URLs:
 ::

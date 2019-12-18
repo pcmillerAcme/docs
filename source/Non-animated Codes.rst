@@ -64,5 +64,3 @@ By setting *both* ``anim=staticCodeOnly`` and ``format=png``, api.acme.codes wil
 
     GET: https://api.acme.codes/new?msg=Hi!&anim=staticCodeOnly&format=png
 
-
-Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily, though generally always available for 48 hours after creation. They are automatically deleted over time. Please remember your harvest period is limited for all files you create on api.acme.codes.
