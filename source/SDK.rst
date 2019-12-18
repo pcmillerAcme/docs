@@ -15,6 +15,8 @@ Here are working examples of client-side software running remotely and accessing
 |br|
 :ref:`Animated QR Code Creation - Web Page (Html & Javascript)`
 |br|
+:ref:`Animated QR Code Creation - Web Page with CDN (Html & Javascript)`
+|br|
 :ref:`Animated QR Code Creation with Image Upload - Python`
 |br|
 :ref:`Animated QR Code Creation with Image Upload - Web Page (Html & Javascript)`
@@ -74,6 +76,27 @@ or `click here <./_static/acmeWebAnimationClient.html>`_ to load and run the pag
 |br|
 |br|
 |br|
+
+.. _Animated QR Code Creation - Web Page with CDN (Html & Javascript):
+
+Animated QR Code Creation - Web Page with CDN (Html & Javascript)
+-----------------------------------------------------------------
+
+acmeWebAnimationClientCDN.html |br|
+acmeWebAnimationClientCDN.js
+
+These files define a web page which dynamically queries api.acme.codes for an animation via chained xmlhttp calls. The final product is loaded from ACME's CDN network at cdn.api.acme.codes.
+
+:download:`Download <./_static/acmeWebAnimationClientCDN.html>` or :ref:`read acmeWebAnimationClientCDN.html`
+|br|
+:download:`Download <./_static/acmeWebAnimationClientCDN.js>` or :ref:`read acmeWebAnimationClientCDN.js`
+|br|
+|br|
+or `click here to load and run the CDN demo page <./_static/acmeWebAnimationClientCDN.html>`_ in your browser now.
+|br|
+|br|
+|br|
+
 
 .. _Animated QR Code Creation with Image Upload - Python:
 
@@ -289,6 +312,54 @@ read acmeWebAnimationClient.html
 |br|
 |br|
 
+.. _read acmeWebAnimationClientCDN.html:
+
+read acmeWebAnimationClientCDN.html
+-----------------------------------
+
+::
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="acmeWebAnimationClientCDN.js"></script>
+    <style>
+        body, table {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>ACME SDK<br>Api Demo Web Page for CDN</h1>
+        <br>
+        This page will automatically load a dynamically created animated QR code
+        from the API at api.acme.codes.<br><br>
+        <b>Note this example shows how to load the animation file hosted on ACME's CDN network.</b><br><br>
+        Reload to restart.<br>
+        <br>
+        <br>
+        The order number is: <b id="orderNumber">--</b>
+        <br>
+        Animation Progress: <b id="orderProgress"></b><br>
+        Animation Stage: <b id="orderStage"></b><br><br>
+        <table>
+            <tr>
+                <td>
+                <video id="mp4Animation"muted autoplay loop src="">
+                </td>
+            </tr>
+        </table>
+    </body>
+    </html>
+    
+|br|
+|br|
+|br|
+
+
 .. _read acmeWebAnimationClient.js:
 
 read acmeWebAnimationClient.js
@@ -396,6 +467,114 @@ read acmeWebAnimationClient.js
 |br|
 |br|
 |br|
+
+.. _read acmeWebAnimationClientCDN.js:
+
+read acmeWebAnimationClientCDN.js
+---------------------------------
+
+::
+
+    let orderRequestJson = null;
+
+    function getQrCode()
+    {
+    submitAnimationRequest();
+    }
+
+    function submitAnimationRequest()
+    {
+    // Send request for new animation
+    // and retrieve order number response
+    let orderRequest = getAbstractedXmlObj();
+
+    orderRequest.tgtUrl = (
+        'https://api.acme.codes/new?msg=AcmeSDKJsApiCDNExample&' +
+        '&anim=Spin' + // Spin is a fast demo
+        '&xres=450' +  // higher than default resolution
+        '&yres=450' +  // higher than default resolution
+        '&gif=0' +     // gif creation is slow
+        '&fbx=0' +     // fbx not needed for demo
+        '&mp4=1'  +    // mp4 is fastest / best
+        '&cdn=1' +     // Request CDN delivery
+        '&apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  // CDN requests requires an apiKey.
+        // Note the above api key is ACME's locked test apiKey, but with CDN permissions
+        );
+
+    orderRequest.onreadystatechange = function()
+        {
+        if (orderRequest.readyState === 4 && orderRequest.status === 200)
+            {
+            orderRequestJson = JSON.parse(orderRequest.responseText);
+            document.getElementById('orderNumber').innerHTML =
+                orderRequestJson.orderNumber;
+            queryAndUpdateProgress();
+            }
+        };
+    orderRequest.open('GET', orderRequest.tgtUrl);
+    orderRequest.send();
+    }
+
+    function queryAndUpdateProgress()
+    // Update progress until 100%
+    {
+    let progressRequest = getAbstractedXmlObj();
+    progressRequest.tgtUrl = (
+        'https://api.acme.codes/orders/' +
+        document.getElementById('orderNumber').innerHTML +
+        '/progress');
+    progressRequest.onreadystatechange = function()
+        {
+        if (progressRequest.readyState === 4 && progressRequest.status === 200)
+            {
+            let orderProgressJson = JSON.parse(progressRequest.responseText);
+            document.getElementById('orderProgress').innerHTML =
+                orderProgressJson.progress + "%";
+            document.getElementById('orderStage').innerHTML =
+                orderProgressJson.stage;
+            if (orderProgressJson.progress === 100)
+                {
+                retrieveMp4Animation();
+                }
+            else
+                {
+                // update every 3 seconds
+                setTimeout(queryAndUpdateProgress, 3000);
+                }
+            }
+        };
+    progressRequest.open('GET', progressRequest.tgtUrl);
+    progressRequest.send();
+    }
+
+    function retrieveMp4Animation()
+    {
+    mp4Animation = document.getElementById("mp4Animation");
+    mp4Animation.setAttribute("src", orderRequestJson.cdnMp4)
+    }
+
+    document.addEventListener('DOMContentLoaded',
+                              function(event)
+                                {
+                                // Trigger auto-updating of animated qr code
+                                getQrCode();
+                                }
+                              );
+
+    function getAbstractedXmlObj()
+        {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+            {xmlhttp = new XMLHttpRequest();}
+        else
+            {xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');}
+        return xmlhttp;
+        }
+
+|br|
+|br|
+|br|
+
 
 .. _read acmeStandardCodeClient.py:
 
