@@ -29,7 +29,7 @@ ACME's CDN hosting is a separate additional offering from the standard ACME work
 |br|
 2. Optionally, ACME subscribers can pay for additional services for automated publication of animations to our CDN. This support is essentially permanent global hosting of animations, so long as the subscription is active. 
 
-See documentation on the `cdn flag in the /new resource <https://acme.readthedocs.io/en/latest/new.html#cdn>`_ on how to implement automated animation product publication on cdn.api.acme.codes.
+See documentation on the `cdn flag in the /new resource <https://acme.readthedocs.io/en/latest/new.html#cdn>`_ on how to implement automated animation product publication on our CDN.
 
 Please email sales@acme.codes for details on rates and sign up for CDN subscription.
 
