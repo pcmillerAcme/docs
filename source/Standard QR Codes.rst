@@ -3,17 +3,18 @@
 
    <br />
 
-Non-animated Codes
-##################
+Standard QR Codes
+#################
 
-Sometimes folks want to use ACME's API to generate standard QR codes that are not animated. Why? Several features such as color control, transparency, stenciling, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) code generation services.
+Sometimes folks want to use ACME's API to generate standard QR codes that are not animated. Why? Several features such as color control, tile shape, transparency, stenciling, anti-aliasing, rotation, and resolution are more controllable than other online standard (non-animated) QR code generation services.
 
 Also, standard QR Codes are free.
 
 (Within reasonable request volume limitations)
 
-To clarify: Though encoded messages are wrapped in free use demo mode *for animations*, static (non-animated) code embedded messages are not wrapped, and have the direct original message embedded in the code. In other words, animated QR codes are paywalled, while standard, non-animated, QR codes are completely free and without message wrapping.
+To clarify: Though encoded messages are wrapped in free use demo mode *for animations*, standard QR code embedded messages are not wrapped, and have the direct original message embedded in the code. In other words, animated QR codes are paywalled, while standard, non-animated, QR codes are completely free and without message wrapping.
 
+Click `here <./new.html>`_ to see all the options for QR code generation, in particular people like to use the `pixelType <./new.html#pixeltype>`_ argument to customize the code tile shapes of standard QR Codes.
 
 There are two methods to getting free standard QR codes form ACME's API:
 
@@ -31,7 +32,7 @@ Here is the 'most ACME way' to do a multi-step request sequence to receive a sta
 1. ``/new?anim=staticCodeOnly&msg=Hello!`` |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
 |br|
 |br|
-2. ``/orders/#/frames/1`` |br| Request the static PNG file by http GET method referencing the **Order Number**. 
+2. ``/orders/#/frames/1`` |br| Request the standard PNG file by http GET method referencing the **Order Number**. 
 
 For example, a requesting service could ask for code by:
 ::
@@ -43,7 +44,7 @@ ACME service would return JSON:
 
     {"orderNumber": "1444720642_NLGEDCVP"}
     
-Now, almost immediately, the client can retrieve a static non-animated PNG file:
+Now, almost immediately, the client can retrieve a standard PNG file:
 ::
 
     GET: https://api.acme.codes/orders/1444720642_NLGEDCVP/frames/1

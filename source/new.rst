@@ -265,6 +265,20 @@ pixelColor
 The color of the base code tiles in hex. Default = ``'000000'`` (Black). Multiple hex color values can be supplied separated by commas for multi color options. Red pixel example: ``https://api.acme.codes/new?pixelColor=FF0000``
 
 
+
+.. _pixelType:
+
+pixelType
+---------
+
+Shape of the pixels (or "tiles") to use in QR codes. Valid set: ['square', 'circle'] Default = square. ``https://api.acme.codes/new?pixelType=circle&xres=400&yres=400``
+
+Result:
+
+.. image:: ./_static/ACME_Circle.png
+
+
+
 .. _random_seed:
 
 random_seed
@@ -287,14 +301,6 @@ stencil
 -------
 
 Stencil option; rather than create a positive pattern of dark tiles on a **white background** to form the code, create the negative pattern of white tiles against a **transparent background** to form the code (complete with white border frame), `like a stencil <https://en.wikipedia.org/wiki/Stencil>`_ . This allows for a client to use the resulting animation as an overlay to a custom darker image, animation, or video. |br| |br| Care must be taken to ensure the code is still scannable in these conditions; since final scannability is only determinable on the client side, scannability with this option is fully the responsibility of the client. Also, unless and until the stencil version of the animated code is actually on top of a dark background, the initial delivery will be functionally invisible when viewed against the white default of browser backgrounds. Default = false |br| Example: ``https://api.acme.codes/new?stencil=true``
-
-
-.. _tileShape:
-
-tileShape
----------
-
-Shape of the tiles to use in QR codes. Valid set: ['square', 'circle'] Default = square. ``https://api.acme.codes/new?tileShape=circle&xres=400&yres=400``
 
 
 .. _transparentBackground:

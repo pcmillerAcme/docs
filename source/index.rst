@@ -45,7 +45,7 @@ Certain design and architectural features of this service are patented under `US
 
    Basic Animation
    Standard Animation
-   Non-animated Codes
+   Standard QR Codes
    animations
    SDK
    CDN

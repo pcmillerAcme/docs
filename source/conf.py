@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ACME api'
-copyright = '2019, Animated Code Made Easy LLC'
+copyright = '2017-2020, Animated Code Made Easy LLC'
 author = 'Peter C. Miller'
 
 # The short X.Y version
