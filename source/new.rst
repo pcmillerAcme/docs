@@ -58,6 +58,13 @@ bgpColor
 Background Plate Color. Background color. Default = '``FFFFFF``' (White). Multiple hex color values can be supplied separated by commas for multi color options. Green background example: ``https://api.acme.codes/new?bgpColor=00FF00``
 
 
+.. _bitRate:
+
+bitRate
+-------
+
+Bitrate argument for encoding mp4 files. Defines the target bitrate for the mp4 streaming encoder. Default is 300. The higher this number, the higher the quality of the delivered mp4 file, as well as the larger the mp4 file size. Example to create a higher than normal fidelity mp4 file: ``https://api.acme.codes/new?bitRate=1200``
+
 .. _blocks:
 
 blocks
