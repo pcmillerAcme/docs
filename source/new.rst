@@ -63,7 +63,7 @@ Background Plate Color. Background color. Default = '``FFFFFF``' (White). Multip
 bitRate
 -------
 
-Bitrate argument for encoding mp4 files. Defines the target bitrate for the mp4 streaming encoder. Default is 300. The higher this number, the higher the quality of the delivered mp4 file, as well as the larger the mp4 file size. Example to create a higher than normal fidelity mp4 file: ``https://api.acme.codes/new?bitRate=1200``
+Bitrate argument for encoding mp4 files. Defines the target bitrate for the mp4 streaming encoder. Default is 0; when set to 0, allows the mp4 encoder to adjust the bitrate as can be best for the animation. When explicitly set, the higher this number, the higher the quality of the delivered mp4 file, as well as the larger the mp4 file size. Example to create a higher than normal fidelity mp4 file: ``https://api.acme.codes/new?bitRate=1200``
 
 .. _blocks:
 
