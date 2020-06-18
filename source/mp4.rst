@@ -13,7 +13,7 @@ mp4
 mp4
 """
 
-This resource returns the complete animated mp4 binary stream. Other than individual rendered frames, mp4 is the most quickly completed format of the animation formats provided by ACME. After frames are created, mp4 files are usually generated in less than a second. Still, it is always recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100, then request the mp4 file. Example URL:
+This standard mp4 resource returns the complete animated mp4 binary stream. Other than individual rendered frames, mp4 is the most quickly completed format of the animation formats provided by ACME. After frames are created, mp4 files are usually generated in less than a second. Still, it is always recommended to query orders/**[OrderNumber]**/progress resource first, and after progress has reached a value of 100, then request the mp4 file. Example URL:
 ::
 
     https://api.acme.codes/orders/1444979323_ODFAUQSE/mp4
@@ -46,5 +46,13 @@ Example return value:
 ::
 
     {"fileSize":  114656}
+
+anim.mp4
+""""""""
+
+This alternative mp4 resource returns the mp4 of an animation order via a static web hosting directory. This is provided for certain browsers which can be extremely particular about the data structures of streamed media data, and as a result the standard /mp4 resource above will not load on these browsers. Using this anim.mp4 resource instead serves as a workaround for users wanting more broad browser support. One result of this file based support however is a much shorter provided download time from ACME; anim.mp4 files are deleted from availability within 3 hours. Since all users are expected to attain their mp4s upon animation completion, this short time window is not known to be a problem, and again the standard mp4 resource is available for much longer. Example URL:
+::
+
+    https://api.acme.codes/orders/1444979323_ODFAUQSE/anim.mp4
 
     
