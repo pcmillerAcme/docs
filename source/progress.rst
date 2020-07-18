@@ -31,6 +31,10 @@ This resource returns a JSON-formatted response containing information key:value
 |br|
 |br|
 "queue": an integer of the count of unstarted orders currently in the request queue. If queue is non-zero, the system is at maximum capacity and progress speed will be delayed. If queue is non-zero, most front end client systems communicate this information to users to help assure them as to why processing is slower than usual.
+|br|
+|br|
+"mp4": This field is only present when "progress" is 100. It is an explicit URL to the specific name of the most recently generated mp4 file (including any recent order changes) for display or download.
+
 
 Example URL:
 ::
@@ -44,4 +48,4 @@ Example return values:
     {"queue": 0, "progress": 0, "stage": "Order Creation"}
     {"queue": 0, "progress": 15, "stage": "Animation"}
     {"queue": 0, "progress": 55, "stage": "Rendering"}
-    {"queue": 0, "progress": 100, "stage": "Order Complete"}    
+    {"queue": 0, "progress": 100, "stage": "Order Complete", "mp4", "https://api.acme.codes/orders/1595107770_1EGWU128/AcmeCode_441535.mp4"}    

@@ -37,7 +37,7 @@ ACME service would then return an animated requested file type. Depending on cre
 
 Note: An immediate resource GET request to an accurate order will initially result in a '202 Accepted' response, and not a '200 OK' return code because the service has not yet completed creating the file. This response page will contain a message clarifying the reason for the temporary inability to return the requested file.
 |br| |br|
-Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily, though generally always available for 48 hours after creation. Older ``/orders`` are automatically deleted over time. Please remember your harvest period for all files you create on api.acme.codes is limited.
+Important reminder: Make sure to copy your animations down and place them in your app or `CDN <https://en.wikipedia.org/wiki/Content_delivery_network>`_ or data storage soon after you create them. Do not put links of the animations you create on api.acme.codes in your apps or CDNs; they will soon be deleted. The animations are only available off of api.acme.codes temporarily; older ``/orders`` are automatically deleted over time. Please remember your harvest period for all files you create on api.acme.codes is limited.
 |br|
 |br|
 OR
