@@ -141,7 +141,11 @@ Api's ``/orders/#/image`` resource.
 :download:`Download <./_static/acmeWebAnimationClientImageUpload.js>` or :ref:`read acmeWebAnimationClientImageUpload.js`
 |br|
 |br|
-or click `here <https://api.acme.codes/sdkDemos/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now.
+
+<!-- or click `here <https://api.acme.codes/sdkDemos/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now. -->
+
+or `click here acmeWebAnimationClientImageUpload.html <./_static/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now.
+
 |br|
 |br|
 |br|
@@ -616,7 +620,6 @@ read acmeWebStandardCodeClient.html
     <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="acmeWebStandardCodeClient.js"></script>
     <style>
         body, table {
         text-align: center;

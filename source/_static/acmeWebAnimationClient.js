@@ -70,7 +70,7 @@ progressRequest.onreadystatechange = function()
             orderProgressJson.stage;
         if (orderProgressJson.progress === 100)
             {
-            retrieveMp4Animation();
+            retrieveMp4Animation(orderProgressJson.mp4);
             }
         else
             {
@@ -83,16 +83,10 @@ progressRequest.open('GET', progressRequest.tgtUrl);
 progressRequest.send();
 }
 
-function retrieveMp4Animation()
+function retrieveMp4Animation(mp4Url)
 {
 mp4Animation = document.getElementById("mp4Animation");
-mp4Animation.setAttribute(
-    "src",
-    ("https://api.acme.codes/orders/" +
-    document.getElementById('orderNumber').innerHTML +
-    "/mp4"
-    )
-    )
+mp4Animation.setAttribute("src", mp4Url)
 }
 
 document.addEventListener('DOMContentLoaded',
