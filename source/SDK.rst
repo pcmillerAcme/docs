@@ -250,11 +250,7 @@ read acmeAnimationClient.py
     print(str(progress_info['progress']) + '% complete')
     
     # Grab the mp4 file and save it in current directory
-    mp4_url = ('https://api.acme.codes/orders/' +
-               new_order_data['orderNumber'] + 
-               '/mp4'
-               )
-    mp4_request = request_object.get(mp4_url)
+    mp4_request = request_object.get(progress_info['mp4'])
     drop_image_file = join(join(os.getcwd(), 'DemoMp4FromAcme.mp4'))
     print('Saving file to: ' + drop_image_file)
     with open(drop_image_file, 'wb') as file_handle:
@@ -415,7 +411,8 @@ read acmeWebAnimationClient.js
             {
             let orderProgressJson = JSON.parse(progressRequest.responseText);
             document.getElementById('orderProgress').innerHTML =
-                orderProgressJson.progress + "%";
+                orderProgressJson
+                progress_info['mp4'].progress + "%";
             document.getElementById('orderStage').innerHTML =
                 orderProgressJson.stage;
             if (orderProgressJson.progress === 100)
@@ -436,13 +433,7 @@ read acmeWebAnimationClient.js
     function retrieveMp4Animation()
     {
     mp4Animation = document.getElementById("mp4Animation");
-    mp4Animation.setAttribute(
-        "src",
-        ("https://api.acme.codes/orders/" +
-        document.getElementById('orderNumber').innerHTML +
-        "/mp4"
-        )
-        )
+    mp4Animation.setAttribute("src", orderProgressJson.mp4);
     }
 
     document.addEventListener('DOMContentLoaded',
@@ -730,11 +721,7 @@ read acmeAnimationClientImageUpload.py
     print(str(progress_info['progress']) + '% complete')
 
     # Grab the mp4 file and save it in current directory
-    mp4_url = (ACME_API_DOMAIN + '/orders/' +
-               new_order_data['orderNumber'] +
-               '/mp4'
-               )
-    mp4_request = request_object.get(mp4_url)
+    mp4_request = request_object.get(progress_info['mp4'])
     drop_image_file = join(join(os.getcwd(),
                                 'DemoAnimationWithCustomImage.mp4'))
     print('Saving file to: ' + drop_image_file)
@@ -882,13 +869,7 @@ read acmeWebAnimationClientImageUpload.js
     function retrieveMp4Animation()
     {
     mp4Animation = document.getElementById("mp4Animation");
-    mp4Animation.setAttribute(
-        "src",
-        ("https://api.acme.codes/orders/" +
-        document.getElementById('orderNumber').innerHTML +
-        "/mp4"
-        )
-        )
+    mp4Animation.setAttribute("src", orderProgressJson.mp4);
     }
 
     document.addEventListener('DOMContentLoaded',

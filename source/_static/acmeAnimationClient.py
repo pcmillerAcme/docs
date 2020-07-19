@@ -62,11 +62,7 @@ while percent_complete < 100:
 print(str(progress_info['progress']) + '% complete')
 
 # Grab the mp4 file and save it in current directory
-mp4_url = ('https://api.acme.codes/orders/' +
-           new_order_data['orderNumber'] +
-           '/mp4'
-           )
-mp4_request = request_object.get(mp4_url)
+mp4_request = request_object.get(progress_info['mp4'])
 drop_image_file = join(join(os.getcwd(), 'DemoMp4FromAcme.mp4'))
 print('Saving file to: ' + drop_image_file)
 with open(drop_image_file, 'wb') as file_handle:
