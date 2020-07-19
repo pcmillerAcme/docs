@@ -142,8 +142,6 @@ Api's ``/orders/#/image`` resource.
 |br|
 |br|
 
-<!-- or click `here <https://api.acme.codes/sdkDemos/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now. -->
-
 or `click here acmeWebAnimationClientImageUpload.html <./_static/acmeWebAnimationClientImageUpload.html>`_ to load and run the page in your browser now.
 
 |br|
