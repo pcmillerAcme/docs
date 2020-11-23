@@ -117,7 +117,7 @@ This controls the fraction of the framed code which fills the camera view. If se
 format
 ------
 
-The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. However, two other options exist: 'html' and 'png'. |br| |br| The 'html' option exists for people interatcing and learning about the ACME API with a browser, and will return an html web page containing a clickable link to the final order products. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts. |br| |br| Also, there is the 'png' format option, which directly returns a png file format **only if non-animated codes have been requested** with ``anim=staticCodeOnly``. See '`Non-animated Codes <https://acme.readthedocs.io/en/latest/Non-animated%20Codes.html>`_' for details.  |br| |br|  Examples: |br| |br| ``https://api.acme.codes/new?format=JSON`` (Default) |br| |br| ``https://api.acme.codes/new?format=html`` |br| |br| ``https://api.acme.codes/new?format=png&anim=staticCodeOnly``
+The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. However, two other options exist: 'html' and 'png'. |br| |br| The 'html' option exists for people interatcing and learning about the ACME API with a browser, and will return an html web page containing a clickable link to the final order products. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts. |br| |br| Also, there is the 'png' format option, which directly returns a png file format **only if non-animated codes have been requested** with ``anim=Still``. See '`Non-animated Codes <https://acme.readthedocs.io/en/latest/Non-animated%20Codes.html>`_' for details.  |br| |br|  Examples: |br| |br| ``https://api.acme.codes/new?format=JSON`` (Default) |br| |br| ``https://api.acme.codes/new?format=html`` |br| |br| ``https://api.acme.codes/new?format=png&anim=Still``
 
 
 .. _fps:
@@ -300,6 +300,14 @@ remoteIp
 --------
 
 Intermediary front-end web pages, apps, or automated API's can send (and are sometimes required to send) the IP address of the remote client through this argument. ``https://api.acme.codes/new?remoteIp=123.456.789.1``
+
+
+.. _startOnOrderCreation:
+
+startOnOrderCreation
+--------------------
+
+Default: True. Used with Image call upload sequence. If a user is going to upload a custom image, the first call to /new would have startOnOrderCreation=0, which delays the animation creation until after the custom image is uploaded.
 
 
 .. _stencil:

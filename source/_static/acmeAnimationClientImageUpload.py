@@ -34,7 +34,8 @@ new_anim_request_url = (
         '&mp4=1'
         '&xres=400'  # since you're a developer...
         '&yres=400'  # ...let's make the resolution better than default
-        '&anim=Spin'
+        '&anim=Spin'  # Simplest demo animation
+        '&startOnOrderCreation=0'  # Let's not start animation creation until after image is uploaded
 )
 
 # Send anim request, get order # in return
@@ -49,6 +50,7 @@ print('The new order number is: ' + new_order_data['orderNumber'])
 
 # Upload a local custom image to the server after order creation
 local_img_file = '/a/path/to/a/file/on/your/system/uploadMe.jpg'
+# local_img_file = 'C:\\Users\\Peter C. Miller\\Pictures\\PeterMillerAtDWA.JPG'
 
 image_upload_url = (ACME_API_DOMAIN +
                     '/orders/' +

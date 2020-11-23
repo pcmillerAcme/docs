@@ -585,7 +585,7 @@ read acmeStandardCodeClient.py
     code_request_url = (
         'https://api.acme.codes/new?msg=DemoMessage'  # Baseline request
         '&format=png'  # request standard image response
-        '&anim=staticCodeOnly'  # and no animation
+        '&anim=Still'  # and no animation
     )
 
     # Send code request, get png image file in return
@@ -636,7 +636,7 @@ read acmeWebStandardCodeClient.html
     <table>
     <tr>
     <td>
-    <img src="https://api.acme.codes/new?msg=AcmeSDKJsApiExample&anim=staticCodeOnly&format=png">
+    <img src="https://api.acme.codes/new?msg=AcmeSDKJsApiExample&anim=Still&format=png">
     </td>
     </tr>
     </table>

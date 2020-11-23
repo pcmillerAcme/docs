@@ -37,7 +37,8 @@ orderRequest.tgtUrl = (
     '&yres=450' +  // higher than default resolution
     '&gif=0' +     // gif creation is slow
     '&fbx=0' +     // fbx not needed for demo
-    '&mp4=1'       // mp4 is fastest / best
+    '&mp4=1' +     // mp4 is fastest / best
+    '&startOnOrderCreation=0'  // Don't start on creation, let image upload start animation
     );
 
 orderRequest.onreadystatechange = function()

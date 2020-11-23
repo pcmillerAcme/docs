@@ -29,7 +29,7 @@ Acme Sequence
 -------------
 Here is the 'most ACME way' to do a multi-step request sequence to receive a standard (non-animated) code from api.acme.codes:
 
-1. ``/new?anim=staticCodeOnly&msg=Hello!`` |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
+1. ``/new?anim=Still&msg=Hello!`` |br| Request an order number by http GET method /new and specify a non-animated product, and receive `JSON <https://en.wikipedia.org/wiki/JSON>`_ response from the ACME service containing an **Order Number** .
 |br|
 |br|
 2. ``/orders/#/frames/1`` |br| Request the standard PNG file by http GET method referencing the **Order Number**. 
@@ -37,7 +37,7 @@ Here is the 'most ACME way' to do a multi-step request sequence to receive a sta
 For example, a requesting service could ask for code by:
 ::
 
-    GET: https://api.acme.codes/new?msg=Hello&anim=staticCodeOnly
+    GET: https://api.acme.codes/new?msg=Hello&anim=Still
 
 ACME service would return JSON:
 ::
@@ -60,8 +60,8 @@ Note: An immediate resource GET request to an accurate order *might* initially r
 
 Single Call
 -----------
-By setting *both* ``anim=staticCodeOnly`` and ``format=png``, api.acme.codes will directly return a PNG file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ``sales@acme.codes`` if you require faster response times for standard QR code creation API calls, which are available. 
+By setting *both* ``anim=Still`` and ``format=png``, api.acme.codes will directly return a PNG file of a standard QR code. Note: Due to our high quality rendering pipeline, turnaround time varies and may require a few seconds before return. Contact ``sales@acme.codes`` if you require faster response times for standard QR code creation API calls, which are available.
 ::
 
-    GET: https://api.acme.codes/new?msg=Hi!&anim=staticCodeOnly&format=png
+    GET: https://api.acme.codes/new?msg=Hi!&anim=Still&format=png
 

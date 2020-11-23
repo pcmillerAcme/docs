@@ -26,7 +26,7 @@ request_object = requests.Session()
 code_request_url = (
     'https://api.acme.codes/new?msg=DemoMessage'  # Baseline request
     '&format=png'  # request standard image response
-    '&anim=staticCodeOnly'  # and no animation
+    '&anim=Still'  # and no animation
 )
 
 # Send code request, get png image file in return
