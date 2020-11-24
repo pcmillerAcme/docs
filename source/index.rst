@@ -24,7 +24,7 @@ If you are a software developer interested in using ACME's service, this documen
 
 This documentation describes the ReST API call sequences for requesting an animated code online. 
 
-The API described in this documentation is available at `https://api.acme.codes <https://api.acme.codes>`_
+The root domain of the API described here is `https://api.acme.codes <https://api.acme.codes>`_
 
 The example workflows described in this documentation will function for anyone without payment; in particular non-animated codes can be generated without any payment (for free). However messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
@@ -49,9 +49,7 @@ Certain design and architectural features of this service are patented under `US
    :maxdepth: 2
    :caption: Contents:
 
-   Basic Animation
-   Standard Animation
-   Standard QR Codes
+   Examples
    animations
    SDK
    CDN
