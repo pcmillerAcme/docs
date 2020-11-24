@@ -916,8 +916,8 @@ read acmeWebAnimationClientImageUpload.js
                 {
                 // Every thing ok, file uploaded, now
                 // clear mp4 field and other output fields and then...
-                animsRetrieved = false;
-                mp4Animation.src = '';
+                if (mp4Animation != null)
+                    {mp4Animation.src = '';}
                 // ...update progress and reload when done
                 queryAndUpdateProgress();
                 }
