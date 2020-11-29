@@ -672,7 +672,7 @@ read acmeAnimationClientImageUpload.py
             '&xres=400'  # since you're a developer...
             '&yres=400'  # ...let's make the resolution better than default
             '&anim=Spin'  # Simplest demo animation
-            '&startOnOrderCreation=0'  # Let's not start animation creation until after image is uploaded
+            '&createAnimation=0'  # Let's not start animation creation until after image is uploaded
     )
 
     # Send anim request, get order # in return
@@ -822,7 +822,7 @@ read acmeWebAnimationClientImageUpload.js
         '&gif=0' +     // gif creation is slow
         '&fbx=0' +     // fbx not needed for demo
         '&mp4=1' +     // mp4 is fastest / best
-        '&startOnOrderCreation=0'  // Don't start on creation, let image upload start animation
+        '&createAnimation=0'  // Don't start on creation, let image upload start animation
         );
 
     orderRequest.onreadystatechange = function()

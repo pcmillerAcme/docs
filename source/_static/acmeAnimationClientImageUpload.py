@@ -35,7 +35,7 @@ new_anim_request_url = (
         '&xres=400'  # since you're a developer...
         '&yres=400'  # ...let's make the resolution better than default
         '&anim=Spin'  # Simplest demo animation
-        '&startOnOrderCreation=0'  # Let's not start animation creation until after image is uploaded
+        '&createAnimation=0'  # Let's not start animation creation until after image is uploaded
 )
 
 # Send anim request, get order # in return

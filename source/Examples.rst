@@ -69,15 +69,15 @@ Custom Image
 Most users of ACME's API want custom images applied to their generated animations. Th workflow below shows how to do this.
 Also, since ACME animation generation times can vary significantly based on animation complexity (sub-second to > 2 minutes), this more standard transaction sequence described below provides more options to a client application.
 
-GET: ``/new?startOnOrderCreation=0`` |br|
+GET: ``/new?createAnimation=0`` |br|
 POST: ``/orders/<#>/image`` |br|
 GET: ``/orders/<#>/progress`` |br|
 GET: ``/orders/<#>/mp4`` |br|
 
 
-1. ``/new?startOnOrderCreation=0`` |br|
+1. ``/new?createAnimation=0`` |br|
 (Required for Custom Image Integration) |br|
-Create the new order but suppress animation creation with startOnOrderCreation=0. Animation will start after below image upload call.
+Create the new order but suppress animation creation with createAnimation=0. Animation will start after below image upload call.
 |br|
 |br|
 2. ``/orders/<order number>/image`` |br|
@@ -121,7 +121,7 @@ Below are specific detailed examples of the above process.
 1. New: For example, a client application could:
 ::
 
-    GET: https://api.acme.codes/new?startOnOrderCreation=0&msg=ReadingAcmeDocumentationIsFun!
+    GET: https://api.acme.codes/new?createAnimation=0&msg=ReadingAcmeDocumentationIsFun!
 
 ACME service would return JSON:
 ::

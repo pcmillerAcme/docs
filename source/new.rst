@@ -302,12 +302,12 @@ remoteIp
 Intermediary front-end web pages, apps, or automated API's can send (and are sometimes required to send) the IP address of the remote client through this argument. ``https://api.acme.codes/new?remoteIp=123.456.789.1``
 
 
-.. _startOnOrderCreation:
+.. _createAnimation:
 
-startOnOrderCreation
---------------------
+createAnimation
+---------------
 
-Default: True. Used with Image call upload sequence. If a user is going to upload a custom image, the first call to /new would have startOnOrderCreation=0, which delays the animation creation until after the custom image is uploaded.
+Default: True. Used with Image call upload sequence. If a user is going to upload a custom image, the first call to /new would have createAnimation=0, which delays the animation creation until after the custom image is uploaded.
 
 
 .. _stencil:
