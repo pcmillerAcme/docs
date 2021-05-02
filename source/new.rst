@@ -34,7 +34,7 @@ apiKey
 First, it's important to remember that sending a value for the ``apiKey`` argument is optional; we do this so any developer can learn, experiment with, and integrate the API at any time. See the SDK section of this documentation for working examples to be used by anyone. Of course, if no ``apiKey`` argument is supplied, the service will watermark the custom portions of the animation and limit the embedded message to a demo page that proves the message can be put into the code by our API, but limits any practical use of the code.
 |br|
 |br|
-To generate animated codes without watermarking and without message demo wrapping, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ associated with a paid subscription to ACME.CODES must be subitted in this argument. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
+To generate animated codes without watermarking and without message demo wrapping, a valid `API Key <https://en.wikipedia.org/wiki/Application_programming_interface_key>`_ associated with a paid subscription to ACME.CODES must be submitted in this argument. Contact sales@acme.codes to be given a temporary "try-it-out" API key or purchase a permanent API Key for completely unlocked codes.
 
 .. _anim:
 
@@ -109,7 +109,7 @@ Create fbx file. Default=True
 fitFactor
 ---------
 
-This controls the fraction of the framed code which fills the camera view. If set to a low values close to ``0``, the code will be very small in the frame, while if set to 1, the code will touch the borders. Note that some animations will alter the default fitFactor to ensure all of the animation is properly viewable, but explicit setting of fitFactor will override animation influences. Default is ``fitFactor=0.9``
+This controls the fraction of the framed code which fills the camera view. If set to a low values close to `` 0 `` , the code will be very small in the frame, while if set to 1, the code will touch the borders. Note that some animations will alter the default fitFactor to ensure all of the animation is properly viewable, but explicit setting of fitFactor will override animation influences. Default is ``fitFactor=0.9``
 
 
 .. _format:
@@ -117,7 +117,7 @@ This controls the fraction of the framed code which fills the camera view. If se
 format
 ------
 
-The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. However, two other options exist: 'html' and 'png'. |br| |br| The 'html' option exists for people interatcing and learning about the ACME API with a browser, and will return an html web page containing a clickable link to the final order products. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts. |br| |br| Also, there is the 'png' format option, which directly returns a png file format **only if non-animated codes have been requested** with ``anim=Still``. See '`Non-animated Codes <https://acme.readthedocs.io/en/latest/Non-animated%20Codes.html>`_' for details.  |br| |br|  Examples: |br| |br| ``https://api.acme.codes/new?format=JSON`` (Default) |br| |br| ``https://api.acme.codes/new?format=html`` |br| |br| ``https://api.acme.codes/new?format=png&anim=Still``
+The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. However, two other options exist: 'html' and 'png'. |br| |br| The 'html' option exists for people interacting and learning about the ACME API with a browser, and will return an html web page containing a clickable link to the final order products. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts. |br| |br| Also, there is the 'png' format option, which directly returns a png file format **only if non-animated codes have been requested** with ``anim=Still``. See '`Non-animated Codes <https://acme.readthedocs.io/en/latest/Non-animated%20Codes.html>`_' for details.  |br| |br|  Examples: |br| |br| ``https://api.acme.codes/new?format=JSON`` (Default) |br| |br| ``https://api.acme.codes/new?format=html`` |br| |br| ``https://api.acme.codes/new?format=png&anim=Still``
 
 
 .. _fps:
@@ -158,26 +158,44 @@ imageRotation
 -------------
 
 The rotation to be applied to a supplied image URL.
-Eample:
+Example:
 ``https://api.acme.codes/new?anim=Spin&img1=https://www.acme.ink/demos/acmecodes/tImg/img1.png&imageRotation=90``
+
+
+
+.. _imgScaleStill:
+
+imgScaleStill
+-------------
+
+If an image is given in a post call to create a standard non-animated QR code, this argument allows for arbitrary scaling
+of the image within the QR code. Note some mild image distortion might occur as the image dimensions must
+be forced to snap to borders of the QR code.
+Example:
+
+``https://api.acme.codes/new?anim=Still&format=png&imgScaleStill=0.4``
 
 
 .. _img1:
 
-img1
-----
+img1 or POSTED images
+---------------------
 
 The image URL to be applied within the animation, if supported by the selected animation. 
 
 Example:
 ``https://api.acme.codes/new?anim=Spin&img1=https://www.acme.ink/demos/acmecodes/tImg/img1.png``
 
-Overview: there are two ways to supply an image to an ACME animation:
+Overview: there are three ways to supply an image to an ACME animation.
 
-1. At initial order creation time, by supplying a URL to an image published on the internet via the ``img1=`` argument for the ``/new`` resource, an image can be inserted into an animation right from the start. The advantage here is the image goes in 'all at once' in *one* call. The disadvantage is the image must already exist over http/https and be published on the internet before the call to ``/new`` is made. 
+1. (Preferred) At initial order creation time, the binary image can be POSTed along with normal creation arguments. See SDK examples for working example web pages and/or code.
 |br|
 |br|
-2. Alternatively, a different call sequnce can be used. After the intial order has been created via a call to ``/new``, a POST of an image to the ``image`` resource will trigger the order animation to be refreshed after order upload is complete. The advantage is the image need never be published on the internet, while the disadvantage is that two seperate calls must be made to create the animation.
+
+2. At initial order creation time, by supplying a URL to an image published on the internet via the ``img1=`` argument for the ``/new`` resource, an image can be inserted into an animation right from the start. The advantage here is the image goes in 'all at once' in *one* call. The disadvantage is the image must already exist over http/https and be published on the internet before the call to ``/new`` is made.
+|br|
+|br|
+3. (DEPRECATED - This call sequence will be removed soon. Please use options 1 or 2 above.) Alternatively, the a different call sequence can be used. After the initial order has been created via a call to ``/new``, a POST of an image to the ``image`` resource will trigger the order animation to be refreshed after order upload is complete. The disadvantage is that two separate calls must be made to create the animation.
 
 Also important are the supported file formats of the provided images. The API supports a wide rang of industry standard file formats including PSD, GIF, JPEG, PNG, Targa, TIFF, XPM, ICO, SVG.
 
@@ -187,7 +205,7 @@ Also important are the supported file formats of the provided images. The API su
 length
 ======
 
-Length, in seconds, to constrain or expand the animation time length. So, if a default animation's time is 4 seconds, using ``length=2`` or ``length=10`` can be used to customize and shorten or extend the length of the animation. Length is applied on top of - but still respecing the relative values of - the ``blocks`` argument. Think of of the  ``length`` argument as stretching or shrinking any explicitly defined or default values of the block timing. Default value of ``length`` is specific to each animation, and can be derived from the last value of the default ``blocks`` value in ``/anims-json``.
+Length, in seconds, to constrain or expand the animation time length. So, if a default animation's time is 4 seconds, using ``length=2`` or ``length=10`` can be used to customize and shorten or extend the length of the animation. Length is applied on top of - but still respecting the relative values of - the ``blocks`` argument. Think of of the  ``length`` argument as stretching or shrinking any explicitly defined or default values of the block timing. Default value of ``length`` is specific to each animation, and can be derived from the last value of the default ``blocks`` value in ``/anims-json``.
 
 
 .. _mp4:
@@ -211,7 +229,7 @@ The message to be encoded into the code. Default = 'https://acme.codes' ``https:
 multiSampleEnable
 -----------------
 
-Also known in the industry as anti-aliasing, this setting improves the edge smoothness for high contrast borders that are at an angle. The 'jaggies', or staircase-like outline of simple renderings of angled edges are smoothed by sampling (measuring / calculating) multiple times the expected tonal within each pixel. Though this can slow down frame creation time, today's hardward GPU powered rendering (including ACME's default renderer), any slowdown is negligible per frame, but can add up to measurable amounts when multiplied over many frames to be rendered in an animation. Default is on.
+Also known in the industry as anti-aliasing, this setting improves the edge smoothness for high contrast borders that are at an angle. The 'jaggies', or staircase-like outline of simple renderings of angled edges are smoothed by sampling (measuring / calculating) multiple times the expected tonal within each pixel. Though this can slow down frame creation time, today's hardware GPU powered rendering (including ACME's default renderer), any slowdown is negligible per frame, but can add up to measurable amounts when multiplied over many frames to be rendered in an animation. Default is on.
 
 
 .. _multiSampleCount:
@@ -227,7 +245,7 @@ If ``multiSampleEnable`` is on, this setting controls the number of additional s
 motionBlurEnable
 ----------------
 
-Motion blur is one of the corenerstones of quality animations; if an object is moving quickly within a single frame, it needs to look blurry with the motion as would be expected by any image capturing device. Without motion blur, animations or video have an unnatural 'crisp', or 'sharp' feel. And, like most quality improving features, slows down creation time substantially. Some cusomters prefer the crisp feel, so this setting allows for control of motion blur. Default is ``motionBlurEnable=True``, though some animations default to disabling it without an explicit override.
+Motion blur is one of the corner stones of quality animations; if an object is moving quickly within a single frame, it needs to look blurry with the motion as would be expected by any image capturing device. Without motion blur, animations or video have an unnatural 'crisp', or 'sharp' feel. And, like most quality improving features, slows down creation time substantially. Some customers prefer the crisp feel, so this setting allows for control of motion blur. Default is ``motionBlurEnable=True``, though some animations default to disabling it without an explicit override.
 
 
 .. _motionBlurSampleCount:

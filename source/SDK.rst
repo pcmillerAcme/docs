@@ -25,6 +25,10 @@ Here are working examples of client-side software running remotely and accessing
 |br|
 :ref:`Standard QR Code Retrieval - Web Page Html`
 |br|
+:ref:`Standard QR Code Retrieval with Image - Python`
+|br|
+:ref:`Standard QR Code Retrieval with Image - Web Page Html`
+|br|
 |br|
 |br|
 |br|
@@ -194,7 +198,53 @@ or `click here acmeWebStandardCodeClient.html <./_static/acmeWebStandardCodeClie
 
 |br|
 |br|
+
+.. _Standard QR Code Retrieval with Image - Python:
+
+Standard QR Code Retrieval with Image - Python
+----------------------------------------------
+
+acmeWebStandardCodeWithImageClient.py
+
+This Python script does a direct retrieval of a standard (non-animated) QR code from api.acme.codes.
+This codes demonstrates the option of uploading an image to be placed in the middle of the code.
+Please note that usage of this resource does not require any Api key and is free of charge within certain volume limitations. ACME reserves
+the right to suppress or deny service to users utilizing high usage volumes (~10-20 per hour) without payment.
+Paid for subscriptions have much higher volume limits.
+
+:download:`Download <./_static/acmeStandardCodeWithImageClient.py>` or :ref:`read acmeStandardCodeWithImageClient.py`
+
 |br|
+|br|
+|br|
+|br|
+
+.. _Standard QR Code Retrieval with Image - Web Page Html:
+
+Standard QR Code Retrieval with Image - Web Page Html
+-----------------------------------------------------
+
+acmeWebStandardCodeWithImageClient.html
+
+This simple Html file simply defines an image on the page that uses a remote resource on api.acme.codes that
+triggers a QR code to made dynamically.
+The feature of putting in an image in the middle of the code is demonstrated.
+
+Note that because only a single image file in png format is requested, the turnaround time is quite sort, and
+can be handled within the scope of normal internet service calls. This is unlike requesting animations, which exceed
+the timeline of standard web service calls; api requests for animations must first query for progress completion before the final
+animated files are retrieved.
+
+Obviously this is not the recommended approach to using the api.acme.codes, since the QR code image file
+is being made from scratch each time the page is viewed. Since ACME should never be considered as a Content Delivery Network (CDN),
+the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server.
+However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
+
+:download:`Download <./_static/acmeWebStandardCodeWithImageClient.html>` or :ref:`read acmeWebStandardCodeWithImageClient.html`
+|br|
+|br|
+or `click here acmeWebStandardCodeWithImageClient.html <./_static/acmeWebStandardCodeWithImageClient.html>`_ to load and run the page in your browser now.
+
 |br|
 |br|
 |br|
@@ -602,6 +652,57 @@ read acmeStandardCodeClient.py
         for chunk in code_request_response.iter_content(4096):
             file_handle.write(chunk)
     print('Done.')
+
+|br|
+|br|
+|br|
+
+.. _read acmeStandardCodeWithImageClient.py:
+
+read acmeStandardCodeWithImageClient.py
+------------------------------
+
+::
+
+    import os
+    import requests
+    from os.path import join
+
+    # Setup Request for animation
+    request_object = requests.Session()
+    code_request_url = (
+        'https://api.acme.codes/new?msg=ThisDemonstratesImageQRCode' +
+        '&anim=Still' +
+        '&format=png' +
+        '&xres=800' +
+        '&yres=800'
+        # imgScaleStill below can be used to scale img, but with increasing
+        # risk to scanability.
+        # Image will be scaled, but also 'snapped to' the tile borders of the code.
+        # See documentation.
+        # '&imgScaleStill=0.33',
+    )
+
+    with open('C:\\Users\\YourFileOnYourComputer.png', 'rb') as fh:
+        r = requests.post(
+            url=code_request_url,
+            files={'ufile': fh}
+        )
+
+        if r.status_code != 200:
+            print('Problem with api call: ' + code_request_url)
+            print(r.text)
+            import sys
+            sys.exit()
+
+    # Save the png file in current directory
+    drop_image_file = join(join(os.getcwd(), 'DemoPngWithImageFromAcme.png'))
+    print('Saving file to: ' + drop_image_file)
+    with open(drop_image_file, 'wb') as file_handle:
+        for chunk in r.iter_content(4096):
+            file_handle.write(chunk)
+    print('Done.')
+
 
 |br|
 |br|
