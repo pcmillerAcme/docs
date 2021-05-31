@@ -3,8 +3,8 @@
 
    <br />
 
-version
-#######
+/version
+########
 
 ``version``
 

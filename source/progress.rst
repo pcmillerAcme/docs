@@ -3,8 +3,8 @@
 
    <br />
 
-progress
-########
+/progress
+#########
 
 ``/orders/<order number>/progress``
 

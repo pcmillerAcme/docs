@@ -19,22 +19,15 @@
 
 function getQrCode()
 {
-submitAnimationRequest();
-}
-
-function submitAnimationRequest()
-{
 // Send request for new animation
 // and retrieve order number response
 let orderRequest = getAbstractedXmlObj();
 orderRequest.tgtUrl = (
-    'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
+    'https://api.acme.codes/new?' +  // Ask for a new animation
+    'msg=AcmeSDKJsApiExample&' +  // Set the message to be embedded into the QR code
     '&anim=Spin' + // Spin is a fast demo
     '&xres=450' +  // higher than default resolution
-    '&yres=450' +  // higher than default resolution
-    '&gif=0' +     // gif creation is slow
-    '&fbx=0' +     // fbx not needed for demo
-    '&mp4=1'       // mp4 is fastest / best
+    '&yres=450'    // higher than default resolution
     );
 
 orderRequest.onreadystatechange = function()
@@ -44,6 +37,8 @@ orderRequest.onreadystatechange = function()
         let orderRequestJson = JSON.parse(orderRequest.responseText);
         document.getElementById('orderNumber').innerHTML =
             orderRequestJson.orderNumber;
+        document.getElementById('mp4File').innerHTML =
+            orderRequestJson.mp4;
         queryAndUpdateProgress();
         }
     };
@@ -70,7 +65,7 @@ progressRequest.onreadystatechange = function()
             orderProgressJson.stage;
         if (orderProgressJson.progress === 100)
             {
-            retrieveMp4Animation(orderProgressJson.mp4);
+            retrieveMp4Animation();
             }
         else
             {
@@ -86,7 +81,8 @@ progressRequest.send();
 function retrieveMp4Animation(mp4Url)
 {
 mp4Animation = document.getElementById("mp4Animation");
-mp4Animation.setAttribute("src", mp4Url)
+mp4Animation.setAttribute("src",
+                          document.getElementById('mp4File').innerHTML)
 }
 
 document.addEventListener('DOMContentLoaded',

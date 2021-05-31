@@ -35,22 +35,25 @@
 <body>
     <h1>ACME SDK<br>Api Demo Web Page<br>with Image Upload</h1>
     <br>
-    This page will automatically create a new order for an animated QR code
-    from the API at api.acme.codes.<br>
+    This page will create an animated QR code with a supplied custom image.
     <br>
-    In addition, buttons tied to xmlhttp objects add support for a local custom image file to be specified and then uploaded.<br>
+    The animation can be created by clicking the create button.<br>
     <br>
-    After the image has been uploaded, the animation will be started.<br>
+    If a custom image is specified, it will be uploaded and integrated to the created animation.<br>
     <br>
-    After progress is complete, the image will be displayed below.<br>
+    If no custom image is specified, the default ACME demonstration logo will be used.<br>
     <br>
-    Reload to restart with a fresh new order.<br>
+    After progress is complete, the animation will be displayed below.<br>
     <br>
     <br>
-    The order number is: <b id="orderNumber">--</b><br>
+    The order number is:<br><b id="orderNumber">--</b><br>
+    <br>
+    <br>
+    The temporary mp4 file will be:<br><b id="mp4File">--</b><br>
+    <br>
     <br>
     <input type="file" id="acmeUploadFile" />
-    <button type="button" onclick="uploadImageWrapper()">Upload Image</button><br>
+    <button type="button" onclick="getQrCode()">Create Animated Code</button><br>
     <br>
     Animation Progress: <b id="orderProgress"></b><br>
     <br>

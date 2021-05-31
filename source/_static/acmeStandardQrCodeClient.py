@@ -17,16 +17,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import os
+import re
 import requests
+import tempfile
 from os.path import join
 
 # Setup Request for animation
 request_object = requests.Session()
 code_request_url = (
-    'https://api.acme.codes/new?msg=DemoMessage'  # Baseline request
-    '&format=png'  # request standard image response
+    'https://api.acme.codes/new?'  # Creation endpoint
+    'msg=fromDocumentationAcmeStandardQrCodeClient.py'  # Message to embed into the QR code
+    '&format=png'  # Request return format of image png file
     '&anim=Still'  # and no animation
+    '&xres=400&'   # Slightly better resolution than default
+    '&yres=400'   # Slightly better resolution than default
 )
 
 # Send code request, get png image file in return
@@ -36,8 +40,10 @@ if code_request_response.status_code != 200:
     import sys
     sys.exit()
 
-# Save the png file in current directory
-drop_image_file = join(join(os.getcwd(), 'DemoPngFromAcme.png'))
+# Save the png file locally
+d = code_request_response.headers['content-disposition']
+filename = re.findall("filename=\"(.+)\"", d)[0]
+drop_image_file = join(tempfile.gettempdir(), filename)
 print('Saving file to: ' + drop_image_file)
 with open(drop_image_file, 'wb') as file_handle:
     for chunk in code_request_response.iter_content(4096):

@@ -21,85 +21,87 @@ let orderRequestJson = null;
 let mp4Animation = null;
 
 function getQrCode()
-{
-submitAnimationRequest();
-}
-
-function submitAnimationRequest()
-{
-// Send request for new animation
-// and retrieve order number response
-let orderRequest = getAbstractedXmlObj();
-orderRequest.tgtUrl = (
-    'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
-    '&anim=Spin' + // Spin is a fast demo
-    '&xres=450' +  // higher than default resolution
-    '&yres=450' +  // higher than default resolution
-    '&gif=0' +     // gif creation is slow
-    '&fbx=0' +     // fbx not needed for demo
-    '&mp4=1' +     // mp4 is fastest / best
-    '&createAnimation=0'  // Don't start on creation, let image upload start animation
-    );
-
-orderRequest.onreadystatechange = function()
     {
-    if (orderRequest.readyState === 4 && orderRequest.status === 200)
+    // Clear out any previously displayed animation
+    mp4Animation = document.getElementById("mp4Animation");
+    mp4Animation.setAttribute("src", "");
+    // Send request for new animation
+    // and retrieve order number response
+    let orderRequest = getAbstractedXmlObj();
+    orderRequest.tgtUrl = (
+        'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
+        '&anim=Spin' + // Spin is a fast and a good demonstration
+        '&xres=450' +  // higher than default resolution
+        '&yres=450' +  // higher than default resolution
+        '&apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  // All image upload requests require an apiKey.
+        // ... Many other options exist...
+        );
+    let fd = {};
+    if (typeof(document.getElementById('acmeUploadFile').files[0]) !== 'undefined')
         {
-        orderRequestJson = JSON.parse(orderRequest.responseText);
-        document.getElementById('orderNumber').innerHTML =
-            orderRequestJson.orderNumber;
-        queryAndUpdateProgress();
+        fd = new FormData();
+        fd.append('ufile', document.getElementById('acmeUploadFile').files[0]);
         }
-    };
-orderRequest.open('GET', orderRequest.tgtUrl);
-orderRequest.send();
-}
+
+    orderRequest.onreadystatechange = function()
+        {
+        if (orderRequest.readyState === 4 && orderRequest.status === 200)
+            {
+            orderRequestJson = JSON.parse(orderRequest.responseText);
+            document.getElementById('orderNumber').innerHTML =
+                orderRequestJson.orderNumber;
+            document.getElementById('mp4File').innerHTML =
+                orderRequestJson.mp4;
+            queryAndUpdateProgress();
+            }
+        };
+    if (fd !== {})
+        {
+        orderRequest.open('POST', orderRequest.tgtUrl);
+        orderRequest.send(fd);
+        }
+    else
+        {
+        orderRequest.open('GET', orderRequest.tgtUrl);
+        orderRequest.send();
+        }
+    }
 
 function queryAndUpdateProgress()
-// Update progress until 100%
-{
-let progressRequest = getAbstractedXmlObj();
-progressRequest.tgtUrl = (
-    'https://api.acme.codes/orders/' +
-    document.getElementById('orderNumber').innerHTML +
-    '/progress');
-progressRequest.onreadystatechange = function()
+    // Update progress until 100%
     {
-    if (progressRequest.readyState === 4 && progressRequest.status === 200)
+    let progressRequest = getAbstractedXmlObj();
+    progressRequest.tgtUrl = (
+        'https://api.acme.codes/orders/' +
+        document.getElementById('orderNumber').innerHTML +
+        '/progress');
+    progressRequest.onreadystatechange = function()
         {
-        let orderProgressJson = JSON.parse(progressRequest.responseText);
-        document.getElementById('orderProgress').innerHTML =
-            orderProgressJson.progress + "%";
-        document.getElementById('orderStage').innerHTML =
-            orderProgressJson.stage;
-        if (orderProgressJson.progress === 100)
+        if (progressRequest.readyState === 4 && progressRequest.status === 200)
             {
-            retrieveMp4Animation(orderProgressJson.mp4);
+            let orderProgressJson = JSON.parse(progressRequest.responseText);
+            document.getElementById('orderProgress').innerHTML =
+                orderProgressJson.progress + "%";
+            document.getElementById('orderStage').innerHTML =
+                orderProgressJson.stage;
+            if (orderProgressJson.progress === 100)
+                {
+                mp4Animation.setAttribute(
+                    "src",
+                    document.getElementById("mp4File").innerHTML
+                    )
+                }
+            else
+                {
+                // update every 3 seconds
+                setTimeout(queryAndUpdateProgress, 3000);
+                }
             }
-        else
-            {
-            // update every 3 seconds
-            setTimeout(queryAndUpdateProgress, 3000);
-            }
-        }
-    };
-progressRequest.open('GET', progressRequest.tgtUrl);
-progressRequest.send();
-}
+        };
+    progressRequest.open('GET', progressRequest.tgtUrl);
+    progressRequest.send();
+    }
 
-function retrieveMp4Animation(mp4Url)
-{
-mp4Animation = document.getElementById("mp4Animation");
-mp4Animation.setAttribute("src", mp4Url)
-}
-
-document.addEventListener('DOMContentLoaded',
-                          function(event)
-                            {
-                            // Trigger auto-updating of animated qr code
-                            getQrCode();
-                            }
-                          );
 
 function getAbstractedXmlObj()
     {
@@ -111,35 +113,5 @@ function getAbstractedXmlObj()
     return xmlhttp;
     }
 
-function uploadImageWrapper()
-    {
-    let a = document.getElementById('acmeUploadFile');
-    uploadImage(
-        a.files[0],
-        orderRequestJson.orderNumber
-        )
-    }
-
-function uploadImage(file, order)
-    {
-    let url = 'https://api.acme.codes/orders/' + order + '/image';
-    let xhr = new XMLHttpRequest();
-    let fd = new FormData();
-    xhr.open('POST', url, true);
-    xhr.onreadystatechange = function()
-        {
-        if (xhr.readyState === 4 && xhr.status === 200)
-            {
-            // Every thing ok, file uploaded, now
-            // clear mp4 field and other output fields and then...
-            if (mp4Animation != null)
-                {mp4Animation.src = '';}
-            // ...update progress and reload when done
-            queryAndUpdateProgress();
-            }
-        };
-    fd.append('ufile', file);
-    xhr.send(fd);
-    }
 
 

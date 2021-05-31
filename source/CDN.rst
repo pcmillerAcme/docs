@@ -7,7 +7,7 @@
 CDN
 ###
 
-Content Delivery Network
+`Content Delivery Network <https://en.wikipedia.org/wiki/Content_delivery_network>`_
 
 ACME provides final animation product file hosting (mp4, gif, fbx, png, zip) in the cloud for paying subscribers. This allows for 24/7/365 global secure availability of created animation files. Our current Cloud Service Provider is Microsoft Azure. Our CDN subdomain endpoints are:
 |br|

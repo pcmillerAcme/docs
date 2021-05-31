@@ -13,20 +13,20 @@ Introduction
 
 .. image:: ./_static/AcmeLogo.png
 
-This documentation describes the `REST <https://en.wikipedia.org/wiki/Representational_state_transfer>`_ ful `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) supporting the  `'Software as a Service' (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'. 
+This documentation describes the `REST <https://en.wikipedia.org/wiki/Representational_state_transfer>`_ ful `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) supporting the  `Software as a Service (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'.
 
-ACME's service provides near real time creation of customized **animations** of any scannable code, including QR codes.
+ACME's service provides near real time creation of customized **animations** of any scannable code, including QR Codes.
 |br|
 |br|
-Standard codes and QR codes (non-animated) can also be created, and are free of charge within certain volume limitations.
+Standard QR Codes (non-animated) can also be created, and are free of charge within certain volume limitations.
 
-If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting ACME's home page: `www.acme.codes <http://www.acme.codes>`_, or you may just want to go ahead and make animated codes yourself with `ACME's Coderunner <https://coderunner.acme.codes>`_ .
+If you are a software developer interested in using ACME's service, this documentation is for you. If you are not a software developer, you'll probably be happier visiting ACME's home page: `www.acme.codes <http://www.acme.codes>`_.
 
 This documentation describes the ReST API call sequences for requesting an animated code online. 
 
 The root domain of the API described here is `https://api.acme.codes <https://api.acme.codes>`_
 
-The example workflows described in this documentation will function for anyone without payment; in particular non-animated codes can be generated without any payment (for free). However messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
+Most example workflows described in this documentation will function for anyone without payment; in particular standard QR Codes can be generated without any payment (for free). However, for calls made to the API without a paid API key, messages embedded into *animated* codes will be prefixed to ACME's website in a way that limits commercial use but still demonstrates ACME's real time encoding ability. All generated demonstration codes are scannable, however the embedded link will only affirm the requested test message rather than contain the original message. To encode messages into animated codes without this prefixed demonstration restriction, a subscription-based business agreement with ACME must first be paid for.
 
 The majority of API calls made available here can be experimented with by anyone with a browser. Simply try the links directly, or copy, edit, and paste them to create your own test codes.
 
@@ -49,20 +49,14 @@ Certain design and architectural features of this service are patented under `US
    :maxdepth: 2
    :caption: Contents:
 
-   Examples
-   animations
    SDK
    CDN
-   fbx
-   frames
-   gif
-   mp4
-   new
-   orders
-   image
-   progress
+   Animations
+   Formats
+   /new
+   /progress
    thumbnails
-   version
+   /version
 
 Indices and tables
 ==================

@@ -17,41 +17,43 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import os
+import re
 import requests
+import tempfile
 from os.path import join
 
 # Setup Request for animation
 request_object = requests.Session()
 code_request_url = (
-    'https://api.acme.codes/new?msg=ThisDemonstratesImageQRCode' +
-    '&anim=Still' +
-    '&format=png' +
-    '&xres=800' +
-    '&yres=800'
+    'https://api.acme.codes/new?'  # Creation endpoint
+    'msg=ThisDemonstratesImageQRCode&'  # Message to embed into QR code 
+    'anim=Still&'  # Request a standard (non animated) code
+    'format=png&'  # Request direct return format of image png
+    'xres=800&' 
+    'yres=800'
     # imgScaleStill below can be used to scale img, but with increasing
     # risk to scanability.
-    # Image will be scaled, but also 'snapped to' the tile borders of the code.
-    # See documentation.
     # '&imgScaleStill=0.33',
 )
 
-with open('C:\\Users\\YourFileOnYourComputer.png', 'rb') as fh:
-    r = requests.post(
+with open('ImageFileOnYourComputer.png', 'rb') as fh:
+    code_request_response = requests.post(
         url=code_request_url,
         files={'ufile': fh}
     )
 
-    if r.status_code != 200:
+    if code_request_response.status_code != 200:
         print('Problem with api call: ' + code_request_url)
-        print(r.text)
+        print(code_request_response.text)
         import sys
-        sys.exit()
+        sys.exit(1)
 
 # Save the png file in current directory
-drop_image_file = join(join(os.getcwd(), 'DemoPngWithImageFromAcme.png'))
+disp_header = code_request_response.headers['content-disposition']
+filename = re.findall("filename=\"(.+)\"", disp_header)[0]
+drop_image_file = join(tempfile.gettempdir(), filename)
 print('Saving file to: ' + drop_image_file)
 with open(drop_image_file, 'wb') as file_handle:
-    for chunk in r.iter_content(4096):
+    for chunk in code_request_response.iter_content(4096):
         file_handle.write(chunk)
 print('Done.')
