@@ -48,6 +48,8 @@ If you have feedback or questions on this documentation, or if you are intereste
 Certain design and architectural features of this service are patented under `US 10,083,535 B2 <https://patents.google.com/patent/US10083535B2>`_.
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
+
+.. image:: ./_static/AcmeLogo.png
    
    
 .. toctree::
