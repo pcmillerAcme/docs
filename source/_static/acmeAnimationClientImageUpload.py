@@ -28,12 +28,13 @@ ACME_API_DOMAIN = 'https://api.acme.codes'
 request_object = requests.Session()
 new_anim_request_url = (
     ACME_API_DOMAIN +
-    '/new?' +  # Image new image creation endpoint
-    'msg=DemoMessage'  # Provide message to be encoded
-    '&xres=400'  # Since you're a developer...
-    '&yres=400'  # ...let's make the resolution better than default
-    '&anim=Spin'  # Simplest demo animation
-    '&apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  # All image upload requests require an apiKey.
+    '/new?' +  # Animation creation endpoint
+    'msg=ThisDemoCodeMadeFromPythonClientWithImage&'  # Provide message to be encoded
+    'xres=800&'  # Since you're a developer...
+    'yres=800&'  # ...let's make the resolution better than default
+    'anim=Cube&'  # This is an interesting animation that completes quickly
+    'apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  # All image upload requests require an apiKey.
+    # ... many other options exist; see documentation on the /new endpoint
 )
 
 # Upload a local custom image to the server after order creation

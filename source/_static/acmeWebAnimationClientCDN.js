@@ -28,13 +28,14 @@ function getQrCode()
 
     orderRequest.tgtUrl = (
         'https://api.acme.codes/new?' +  // Endpoint for new animation creation
-        'msg=AcmeSDKJsApiCDNExample&' +  // Message to embed into code
-        '&anim=Spin' + // Spin is a fast demo
-        '&xres=450' +  // higher than default resolution
-        '&yres=450' +  // higher than default resolution
+        'msg=ThisDemoCodeMadeFromAnimationCdnClient&' +  // Message to embed into code
+        '&anim=Cubie' + // One of many animation choices
+        '&xres=800' +  // higher than default resolution
+        '&yres=800' +  // higher than default resolution
         '&cdn=1' +     // Request CDN delivery for accounts that have it
         '&apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  // CDN requests requires an apiKey.
         // Note the above api key is ACME's locked test apiKey, but with CDN permissions
+        // ... many other options exist; see documentation on the /new endpoint
         );
 
     orderRequest.onreadystatechange = function()

@@ -10,7 +10,7 @@ SDK
 
 `Software Development Kit <https://en.wikipedia.org/wiki/Software_development_kit>`_
 
-Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. Developers are encouraged to copy or duplicate this code to get up and running with using our API.
+Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. All published example code here has the MIT free use license embedded within it; Developers are encouraged to copy or duplicate this code to get up and running with using our API.
 
 Animated QR code creation examples:
 
@@ -69,10 +69,8 @@ Python + Image Upload
 
 acmeAnimationClientImageUpload.py
 
-This Python script is identical to the Animated QR Code Creation except it has the additional
-step of uploading a custom image to the order.
-|br|
-"POST new order, check progress #, download mp4"
+This Python script is identical to acmeAnimationClient.py above except it has the additional
+step of uploading a custom image to the order. It follows the general pattern of "POST new order, check progress #, download mp4"
 |br|
 
 `Download/Read acmeAnimationClientImageUpload.py <./_static/acmeAnimationClientImageUpload.py>`_

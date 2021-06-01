@@ -26,10 +26,13 @@ from time import sleep
 # Setup Request for animation
 request_object = requests.Session()
 new_anim_request_url = (
-    'https://api.acme.codes/new?msg=DemoMessage'  # Baseline request
-    '&fbx=0'  # Optional: Suppress fbx for faster response time
-    '&xres=400'  # Optional: since you're a developer...
-    '&yres=400'  # ...let's make the resolution better than default
+    'https://api.acme.codes/new?'  # Animation creation endpoint 
+    'msg=ThisDemoCodeMadeFromPythonClient&'  # The message to embed into the QR code
+    'anim=Cube&'  # This is an interesting animation that completes quickly
+    'fbx=0&'  # Optional: Suppress fbx for faster response time
+    'xres=800&'  # Optional: since you're a developer...
+    'yres=800&'  # ...let's make the resolution better than default
+    # ... many other options exist; see documentation on the /new endpoint
 )
 
 # Send anim request and get back eventual location
@@ -41,7 +44,7 @@ if order_request_response.status_code != 200:
     sys.exit()
 new_order_data = order_request_response.json()
 print('The new order number is: ' + new_order_data['orderNumber'])
-print('The mp4 will be available at : ' + new_order_data['mp4'])
+print('The mp4 will be temporarily available at : ' + new_order_data['mp4'])
 
 # Query the api to know when it is complete
 progress_url = ('https://api.acme.codes/orders/' +

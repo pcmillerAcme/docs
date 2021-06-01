@@ -6,19 +6,25 @@
 Formats
 #######
 
+Output
+------
+
 Acme's API can return the following file formats:
 
-mp4 - Industry standard compressed movie file playable on almost any modern system.
-|br|
-|br|
-png - Web standard image file format; used to return individual animation frames.
-|br|
-|br|
-gif - Most widely displayable format, comes at the cost of large file size inefficiency and time inefficiency.
-|br|
-|br|
-fbx - 3d industry standard scene definition file.
-|br|
-|br|
-zip - Compressed file containing all frames of an animation; used by customers wanting to apply their own compression into animation files.
+-  `mp4 <https://en.wikipedia.org/wiki/MPEG-4_Part_14>`_  |br| The industry standard compressed movie file playable on almost any modern system. This is the default deliverable format for all ACME animated QR codes. |br|  |br|
+-  `png <https://en.wikipedia.org/wiki/Portable_Network_Graphics>`_  |br|  Web standard image file format; used to return individual animation frames for customers requiring uncompressed animation quality. |br|  |br|
+-  `gif <https://en.wikipedia.org/wiki/GIF>`_   |br|  Most widely displayable format, comes at the costs of large file size, long creation times, and reduced color palettes. Default is off. |br|  |br|
+-  `fbx <https://en.wikipedia.org/wiki/FBX>`_   |br| 3d industry standard scene definition file. Default is off. |br|  |br|
+-  `zip <https://en.wikipedia.org/wiki/ZIP_(file_format)>`_   |br| Compressed file containing all frames of an animation; used by customers wanting to apply their own compression into animation files. Available to subscribers only. |br|  |br|
+
+All of the above formats can be directly toggled on or off as arguments to the ``/new`` endpoint when each animation is created.
+
+Input
+-----
+
+Images can be uploaded to ACME's api to be integrated in each custom animation. We recommend only uploading the most commonly supported formats, such as jpeg, tif, and png. Our pipeline can support a much broader file formats including jpeg, exr, deepexr, tif, bmp, dib, eps, gif, icns, ico, im, msp, pcx, ppm sgi, spider, tga, webp, xbm, paml, pdf, xvThumbnails. However, within each of these formats many different options from an ocean of different applications can create versions of image files that we cannot support. If this occurs, please take the time to convert your image files to industry standard files that can be displayed on a web browser before uploading them to our service to be animated.
+|br|  |br|
+A note on gifs: We have found on occasion some customers upload animated gifs into our pipeline. This is not currently supported - only the first frame of the gif will be integrated. This is an option for customers willing to pay for custom animation creation. Contact sales@acme.codes if interested in this kind of hybrid animation.
+
+  |br|  |br|
 

@@ -23,11 +23,12 @@ function getQrCode()
 // and retrieve order number response
 let orderRequest = getAbstractedXmlObj();
 orderRequest.tgtUrl = (
-    'https://api.acme.codes/new?' +  // Ask for a new animation
-    'msg=AcmeSDKJsApiExample&' +  // Set the message to be embedded into the QR code
-    '&anim=Spin' + // Spin is a fast demo
-    '&xres=450' +  // higher than default resolution
-    '&yres=450'    // higher than default resolution
+    'https://api.acme.codes/new?' +  // Animation creation endpoint
+    'msg=ThisDemoCodeMadeFromAnimationHtmlJsClient&' +  // Set the message to be embedded into the QR code
+    '&anim=Cube' + // Cube is an interesting animation that renders quickly
+    '&xres=800' +  // higher than default resolution
+    '&yres=800'    // higher than default resolution
+    // ... many other options exist; see documentation on the /new endpoint
     );
 
 orderRequest.onreadystatechange = function()

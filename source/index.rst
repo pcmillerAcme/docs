@@ -1,7 +1,12 @@
 
 .. |br| raw:: html
 
-   <br />
+   <br>
+
+
+.. |vid| raw:: html
+
+    <video src="./_static/AcmeDocsTopAnimation.mp4" width="500" height="500" playsinline autoplay loop muted></video>
 
 api.acme.codes ReST documentation
 =================================
@@ -11,7 +16,7 @@ api.acme.codes ReST documentation
 Introduction
 ================
 
-.. image:: ./_static/AcmeLogo.png
+|vid|
 
 This documentation describes the `REST <https://en.wikipedia.org/wiki/Representational_state_transfer>`_ ful `Web Application Programming Interface <https://en.wikipedia.org/wiki/Web_API>`_ (Web API) supporting the  `Software as a Service (SaaS) <https://en.wikipedia.org/wiki/Software_as_a_service>`_ provided by `Animated Codes Made Easy LLC <https://www.acme.codes>`_, or 'ACME'.
 

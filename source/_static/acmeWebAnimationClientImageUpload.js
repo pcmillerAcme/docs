@@ -29,12 +29,13 @@ function getQrCode()
     // and retrieve order number response
     let orderRequest = getAbstractedXmlObj();
     orderRequest.tgtUrl = (
-        'https://api.acme.codes/new?msg=AcmeSDKJsApiExample&' +
-        '&anim=Spin' + // Spin is a fast and a good demonstration
-        '&xres=450' +  // higher than default resolution
-        '&yres=450' +  // higher than default resolution
-        '&apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  // All image upload requests require an apiKey.
-        // ... Many other options exist...
+        'https://api.acme.codes/new?' + // Animation creation endpoint
+        'msg=ThisDemoCodeMadeFromAnimationImageClient&' +  // Message to embed into the QR code
+        'anim=Cubist_Smooth&' + // One of many animation options, see animation library
+        'xres=800&' +  // higher than default resolution
+        'yres=800&' +  // higher than default resolution
+        'apiKey=6d3873dc-af01-4cc0-bbb2-0f3537b21f80'  // All image upload requests require an apiKey.
+        // ... Many other options exist, see documentation on the /new resource
         );
     let fd = {};
     if (typeof(document.getElementById('acmeUploadFile').files[0]) !== 'undefined')
