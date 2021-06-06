@@ -22,7 +22,7 @@ All of the above formats can be directly toggled on or off as arguments to the `
 Input
 -----
 
-Images can be uploaded to ACME's api to be integrated in each custom animation. We recommend only uploading the most commonly supported formats, such as jpeg, tif, and png. Our pipeline can support a much broader set of file formats:
+Images can be uploaded to ACME's api to be integrated in each custom animation. We recommend only uploading the most commonly supported formats, such as jpg/jpeg, tif, and png. Our pipeline will accept a much broader set of file format extensions:
 
     'bmp',
     'deepexr',
