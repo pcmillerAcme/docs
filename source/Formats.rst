@@ -22,7 +22,35 @@ All of the above formats can be directly toggled on or off as arguments to the `
 Input
 -----
 
-Images can be uploaded to ACME's api to be integrated in each custom animation. We recommend only uploading the most commonly supported formats, such as jpeg, tif, and png. Our pipeline can support a much broader file formats including jpeg, exr, deepexr, tif, bmp, dib, eps, gif, icns, ico, im, msp, pcx, ppm sgi, spider, tga, webp, xbm, paml, pdf, xvThumbnails. However, within each of these formats many different options from an ocean of different applications can create versions of image files that we cannot support. If this occurs, please take the time to convert your image files to industry standard files that can be displayed on a web browser before uploading them to our service to be animated.
+Images can be uploaded to ACME's api to be integrated in each custom animation. We recommend only uploading the most commonly supported formats, such as jpeg, tif, and png. Our pipeline can support a much broader set of file formats:
+
+    'bmp',
+    'deepexr',
+    'dib',
+    'eps',
+    'exr',
+    'gif',
+    'icns',
+    'ico',
+    'im',
+    'jpeg',
+    'jpg',
+    'msp',
+    'paml',
+    'pcx',
+    'pdf',
+    'ppm',
+    'png',
+    'sgi'
+    'spider'
+    'svg'
+    'tga',
+    'tif',
+    'webp',
+    'xbm',
+    'xvThumbnails'
+
+However, within each of these formats, many different options form an ocean of different option sets which we cannot support. If this occurs, please take the time to convert your image files to a more common industry standard file - say one that can be displayed on a web browser - before uploading them to our service to be animated.
 |br|  |br|
 A note on gifs: We have found on occasion some customers upload animated gifs into our pipeline. This is not currently supported - only the first frame of the gif will be integrated. This is an option for customers willing to pay for custom animation creation. Contact sales@acme.codes if interested in this kind of hybrid animation.
 

@@ -10,7 +10,7 @@ SDK
 
 `Software Development Kit <https://en.wikipedia.org/wiki/Software_development_kit>`_
 
-Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. All published example code here has the MIT free use license embedded within it; Developers are encouraged to copy or duplicate this code to get up and running with using our API.
+Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. All published example code here has the MIT free use license embedded within it; Developers are encouraged to duplicate this code to get up and running with our API and then make modifications as needed.
 
 Animated QR code creation examples:
 
