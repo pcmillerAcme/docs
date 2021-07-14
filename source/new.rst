@@ -6,7 +6,7 @@
 /new
 ####
 
-``/new`` 
+``/new``
 
 
 ``/new`` starts the creation process of a new animated code and returns a response containing the **Order Number** to be used for all subsequent queries about (and certain limited updates to) the started animation. 
@@ -103,6 +103,17 @@ eyeColor
 
 A custom color for the QR code 'eyes'; the three visually prominent registration anchors in the corners of all QR codes. This argument will give all 3 eyes a distinct color from the color defined by the 'pixelColor' argument.
 
+Some examples of using eyeColor and the other related options below:
+
+.. image:: ./_static/allEyes.png
+
+.. image:: ./_static/eyeIris.png
+
+.. image:: ./_static/eyeUL.png
+
+.. image:: ./_static/gradients3.png
+
+
 .. _eyeColorLL:
 
 eyeColorLL
@@ -159,9 +170,9 @@ eyeColorLL3
 
 A third color defining a color gradient to be applied only to the lower left eye.
 
-.. _eyeColorAngleLL:
+.. _eyeColorLLAngle:
 
-eyeColorAngleLL
+eyeColorLLAngle
 ---------------
 
 The angle of the gradient pattern applied to the lower left eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
@@ -181,9 +192,9 @@ eyeColorUL3
 
 A third color defining a color gradient to be applied only to the upper left eye.
 
-.. _eyeColorAngleUL:
+.. _eyeColorULAngle:
 
-eyeColorAngleUL
+eyeColorULAngle
 ---------------
 
 The angle of the gradient pattern applied to the upper left eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
@@ -203,41 +214,41 @@ eyeColorUR3
 
 A third color defining a color gradient to be applied only to the upper right eye.
 
-.. _eyeColorAngleUR:
+.. _eyeColorURAngle:
 
-eyeColorAngleUR
+eyeColorURAngle
 ---------------
 
 The angle of the gradient pattern applied to the upper right eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
 
-.. _eyeIrisColor:
+.. _irisColor:
 
-eyeIrisColor
-------------
+irisColor
+---------
 
 The color to be applied to the central square of all eyes, distinct from the eyeColor. Ignored if color gradients are defined.
 
 
-.. _eyeIrisColorLL:
+.. _irisColorLL:
 
-eyeIrisColorLL
---------------
+irisColorLL
+-----------
 
 The color to be applied to the central square of the lower left eye, distinct from the eyeColor. Ignored if color gradients are defined.
 
 
-.. _eyeIrisColorUL:
+.. _irisColorUL:
 
-eyeIrisColorUL
---------------
+irisColorUL
+-----------
 
 The color to be applied to the central square of the upper left eye, distinct from the eyeColor. Ignored if color gradients are defined.
 
 
-.. _eyeIrisColorUR:
+.. _irisColorUR:
 
-eyeIrisColorUR
---------------
+irisColorUR
+-----------
 
 The color to be applied to the central square of the upper right eye, distinct from the eyeColor. Ignored if color gradients are defined.
 
@@ -327,7 +338,9 @@ Example:
 img1 or POSTED images
 ---------------------
 
-The image URL to be applied within the animation, if supported by the selected animation. 
+The image URL to be applied within the animation, if supported by the selected animation.
+
+Note if an image is supplied to a standard (non animated) QR code generation request, the image is placed in the middle of the code.
 
 Example:
 ``https://api.acme.codes/new?anim=Spin&img1=https://www.acme.ink/demos/acmecodes/tImg/img1.png``
