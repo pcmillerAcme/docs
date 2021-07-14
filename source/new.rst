@@ -96,6 +96,152 @@ chromaRange
 Supports the breadth of color range to be used in chromaKeys arg. Default value is 5.
 
 
+.. _eyeColor:
+
+eyeColor
+--------
+
+A custom color for the QR code 'eyes'; the three visually prominent registration anchors in the corners of all QR codes. This argument will give all 3 eyes a distinct color from the color defined by the 'pixelColor' argument.
+
+.. _eyeColorLL:
+
+eyeColorLL
+----------
+
+A custom color for the lower left eye, layered on top of the value for the eyeColor argument, if any.
+
+.. _eyeColorUL:
+
+eyeColorUL
+----------
+
+A custom color for the upper left eye, layered on top of the value for the eyeColor argument, if any.
+
+.. _eyeColorUR:
+
+eyeColorUR
+----------
+
+A custom color for the upper right eye, layered on top of the value for the eyeColor argument, if any.
+
+.. _eyeColor2:
+
+eyeColor2
+---------
+
+A second color defining a color gradient to be applied to all eyes. If defined along with eyeColor, a gradient color tone will be made from eyeColor to eyeColor2 for all eyes.
+
+.. _eyeColor3:
+
+eyeColor3
+---------
+
+A third color defining a color gradient to be applied to all eyes. If defined along with eyeColor and eyeColor2, a gradient color tone will be made from eyeColor to eyeColor2 to eyeColor3 for all eyes.
+
+.. _eyeColorAngle:
+
+eyeColorAngle
+-------------
+
+The angle of the gradient pattern applied to eyes when eyeColor2, or both eyeColor2 and eyeColor3 are defined.
+
+.. _eyeColorLL2:
+
+eyeColorLL2
+-----------
+
+A second color defining a color gradient to be applied only to the lower left eye.
+
+.. _eyeColorLL3:
+
+eyeColorLL3
+-----------
+
+A third color defining a color gradient to be applied only to the lower left eye.
+
+.. _eyeColorAngleLL:
+
+eyeColorAngleLL
+---------------
+
+The angle of the gradient pattern applied to the lower left eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
+
+
+.. _eyeColorUL2:
+
+eyeColorUL2
+-----------
+
+A second color defining a color gradient to be applied only to the upper left eye.
+
+.. _eyeColorUL3:
+
+eyeColorUL3
+-----------
+
+A third color defining a color gradient to be applied only to the upper left eye.
+
+.. _eyeColorAngleUL:
+
+eyeColorAngleUL
+---------------
+
+The angle of the gradient pattern applied to the upper left eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
+
+
+.. _eyeColorUR2:
+
+eyeColorUR2
+-----------
+
+A second color defining a color gradient to be applied only to the upper right eye.
+
+.. _eyeColorUR3:
+
+eyeColorUR3
+-----------
+
+A third color defining a color gradient to be applied only to the upper right eye.
+
+.. _eyeColorAngleUR:
+
+eyeColorAngleUR
+---------------
+
+The angle of the gradient pattern applied to the upper right eye when its associated eyeColor2, or both eyeColor2 and eyeColor3 are defined.
+
+.. _eyeIrisColor:
+
+eyeIrisColor
+------------
+
+The color to be applied to the central square of all eyes, distinct from the eyeColor. Ignored if color gradients are defined.
+
+
+.. _eyeIrisColorLL:
+
+eyeIrisColorLL
+--------------
+
+The color to be applied to the central square of the lower left eye, distinct from the eyeColor. Ignored if color gradients are defined.
+
+
+.. _eyeIrisColorUL:
+
+eyeIrisColorUL
+--------------
+
+The color to be applied to the central square of the upper left eye, distinct from the eyeColor. Ignored if color gradients are defined.
+
+
+.. _eyeIrisColorUR:
+
+eyeIrisColorUR
+--------------
+
+The color to be applied to the central square of the upper right eye, distinct from the eyeColor. Ignored if color gradients are defined.
+
+
 .. _fbx:
 
 fbx
