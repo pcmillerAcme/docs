@@ -3,7 +3,7 @@
 
    <br />
 
-thumbnails
+Thumbnails
 ##########
 
 ``https://service.acme.codes/anims/<anim>/thumbnails/anim.*``

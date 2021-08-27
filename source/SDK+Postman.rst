@@ -4,13 +4,15 @@
    <br />
 
 
-SDK
-###
+SDK+Postman
+###########
 
+SDK
+---
 
 `Software Development Kit <https://en.wikipedia.org/wiki/Software_development_kit>`_
 
-Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. All published example code here has the MIT free use license embedded within it; Developers are encouraged to duplicate this code to get up and running with our API and then make modifications as needed.
+Here are working programs of client-side software running remotely and accessing resource endpoints at api.acme.codes to attain animated or standard QR codes. Many of these examples can be run directly in your browser by clicking on the provided links. All published example code here has the MIT free use license embedded within it; Developers are encouraged to duplicate this code to get up and running with our API and then make modifications as needed.
 
 Animated QR code creation examples:
 
@@ -19,8 +21,6 @@ Animated QR code creation examples:
     :ref:`Python + Image Upload`
     |br|
     :ref:`Web Page`
-    |br|
-    :ref:`Web Page + CDN`
     |br|
     :ref:`Web Page + Image Upload`
     |br|
@@ -44,7 +44,7 @@ Standard QR code - 'Std' - creation examples:
 .. _Python:
 
 Python
-------
+~~~~~~
 
 acmeAnimationClient.py
 
@@ -65,7 +65,7 @@ standard timeout periods of internet web service calls.
 .. _Python + Image Upload:
 
 Python + Image Upload
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 acmeAnimationClientImageUpload.py
 
@@ -82,7 +82,7 @@ step of uploading a custom image to the order. It follows the general pattern of
 .. _Web Page:
 
 Web Page
---------
+~~~~~~~~
 
 acmeWebAnimationClient.html |br|
 acmeWebAnimationClient.js
@@ -102,32 +102,11 @@ standard timeout periods of internet web service calls.
 |br|
 |br|
 
-.. _Web Page + CDN:
-
-Web Page + CDN
---------------
-
-acmeWebAnimationClientCDN.html |br|
-acmeWebAnimationClientCDN.js
-
-These files define a web page which dynamically queries api.acme.codes for an animation via chained xmlhttp calls. The final product is loaded from ACME's Content Delivery Network at cdn.api.acme.codes. See the `CDN section of this documentation <https://acme.readthedocs.io/en/latest/CDN.html>`_ for more details.
-
-|br|
-|br|
-`Click here to load and run acmeWebAnimationClientCDN.html <./_static/acmeWebAnimationClientCDN.html>`_  in your browser now.
-|br|
-|br|
-`Download/Read acmeWebAnimationClientCDN.js <./_static/acmeWebAnimationClientCDN.js>`_
-|br|
-|br|
-|br|
-
-
 
 .. _Web Page + Image Upload:
 
 Web Page + Image Upload
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 acmeWebAnimationClientImageUpload.html
 acmeWebAnimationClientImageUpload.js
@@ -148,7 +127,7 @@ a uploading a local image when making the request for the animation.
 .. _Python Std:
 
 Python Std
-----------
+~~~~~~~~~~
 
 acmeStandardQrCodeClient.py
 
@@ -171,23 +150,16 @@ Paid for subscriptions have much higher volume limits.
 .. _Web Page Std:
 
 Web Page Std
-------------
+~~~~~~~~~~~~
 
 acmeWebStandardCodeClient.html
 
 This simple Html file simply defines an image on the page that uses a remote resource on api.acme.codes that
 triggers a QR code to made dynamically.
 
-Note that because only a single image file in png format is requested, the turnaround time is quite sort, and
-can be handled within the scope of normal internet service calls. This is unlike requesting animations, which exceed
-the timeline of standard web service calls; api requests for animations must first query for progress completion before the final
-animated files are retrieved.
+Note that because only a single image file in png format is requested, the turnaround time is quite sort, and can be handled within the scope of normal internet service calls. This is unlike requesting animations, which exceed the timeline of standard web service calls; api requests for animations must first query for progress completion before the final animated files are retrieved.
 
-Obviously this is not the recommended approach to using the api.acme.codes, since the QR code image file
-is being made from scratch each time the page is viewed. Since ACME should never be considered as a Content Delivery Network (CDN),
-the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server.
-However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
-
+Obviously this is not the recommended approach to using the api.acme.codes, since the QR code image file is being made from scratch each time the page is viewed. Since ACME should never be considered as a Content Delivery Network (CDN), the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server. However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
 |br|
 |br|
 `Click here to load and run acmeWebStandardCodeClient.html <./_static/acmeWebStandardCodeClient.html>`_ in your browser now.
@@ -198,7 +170,7 @@ However, for educational purposes of this SDK kit, the illustration shows how ce
 .. _Python Std + Image Upload:
 
 Python Std + Image Upload
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 acmeStandardCodeWithImageClient.py
 
@@ -206,9 +178,7 @@ This Python script does a direct retrieval of a standard (non-animated) QR code 
 This script also demonstrates the option of uploading an image to be placed in the middle of the code.
 |br|
 |br|
-When an image is uploaded for a standard QR code, the submitted image is placed in the middle of the
-code, and the QR code creation engine automatically increases the duplicated message content to help
-ensure the code is scannable.
+When an image is uploaded for a standard QR code, the submitted image is placed in the middle of the code, and the QR code creation engine automatically increases the duplicated message content to help ensure the code is scannable.
 |br|
 |br|
 An argument exists to alter the percentage size the uploaded image covers the QR code: imgScaleStill. It is not recommended to alter this value too much, but in some cases codes can remain scannable.
@@ -232,27 +202,50 @@ Paid for subscriptions have much higher volume limits.
 .. _Web Page Std + Image Reference:
 
 Web Page Std + Image Reference
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 acmeWebStandardCodeWithImageClient.html
 
 This simple Html file simply defines an image on the page that uses a remote resource on api.acme.codes that
-triggers a QR code to made dynamically.
-The feature of putting in an image in the middle of the code is demonstrated.
+triggers a QR code to made dynamically. The feature of putting in an image in the middle of the code is demonstrated.
 
-Note that because only a single image file in png format is requested, the turnaround time is quite sort, and
-can be handled within the scope of normal internet service calls. This is unlike requesting animations, which exceed
-the timeline of standard web service calls; api requests for animations must first query for progress completion before the final
-animated files are retrieved.
+Note that because only a single image file in png format is requested, the turnaround time is quite sort, and can be handled within the scope of normal internet service calls. This is unlike requesting animations, which exceed the timeline of standard web service calls; api requests for animations must first query for progress completion before the final animated files are retrieved.
 
 Obviously this is not the recommended approach to using the api.acme.codes, since the QR code image file
-is being made from scratch each time the page is viewed. Since ACME should never be considered as a Content Delivery Network (CDN),
-the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server.
-However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
+is being made from scratch each time the page is viewed. Since ACME should never be as a Content Delivery Network (CDN) only if that service is subscribed to, the proper approach would be to capture such images from api.acme.codes first and then store them on a CDN or web server. However, for educational purposes of this SDK kit, the illustration shows how certain calls api.acme.codes can be easily implemented.
 
 |br|
 |br|
 `Click here to load and run acmeWebStandardCodeWithImageClient.html <./_static/acmeWebStandardCodeWithImageClient.html>`_  in your browser now.
+|br|
+|br|
+|br|
+
+Postman
+-------
+
+Postman is a well known industry website for sharing, collaborating, and demonstrating API workflows and call sequences. For developers familiar with or interested in Postman, here is a link to our public `Postman workspace for api.acme.codes <https://www.postman.com/acme-codes/workspace/api-acme-codes>`_ On this page there are several Postman "collections" demonstrating the creation of both standard and animated QR codes. Note if you want to run the demonstration Postman collections on the above page, you will have to login or create a Postman account, but they have a baseline free level of service.
+
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
+|br|
 |br|
 |br|
 |br|
