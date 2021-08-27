@@ -89,7 +89,7 @@ Real time example link:
 """""""""""""
 
 More detailed information on each animation is available in the corresponding path. |br|
-Example details include internal animation block timing, animation lable tag values, default time length, and current retail prices.
+Example details include internal animation block timing, animation label descriptive tag values, default time length, and current retail prices.
 
 .. code-block:: javascript
 
