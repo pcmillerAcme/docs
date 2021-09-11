@@ -28,8 +28,7 @@ code_request_url = (
     'https://api.acme.codes/new?'  # Creation endpoint
     'msg=fromDocumentationAcmeStandardQrCodeClient.py'  # Message to embed into the QR code
     '&format=png'  # Request return format of image png file
-    '&anim=Still'  # and no animation
-    '&xres=400&'   # Slightly better resolution than default
+    '&xres=400'   # Slightly better resolution than default
     '&yres=400'   # Slightly better resolution than default
 )
 

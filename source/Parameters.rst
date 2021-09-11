@@ -29,7 +29,7 @@ Example return value:
 
 |br|
 
-**Far and away, the most commonly used parameters are:** |br|
+**For Animated QR codes, the most commonly used parameters are:** |br|
 
 Message: ``msg=`` |br|
 Resolution: ``xres=``, ``yres=`` |br|
@@ -37,7 +37,15 @@ Custom images ``ufile=`` |br|
 Animation ``anim=`` |br|
 |br|
 |br|
-For example, a user could request: |br|
+**For Standard QR codes, the most commonly used parameters are:** |br|
+
+Format ``format=png`` (Required) |br|
+Message: ``msg=`` |br|
+Resolution: ``xres=``, ``yres=`` |br|
+Custom images ``ufile=`` |br|
+|br|
+|br|
+For example, a user wanting an animated QR code could send a request for: |br|
 |br|
 1. A larger resolution mp4 file |br|
 2. of the 'Spin' Animation |br|
@@ -49,6 +57,21 @@ with the following call:
 |br|
 |br|
 ``https://api.acme.codes/new?msg=https://myWebsite.com/productPurchasePage20&xres=1000&yres=1000&anim=Spin&img1=https://myWebsite.com/images/product20.jpg``
+|br|
+|br|
+|br|
+|br|
+|br|
+For another example, a user wanting a Standard QR code could send a request for: |br|
+|br|
+1. A specific resolution png file |br|
+2. with an embedded message for a product purchase page on their website |br|
+|br|
+
+with the following call:
+|br|
+|br|
+``https://api.acme.codes/new?msg=https://myWebsite.com/productPurchasePage20&xres=1000&yres=1000&format=png``
 |br|
 |br|
 |br|
@@ -312,10 +335,20 @@ This controls the fraction of the framed code which fills the camera view. If se
 format
 ------
 
-The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. However, two other options exist: 'png', and the rarely used 'html'.
+The desired format of the return value. Default = 'JSON'. Usually format is left undeclared in order inherit the default 'JSON'. Animated QR codes take time to make, so the JSON response provides information to make follow up calls to query the state of creation, and ultimately the final animation as an mp4 file. Typical JSON response would look like
+
+``{"orderNumber": "1631327815_Z5V5M2U0", "mp4": "https://api.acme.codes/orders/1631327815_Z5V5M2U0/AcmeCode_826882.mp4"}``
+
+With the above information, progress checks can be made with calls to
+
+``https://api.acme.codes/orders/1631327815_Z5V5M2U0/progress``
+
+and when responses to progress indicate the animation creation has reached 100%, retrieve the completed mp4 file at the specificed mp4 location.
+
+However, two other options exist: 'png', and the rarely used 'html'.
 |br|
 |br|
-The 'png' format option is frequently used, which directly returns a png file format **only if non-animated codes have been requested** with ``anim=Still``.
+The 'png' format option is used to retrieve a direct response of an image file in png format. Since image files can be made very quickly, direct responses are possible.
 |br|
 |br|
 The 'html' option exists for people interacting and learning about the ACME API with a browser, and will return an html web page containing a clickable link to the final order products. This can be useful for interactive demonstration, testing, and verification of the API directly without relying on a more complex GUI front end. Without the 'html' option and without a front end, the user is left to parse raw JSON and manually assemble the URL, which is not fun for anything but scripts.
@@ -324,7 +357,7 @@ The 'html' option exists for people interacting and learning about the ACME API 
 Examples: |br|
 ``https://api.acme.codes/new?format=JSON`` (Default) |br| |br|
 ``https://api.acme.codes/new?format=html`` (Simple html page for workflow education) |br| |br|
-``https://api.acme.codes/new?format=png&anim=Still`` (Parameters for direct single png image return) |br| |br|
+``https://api.acme.codes/new?format=png``  (Parameter for direct single png image return) |br| |br|
 
 
 .. _fps:
@@ -380,7 +413,7 @@ of the image within the QR code. Note some mild image distortion might occur as 
 be forced to snap to borders of the QR code.
 Example:
 
-``https://api.acme.codes/new?anim=Still&format=png&imgScaleStill=0.4``
+``https://api.acme.codes/new?format=png&imgScaleStill=0.4``
 
 
 .. _img1derp:

@@ -26,11 +26,10 @@ from os.path import join
 request_object = requests.Session()
 code_request_url = (
     'https://api.acme.codes/new?'  # Creation endpoint
-    'msg=ThisDemonstratesImageQRCode&'  # Message to embed into QR code 
-    'anim=Still&'  # Request a standard (non animated) code
-    'format=png&'  # Request direct return format of image png
-    'xres=800&' 
-    'yres=800'
+    'msg=ThisDemonstratesImageQRCode'  # Message to embed into QR code 
+    '&format=png'  # Request direct return format of image png
+    '&xres=800' 
+    '&yres=800'
     # imgScaleStill below can be used to scale img, but with increasing
     # risk to scanability.
     # '&imgScaleStill=0.33',
