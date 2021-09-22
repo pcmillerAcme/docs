@@ -569,7 +569,7 @@ Removes the background plane and allows for full transparency. Note transparency
 transpTriggerValue
 ------------------
 
-some text here
+Hex defined value which determines the transparency amount when a portion of the uploaded image is determined to be fully transparent. This is a rarely used fine tuning option for the Exchange and a few other animations.
 
 .. _uderp:
 
