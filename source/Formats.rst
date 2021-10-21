@@ -17,7 +17,7 @@ Acme's API can return the following file formats:
 -  `mp4 <https://en.wikipedia.org/wiki/MPEG-4_Part_14>`_  |br| The industry standard compressed movie file playable on almost any modern system. This is the default deliverable format for all ACME animated QR codes. |br|  |br|
 -  `png <https://en.wikipedia.org/wiki/Portable_Network_Graphics>`_  |br|  Web standard image file format; used to return individual animation frames for customers requiring uncompressed animation quality. |br|  |br|
 -  `gif <https://en.wikipedia.org/wiki/GIF>`_   |br|  Most widely displayable format, comes at the costs of large file size, long creation times, and reduced color palettes. Default is off. |br|  |br|
--  `fbx <https://en.wikipedia.org/wiki/FBX>`_   |br| 3d industry standard scene definition file. Default is off. |br|  |br|
+-  `fbx <https://en.wikipedia.org/wiki/FBX>`_   |br| 3d industry standard geometry and animation definition file. Example applications include plug and play animations for drone light shows. Default is off. |br|  |br|
 -  `zip <https://en.wikipedia.org/wiki/ZIP_(file_format)>`_   |br| Compressed file containing all frames of an animation; used by customers wanting to apply their own compression into animation files. Available to subscribers only. |br|  |br|
 
 All of the above formats can be directly toggled on or off as arguments to the ``/new`` endpoint when each animation is created.
