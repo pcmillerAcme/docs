@@ -110,7 +110,7 @@ This setting allows for diagnostic per frame overlays of a frame hand and frame 
 bgpColor
 --------
 
-Background Plate Color. Background color. Default = '``FFFFFF``' (White). Multiple hex color values can be supplied separated by commas for multi color options. Green background example: ``https://api.acme.codes/new?bgpColor=00FF00``
+Background Plate Color. Background color. Default = '``FFFFFF``' (White). In the future, multiple hex color values can be supplied separated by commas for multi color gradations. Green background example: ``https://api.acme.codes/new?bgpColor=00FF00``
 
 
 .. _bitRate:
