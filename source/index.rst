@@ -44,7 +44,7 @@ A note on file hosting:|br| The animation files created by this service can be v
 
 If you have feedback or questions on this documentation, or if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API, please contact `sales@acme.codes <mailto:sales@acme.codes?subject=From%20RTD:%20Interest%20in%20ACME%20Web%20Service>`_  
 
-Certain design and architectural features of this service are patented under `US 10,083,535 B2 <https://patents.google.com/patent/US10083535B2>`_.
+Certain design and architectural features of api.acme.codes are patented under `US 10,083,535 B2 <https://patents.google.com/patent/US10083535B2>`_.
 
 'QR Code' is a registered trademark of DENSO WAVE INCORPORATED
 
