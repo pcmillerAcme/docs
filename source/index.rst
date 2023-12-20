@@ -39,7 +39,7 @@ A note on file hosting:|br| The animation files created by this service can be v
 |br|
 - Free demo and retail animations are only available for download for a few hours. Users must manage their file hosting on their own after animation creation. |br|
 |br|
-- Paying subscribers may choose to have their files automatically hosted on our `Microsoft Azure <https://azure.microsoft.com>`_ based global cloud provider `Content Delivery Network (CDN) <https://en.wikipedia.org/wiki/Content_delivery_network>`_ . |br|
+- Paying subscribers may choose to have their files automatically hosted on our `Microsoft Azure <https://azure.microsoft.com>`_ based global cloud provider `Content Delivery Network (CDN) <https://en.wikipedia.org/wiki/Content_delivery_network>`_  . |br|
 |br|
 
 If you have feedback or questions on this documentation, or if you are interested in purchasing bulk quantity near real time animated codes or QR codes through ACME's API, please contact `sales@acme.codes <mailto:sales@acme.codes?subject=From%20RTD:%20Interest%20in%20ACME%20Web%20Service>`_  
